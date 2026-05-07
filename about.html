@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Wid Gets Cafe | Mobile Repairing Institute Delhi</title>
+  <meta name="description" content="Learn about Wid Gets Cafe — Delhi's premier mobile repairing training institute. Our story, mission, vision, and expert faculty." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --navy:#071120; --navy2:#0a1628; --cyan:#00E5FF; --blue:#2563EB;
+      --gray:#94A3B8; --white:#FFFFFF; --glass:rgba(255,255,255,0.04);
+      --glass-b:rgba(0,229,255,0.08); --border:rgba(0,229,255,0.15);
+      --shadow:0 8px 32px rgba(0,229,255,0.08); --radius:16px;
+      --tr:all 0.35s cubic-bezier(.4,0,.2,1);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Poppins',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;line-height:1.6;}
+    a{text-decoration:none;color:inherit;} ul{list-style:none;} section{padding:90px 0;}
+    ::-webkit-scrollbar{width:6px;} ::-webkit-scrollbar-track{background:var(--navy);}
+    ::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:3px;}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+    .section-tag{display:inline-block;background:var(--glass-b);border:1px solid var(--border);color:var(--cyan);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 18px;border-radius:50px;margin-bottom:16px;}
+    .section-title{font-size:clamp(28px,4vw,48px);font-weight:800;line-height:1.2;margin-bottom:16px;}
+    .section-title span{color:var(--cyan);}
+    .section-sub{font-size:16px;color:var(--gray);max-width:560px;margin:0 auto 50px;}
+    .text-center{text-align:center;}
+    .btn-primary{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--cyan),var(--blue));color:var(--navy);font-weight:700;font-size:15px;padding:14px 32px;border-radius:50px;border:none;cursor:pointer;transition:var(--tr);box-shadow:0 0 24px rgba(0,229,255,0.3);}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(0,229,255,0.5);}
+    .btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--white);font-weight:600;font-size:15px;padding:13px 30px;border-radius:50px;border:1.5px solid var(--border);cursor:pointer;transition:var(--tr);}
+    .btn-outline:hover{border-color:var(--cyan);color:var(--cyan);background:var(--glass-b);}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+
+    /* NAVBAR */
+    #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;transition:var(--tr);}
+    #navbar.scrolled{background:rgba(7,17,32,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 0;}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;}
+    /* ===================== LOGO ===================== */
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    /* Navbar logo image */
+    .logo-img {
+      /* Show the real PNG — no color filter so original red/black/white shows */
+      display: block;
+      width: auto;
+      height: 64px;          /* Comfortable navbar height */
+      max-width: 240px;      /* Never overflow on smaller screens */
+      object-fit: contain;
+      object-position: left center;
+
+      /* Subtle glow matching the site's cyan accent */
+      filter: drop-shadow(0 2px 12px rgba(0, 229, 255, 0.20));
+
+      /* Smooth transitions for scroll-shrink & hover */
+      transition: height 0.35s cubic-bezier(.4,0,.2,1),
+                  filter 0.35s cubic-bezier(.4,0,.2,1),
+                  transform 0.35s cubic-bezier(.4,0,.2,1);
+    }
+
+    /* Hover: gentle lift + glow boost */
+    .logo-img:hover {
+      filter: drop-shadow(0 4px 18px rgba(0, 229, 255, 0.45));
+      transform: translateY(-1px) scale(1.02);
+    }
+
+    /* Scrolled navbar: shrink logo so header gets slimmer */
+    #navbar.scrolled .logo-img {
+      height: 48px;
+    }
+
+    /* Footer logo — slightly bigger, centered in brand column */
+    .logo-img-footer {
+      height: 72px;
+      max-width: 260px;
+      filter: drop-shadow(0 2px 10px rgba(0, 229, 255, 0.15));
+    }
+    .logo-img-footer:hover {
+      filter: drop-shadow(0 4px 20px rgba(0, 229, 255, 0.40));
+      transform: translateY(-1px) scale(1.02);
+    }
+    .logo-text .name{font-size:18px;font-weight:800;line-height:1.1;color:var(--white);}
+    .logo-text .name span{color:var(--cyan);}
+    .logo-text .tagline{font-size:10px;color:var(--gray);letter-spacing:1px;}
+    .nav-links{display:flex;align-items:center;gap:8px;}
+    .nav-links a{font-size:14px;font-weight:500;color:var(--gray);padding:8px 14px;border-radius:8px;transition:var(--tr);}
+    .nav-links a:hover,.nav-links a.active{color:var(--white);background:var(--glass);}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;}
+    .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(7,17,32,0.97);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:24px;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{font-size:22px;font-weight:600;color:var(--gray);transition:var(--tr);}
+    .mobile-menu a:hover{color:var(--cyan);}
+    .mobile-close{position:absolute;top:24px;right:24px;font-size:28px;cursor:pointer;color:var(--gray);}
+
+    
+    /* PAGE HERO */
+    .page-hero{padding:160px 0 80px;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(0,229,255,0.07) 0%,transparent 70%),var(--navy);text-align:center;position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.03) 1px,transparent 1px);background-size:60px 60px;}
+    .page-hero-content{position:relative;z-index:2;}
+    .breadcrumb{display:flex;align-items:center;justify-content:center;gap:10px;font-size:13px;color:var(--gray);margin-bottom:20px;}
+    .breadcrumb a{color:var(--cyan);}
+    .breadcrumb span{color:var(--gray);}
+    .page-title{font-size:clamp(36px,5vw,64px);font-weight:900;margin-bottom:20px;}
+    .page-title span{color:var(--cyan);}
+    .page-sub{font-size:17px;color:var(--gray);max-width:560px;margin:0 auto;}
+
+    /* FOUNDER */
+    .founder-card{background:var(--glass);border:1px solid var(--border);border-radius:20px;padding:48px;display:flex;gap:48px;align-items:flex-start;}
+    .founder-avatar{width:160px;height:160px;min-width:160px;border-radius:50%;background:linear-gradient(135deg,rgba(0,229,255,0.2),rgba(37,99,235,0.2));border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:64px;}
+    .founder-quote{font-size:18px;color:var(--gray);font-style:italic;line-height:1.8;margin-bottom:24px;position:relative;padding-left:24px;}
+    .founder-quote::before{content:'"';position:absolute;left:0;top:-8px;font-size:48px;color:var(--cyan);opacity:0.4;font-family:serif;line-height:1;}
+    .founder-name{font-size:20px;font-weight:800;}
+    .founder-role{font-size:14px;color:var(--cyan);}
+    .founder-exp{display:flex;gap:24px;margin-top:20px;}
+    .fe-item .fe-num{font-size:24px;font-weight:800;color:var(--cyan);}
+    .fe-item .fe-label{font-size:12px;color:var(--gray);}
+
+    /* MISSION VISION */
+    .mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+    .mv-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);padding:36px;}
+    .mv-card.mission{border-left:3px solid var(--cyan);}
+    .mv-card.vision{border-left:3px solid var(--blue);}
+    .mv-icon{font-size:40px;margin-bottom:20px;}
+    .mv-title{font-size:22px;font-weight:800;margin-bottom:12px;}
+    .mv-text{font-size:15px;color:var(--gray);line-height:1.8;}
+
+    /* VALUES */
+    .values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+    .value-item{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:center;transition:var(--tr);}
+    .value-item:hover{border-color:var(--cyan);transform:translateY(-4px);}
+    .value-icon{font-size:40px;margin-bottom:16px;}
+    .value-title{font-size:16px;font-weight:700;margin-bottom:8px;}
+    .value-text{font-size:13px;color:var(--gray);line-height:1.7;}
+
+    /* INFRASTRUCTURE */
+    .infra-bg{background:var(--navy2);}
+    .infra-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+    .infra-item{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);padding:32px;transition:var(--tr);}
+    .infra-item:hover{border-color:var(--cyan);box-shadow:var(--shadow);}
+    .infra-icon{width:60px;height:60px;background:linear-gradient(135deg,rgba(0,229,255,0.15),rgba(37,99,235,0.15));border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:20px;}
+    .infra-title{font-size:17px;font-weight:700;margin-bottom:10px;}
+    .infra-desc{font-size:14px;color:var(--gray);line-height:1.7;}
+
+    /* ACHIEVEMENTS */
+    .ach-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+    .ach-card{background:linear-gradient(135deg,rgba(0,229,255,0.06),rgba(37,99,235,0.06));border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center;transition:var(--tr);}
+    .ach-card:hover{border-color:var(--cyan);transform:translateY(-4px);}
+    .ach-num{font-size:clamp(32px,4vw,48px);font-weight:900;color:var(--cyan);margin-bottom:8px;}
+    .ach-label{font-size:14px;color:var(--gray);font-weight:500;}
+
+    /* TEAM */
+    .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+    .team-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center;transition:var(--tr);}
+    .team-card:hover{border-color:var(--cyan);transform:translateY(-4px);}
+    .team-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--blue));display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:700;color:var(--navy);margin:0 auto 16px;}
+    .team-name{font-size:18px;font-weight:700;margin-bottom:6px;}
+    .team-role{font-size:13px;color:var(--cyan);margin-bottom:12px;}
+    .team-exp{font-size:13px;color:var(--gray);}
+
+    /* FOOTER */
+    footer{background:var(--navy2);border-top:1px solid var(--border);padding:60px 0 0;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
+    .footer-brand .logo{margin-bottom:16px;}
+    .footer-desc{font-size:14px;color:var(--gray);line-height:1.8;margin-bottom:20px;}
+    .social-links{display:flex;gap:12px;}
+    .social-link{width:38px;height:38px;background:var(--glass);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:15px;transition:var(--tr);}
+    .social-link:hover{background:var(--glass-b);border-color:var(--cyan);color:var(--cyan);}
+    .footer-col h4{font-size:15px;font-weight:700;margin-bottom:20px;}
+    .footer-col ul li a{font-size:14px;color:var(--gray);display:block;padding:5px 0;transition:var(--tr);}
+    .footer-col ul li a:hover{color:var(--cyan);padding-left:6px;}
+    .footer-bottom{border-top:1px solid var(--border);padding:20px 0;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--gray);flex-wrap:wrap;gap:12px;}
+    .float-btns{position:fixed;bottom:30px;right:24px;z-index:900;display:flex;flex-direction:column;gap:12px;}
+    .float-btn{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.4);transition:var(--tr);border:none;}
+    .float-wa{background:#25D366;color:white;}
+    .float-call{background:var(--blue);color:white;}
+    .float-btn:hover{transform:scale(1.12);}
+
+    @media(max-width:1024px){
+      .values-grid,.ach-grid{grid-template-columns:repeat(2,1fr);}
+      .infra-grid,.team-grid{grid-template-columns:repeat(2,1fr);}
+      .footer-grid{grid-template-columns:1fr 1fr;}
+      .mv-grid{grid-template-columns:1fr;}
+    }
+    @media(max-width:768px){
+      section{padding:60px 0;}
+      .nav-links,.nav-cta{display:none;}
+      .hamburger{display:flex;}
+      .grid-2{grid-template-columns:1fr;}
+      .founder-card{flex-direction:column;padding:28px;}
+      .values-grid,.ach-grid,.infra-grid,.team-grid{grid-template-columns:1fr;}
+      .footer-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+ <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="logo">
+          <img
+            src="image/wedget_logo-removebg-preview.png"
+            alt="Widgets Cafe Mobile Repair Institute"
+            class="logo-img"
+          >
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html" class="active">About</a>
+          <a href="courses.html">Courses</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="nav-cta">
+          <a href="admission.html" class="btn-primary" style="padding:10px 22px;font-size:13px;"><i class="fas fa-graduation-cap"></i> Enroll Now</a>
+        </div>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <span class="mobile-close" id="mobileClose">&times;</span>
+    <a href="index.html">Home</a><a href="about.html">About Us</a><a href="courses.html">Courses</a>
+    <a href="gallery.html">Gallery</a><a href="testimonials.html">Testimonials</a>
+    <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+    <a href="admission.html" class="btn-primary">Enroll Now</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>About Us</span>
+      </div>
+      <h1 class="page-title">About <span>Wid Gets Cafe</span></h1>
+      <p class="page-sub">Empowering young technicians since 2009 with world-class mobile repairing education right in the heart of Delhi.</p>
+    </div>
+  </div>
+
+  <!-- INSTITUTE INTRO -->
+  <section>
+    <div class="container">
+      <div class="grid-2">
+        <div class="reveal">
+          <div class="section-tag">Our Story</div>
+          <h2 class="section-title">Delhi's Most Trusted<br><span>Repair Training Institute</span></h2>
+          <p style="font-size:15px;color:var(--gray);line-height:1.9;margin-bottom:20px;">
+            Founded in 2009, Wid Gets Cafe has grown from a small training center to Delhi's most recognized
+            mobile repairing institute. Located in the heart of Uttam Nagar, we've trained over 5,000 students
+            who are now running successful careers and businesses across India.
+          </p>
+          <p style="font-size:15px;color:var(--gray);line-height:1.9;margin-bottom:32px;">
+            Our philosophy is simple — <strong style="color:var(--white)">learn by doing</strong>. Every student who walks through our doors
+            gets hands-on experience with real devices, professional tools, and expert guidance that prepares
+            them for the real world from day one.
+          </p>
+          <div style="display:flex;gap:16px;flex-wrap:wrap;">
+            <a href="admission.html" class="btn-primary"><i class="fas fa-graduation-cap"></i> Join Us Today</a>
+            <a href="contact.html" class="btn-outline"><i class="fas fa-phone"></i> Talk to Us</a>
+          </div>
+        </div>
+        <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div style="background:var(--glass);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center;">
+            <div style="font-size:48px;font-weight:900;color:var(--cyan)">15+</div>
+            <div style="font-size:14px;color:var(--gray)">Years of Excellence</div>
+          </div>
+          <div style="background:var(--glass);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center;margin-top:24px;">
+            <div style="font-size:48px;font-weight:900;color:var(--cyan)">5K+</div>
+            <div style="font-size:14px;color:var(--gray)">Students Trained</div>
+          </div>
+          <div style="background:var(--glass);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center;">
+            <div style="font-size:48px;font-weight:900;color:var(--cyan)">20+</div>
+            <div style="font-size:14px;color:var(--gray)">Courses Offered</div>
+          </div>
+          <div style="background:var(--glass);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center;margin-top:24px;">
+            <div style="font-size:48px;font-weight:900;color:var(--cyan)">98%</div>
+            <div style="font-size:14px;color:var(--gray)">Placement Rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER STORY -->
+  <section style="background:var(--navy2);">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:50px;">
+        <div class="section-tag">Leadership</div>
+        <h2 class="section-title">The <span>Founder's Story</span></h2>
+      </div>
+      <div class="founder-card reveal">
+        <div class="founder-avatar">👨‍🔧</div>
+        <div>
+          <p class="founder-quote">
+            I started Wid Gets Cafe with one goal — to give young people a skill that can never be taken away from them.
+            Mobile technology is the future, and the technicians who can repair these devices will always be in demand.
+            We don't just teach repair; we build entrepreneurs and confident professionals.
+          </p>
+          <div class="founder-name">Ajay Kumar</div>
+          <div class="founder-role">Founder & Chief Instructor — Wid Gets Cafe</div>
+          <div class="founder-exp">
+            <div class="fe-item">
+              <div class="fe-num">15+</div>
+              <div class="fe-label">Years in Industry</div>
+            </div>
+            <div class="fe-item">
+              <div class="fe-num">5000+</div>
+              <div class="fe-label">Students Mentored</div>
+            </div>
+            <div class="fe-item">
+              <div class="fe-num">Apple</div>
+              <div class="fe-label">Certified Trainer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION & VISION -->
+  <section>
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag">Purpose</div>
+        <h2 class="section-title">Our <span>Mission & Vision</span></h2>
+      </div>
+      <div class="mv-grid">
+        <div class="mv-card mission reveal">
+          <div class="mv-icon">🎯</div>
+          <div class="mv-title">Our Mission</div>
+          <p class="mv-text">To provide world-class, affordable, and practical mobile repairing education that empowers students from all backgrounds to build successful, sustainable careers in the growing smartphone repair industry. We are committed to hands-on learning, expert mentorship, and continuous skill development.</p>
+        </div>
+        <div class="mv-card vision reveal">
+          <div class="mv-icon">🔭</div>
+          <div class="mv-title">Our Vision</div>
+          <p class="mv-text">To become India's most trusted and recognized mobile technology training institution — a place where every student leaves with not just a certificate, but the confidence, skills, and business mindset to lead the future of the mobile repair industry across the nation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE VALUES -->
+  <section style="background:var(--navy2);">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag">What We Stand For</div>
+        <h2 class="section-title">Our Core <span>Values</span></h2>
+        <p class="section-sub">The principles that guide everything we do at Wid Gets Cafe.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-item reveal">
+          <div class="value-icon">🤝</div>
+          <div class="value-title">Integrity</div>
+          <div class="value-text">We teach with honesty and transparency. No false promises — only real results.</div>
+        </div>
+        <div class="value-item reveal">
+          <div class="value-icon">⚡</div>
+          <div class="value-title">Excellence</div>
+          <div class="value-text">We never settle for average. Every lesson, every demo is delivered at the highest standard.</div>
+        </div>
+        <div class="value-item reveal">
+          <div class="value-icon">💡</div>
+          <div class="value-title">Innovation</div>
+          <div class="value-text">We update our curriculum constantly to stay ahead of new technologies and devices.</div>
+        </div>
+        <div class="value-item reveal">
+          <div class="value-icon">❤️</div>
+          <div class="value-title">Student First</div>
+          <div class="value-text">Every decision we make is centered around student success, comfort, and growth.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFRASTRUCTURE -->
+  <section class="infra-bg">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag">Facilities</div>
+        <h2 class="section-title">World-Class <span>Infrastructure</span></h2>
+        <p class="section-sub">Our lab is equipped with the most advanced tools used in top professional repair centers.</p>
+      </div>
+      <div class="infra-grid">
+        <div class="infra-item reveal">
+          <div class="infra-icon">🔬</div>
+          <div class="infra-title">Professional BGA Lab</div>
+          <div class="infra-desc">Our BGA reballing lab features professional-grade BGA machines, rework stations, and precision soldering equipment for advanced chip-level training.</div>
+        </div>
+        <div class="infra-item reveal">
+          <div class="infra-icon">🖥️</div>
+          <div class="infra-title">Software Flashing Lab</div>
+          <div class="infra-desc">Dedicated software section with JTAG boxes, Octoplus, UFI, and all major flash tools for complete mobile software training.</div>
+        </div>
+        <div class="infra-item reveal">
+          <div class="infra-icon">⚡</div>
+          <div class="infra-title">Power & Testing Lab</div>
+          <div class="infra-desc">DC power supplies, digital oscilloscopes, component testers, and multimeters for fault diagnosis and power-level training.</div>
+        </div>
+        <div class="infra-item reveal">
+          <div class="infra-icon">🔧</div>
+          <div class="infra-title">Hardware Workshop</div>
+          <div class="infra-desc">Fully equipped hardware workshop with hot air rework stations, soldering irons, magnification tools, and all precision instruments.</div>
+        </div>
+        <div class="infra-item reveal">
+          <div class="infra-icon">📚</div>
+          <div class="infra-title">Digital Learning Room</div>
+          <div class="infra-desc">Smart classroom with projectors and digital content for theory sessions, circuit diagram studies, and video demonstrations.</div>
+        </div>
+        <div class="infra-item reveal">
+          <div class="infra-icon">🏢</div>
+          <div class="infra-title">Student Lounge</div>
+          <div class="infra-desc">Comfortable lounge area for students to relax, network, and collaborate — because great technicians are built outside the lab too.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section>
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag">Milestones</div>
+        <h2 class="section-title">Our Key <span>Achievements</span></h2>
+      </div>
+      <div class="ach-grid">
+        <div class="ach-card reveal">
+          <div class="ach-num">5000+</div>
+          <div class="ach-label">Students Successfully Trained</div>
+        </div>
+        <div class="ach-card reveal">
+          <div class="ach-num">500+</div>
+          <div class="ach-label">Repair Shops Launched by Alumni</div>
+        </div>
+        <div class="ach-card reveal">
+          <div class="ach-num">15+</div>
+          <div class="ach-label">Industry Awards Received</div>
+        </div>
+        <div class="ach-card reveal">
+          <div class="ach-num">50+</div>
+          <div class="ach-label">Corporate Placement Partners</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR TEAM -->
+  <section style="background:var(--navy2);">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag">Expert Faculty</div>
+        <h2 class="section-title">Meet Our <span>Instructors</span></h2>
+        <p class="section-sub">Our team of certified experts brings real-world industry experience to every classroom.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="team-avatar">AK</div>
+          <div class="team-name">Ajay Kumar</div>
+          <div class="team-role">Founder & Master Trainer</div>
+          <div class="team-exp">15+ years experience · Chip-level specialist · Apple certified</div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-avatar">RS</div>
+          <div class="team-name">Ravi Sharma</div>
+          <div class="team-role">Senior Hardware Trainer</div>
+          <div class="team-exp">12+ years experience · iPhone specialist · BGA expert</div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-avatar">PG</div>
+          <div class="team-name">Pradeep Gupta</div>
+          <div class="team-role">Software & Firmware Expert</div>
+          <div class="team-exp">10+ years experience · Android & iOS specialist</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img
+            src="image/wedget_logo-removebg-preview.png"
+            alt="Widgets Cafe Mobile Repair Institute"
+            class="logo-img"
+          >
+            <div class="logo-text"><div class="name">Wid <span>Gets</span> Cafe</div><div class="tagline">Premier Tech Institute</div></div>
+          </a>
+          <p class="footer-desc">Delhi's premier mobile repairing training institute. Practical, professional, and career-focused education since 2009.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li><li><a href="gallery.html">Gallery</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li><li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Our Courses</h4>
+          <ul>
+            <li><a href="course-detail.html">Mobile Repairing Basic</a></li>
+            <li><a href="course-detail.html">Chip Level Repairing</a></li>
+            <li><a href="course-detail.html">iPhone Expert Course</a></li>
+            <li><a href="course-detail.html">Laptop Repairing</a></li>
+            <li><a href="course-detail.html">Master Technician</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#">WZ-248, Milap Nagar</a></li>
+            <li><a href="#">Uttam Nagar, Delhi 110059</a></li>
+            <li><a href="tel:+919999999999">+91 99999 99999</a></li>
+            <li><a href="mailto:info@widgetscafe.in">info@widgetscafe.in</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 Wid Gets Cafe. All rights reserved.</span>
+        <span>Designed with ❤️ for aspiring technicians</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="float-btns">
+    <a href="https://wa.me/919999999999" target="_blank" class="float-btn float-wa"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+919999999999" class="float-btn float-call"><i class="fas fa-phone"></i></a>
+  </div>
+
+  <script>
+    const navbar=document.getElementById('navbar');
+    window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',window.scrollY>60);});
+    document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+    document.getElementById('mobileClose').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+    const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
+  </script>
+</body>
+</html>

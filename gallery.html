@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Wid Gets Cafe | Mobile Repairing Institute Delhi</title>
+  <meta name="description" content="Explore our training facility, lab equipment, classroom sessions, and student activities at Wid Gets Cafe mobile repairing institute." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root{--navy:#071120;--navy2:#0a1628;--cyan:#00E5FF;--blue:#2563EB;--gray:#94A3B8;--white:#FFFFFF;--glass:rgba(255,255,255,0.04);--glass-b:rgba(0,229,255,0.08);--border:rgba(0,229,255,0.15);--shadow:0 8px 32px rgba(0,229,255,0.08);--radius:16px;--tr:all 0.35s cubic-bezier(.4,0,.2,1);}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Poppins',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;line-height:1.6;}
+    a{text-decoration:none;color:inherit;} ul{list-style:none;} section{padding:80px 0;}
+    ::-webkit-scrollbar{width:6px;} ::-webkit-scrollbar-track{background:var(--navy);} ::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:3px;}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+    .section-tag{display:inline-block;background:var(--glass-b);border:1px solid var(--border);color:var(--cyan);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 18px;border-radius:50px;margin-bottom:16px;}
+    .section-title{font-size:clamp(28px,4vw,48px);font-weight:800;line-height:1.2;margin-bottom:16px;}
+    .section-title span{color:var(--cyan);}
+    .section-sub{font-size:16px;color:var(--gray);max-width:560px;margin:0 auto 50px;}
+    .text-center{text-align:center;}
+    .btn-primary{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--cyan),var(--blue));color:var(--navy);font-weight:700;font-size:15px;padding:14px 32px;border-radius:50px;border:none;cursor:pointer;transition:var(--tr);box-shadow:0 0 24px rgba(0,229,255,0.3);}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(0,229,255,0.5);}
+    .btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--white);font-weight:600;font-size:15px;padding:13px 30px;border-radius:50px;border:1.5px solid var(--border);cursor:pointer;transition:var(--tr);}
+    .btn-outline:hover{border-color:var(--cyan);color:var(--cyan);background:var(--glass-b);}
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+
+    /* NAVBAR */
+    #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;transition:var(--tr);}
+    #navbar.scrolled{background:rgba(7,17,32,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 0;}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;}
+    /* ===================== LOGO ===================== */
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    /* Navbar logo image */
+    .logo-img {
+      /* Show the real PNG — no color filter so original red/black/white shows */
+      display: block;
+      width: auto;
+      height: 64px;          /* Comfortable navbar height */
+      max-width: 240px;      /* Never overflow on smaller screens */
+      object-fit: contain;
+      object-position: left center;
+
+      /* Subtle glow matching the site's cyan accent */
+      filter: drop-shadow(0 2px 12px rgba(0, 229, 255, 0.20));
+
+      /* Smooth transitions for scroll-shrink & hover */
+      transition: height 0.35s cubic-bezier(.4,0,.2,1),
+                  filter 0.35s cubic-bezier(.4,0,.2,1),
+                  transform 0.35s cubic-bezier(.4,0,.2,1);
+    }
+
+    /* Hover: gentle lift + glow boost */
+    .logo-img:hover {
+      filter: drop-shadow(0 4px 18px rgba(0, 229, 255, 0.45));
+      transform: translateY(-1px) scale(1.02);
+    }
+
+    /* Scrolled navbar: shrink logo so header gets slimmer */
+    #navbar.scrolled .logo-img {
+      height: 48px;
+    }
+
+    /* Footer logo — slightly bigger, centered in brand column */
+    .logo-img-footer {
+      height: 72px;
+      max-width: 260px;
+      filter: drop-shadow(0 2px 10px rgba(0, 229, 255, 0.15));
+    }
+    .logo-img-footer:hover {
+      filter: drop-shadow(0 4px 20px rgba(0, 229, 255, 0.40));
+      transform: translateY(-1px) scale(1.02);
+    }
+    .logo-text .name{font-size:18px;font-weight:800;line-height:1.1;} .logo-text .name span{color:var(--cyan);}
+    .logo-text .tagline{font-size:10px;color:var(--gray);letter-spacing:1px;}
+    .nav-links{display:flex;align-items:center;gap:8px;}
+    .nav-links a{font-size:14px;font-weight:500;color:var(--gray);padding:8px 14px;border-radius:8px;transition:var(--tr);}
+    .nav-links a:hover,.nav-links a.active{color:var(--white);background:var(--glass);}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;}
+    .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(7,17,32,0.97);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:24px;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{font-size:22px;font-weight:600;color:var(--gray);}
+    .mobile-menu a:hover{color:var(--cyan);}
+    .mobile-close{position:absolute;top:24px;right:24px;font-size:28px;cursor:pointer;color:var(--gray);}
+
+    /* PAGE HERO */
+    .page-hero{padding:160px 0 80px;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(0,229,255,0.07) 0%,transparent 70%),var(--navy);text-align:center;position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.03) 1px,transparent 1px);background-size:60px 60px;}
+    .breadcrumb{display:flex;align-items:center;justify-content:center;gap:10px;font-size:13px;color:var(--gray);margin-bottom:20px;}
+    .breadcrumb a{color:var(--cyan);}
+    .page-title{font-size:clamp(36px,5vw,64px);font-weight:900;margin-bottom:20px;}
+    .page-title span{color:var(--cyan);}
+    .page-sub{font-size:17px;color:var(--gray);max-width:560px;margin:0 auto;}
+
+    /* GALLERY CATEGORIES */
+    .filter-bar{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:48px;}
+    .filter-btn{background:var(--glass);border:1px solid var(--border);color:var(--gray);font-size:14px;font-weight:500;padding:10px 22px;border-radius:50px;cursor:pointer;transition:var(--tr);font-family:'Poppins',sans-serif;}
+    .filter-btn:hover,.filter-btn.active{background:var(--glass-b);border-color:var(--cyan);color:var(--cyan);}
+
+    /* GALLERY GRID */
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:60px;}
+    .gallery-item{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:var(--tr);cursor:pointer;position:relative;}
+    .gallery-item:hover{border-color:var(--cyan);box-shadow:0 0 30px rgba(0,229,255,0.1);transform:translateY(-4px);}
+    .gallery-img{width:100%;height:250px;background:linear-gradient(135deg,var(--navy2),rgba(0,229,255,0.1));display:flex;align-items:center;justify-content:center;font-size:48px;position:relative;overflow:hidden;}
+    .gallery-img::after{content:'';position:absolute;inset:0;background:rgba(0,229,255,0.05);opacity:0;transition:opacity 0.3s;}
+    .gallery-item:hover .gallery-img::after{opacity:1;}
+    .gallery-content{padding:20px;}
+    .gallery-title{font-size:16px;font-weight:700;margin-bottom:8px;}
+    .gallery-desc{font-size:13px;color:var(--gray);line-height:1.6;}
+
+    /* GALLERY HIGHLIGHTS */
+    .gallery-highlights{background:var(--navy2);padding:80px 0;}
+    .highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+    .highlight-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center;transition:var(--tr);}
+    .highlight-card:hover{border-color:var(--cyan);transform:translateY(-4px);}
+    .highlight-icon{font-size:48px;margin-bottom:16px;display:block;}
+    .highlight-title{font-size:18px;font-weight:700;margin-bottom:8px;}
+    .highlight-desc{font-size:14px;color:var(--gray);line-height:1.7;}
+
+    /* CTA */
+    .cta-section{background:linear-gradient(135deg,rgba(0,229,255,0.08),rgba(37,99,235,0.08));border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;padding:80px 0;}
+    .cta-title{font-size:clamp(28px,4vw,48px);font-weight:800;margin-bottom:16px;}
+    .cta-sub{font-size:17px;color:var(--gray);margin-bottom:40px;}
+    .cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+    /* FOOTER */
+    footer{background:var(--navy2);border-top:1px solid var(--border);padding:60px 0 0;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
+    .footer-desc{font-size:14px;color:var(--gray);line-height:1.8;margin-bottom:20px;}
+    .social-links{display:flex;gap:12px;}
+    .social-link{width:38px;height:38px;background:var(--glass);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:15px;transition:var(--tr);}
+    .social-link:hover{background:var(--glass-b);border-color:var(--cyan);color:var(--cyan);}
+    .footer-col h4{font-size:15px;font-weight:700;margin-bottom:20px;}
+    .footer-col ul li a{font-size:14px;color:var(--gray);display:block;padding:5px 0;transition:var(--tr);}
+    .footer-col ul li a:hover{color:var(--cyan);padding-left:6px;}
+    .footer-bottom{border-top:1px solid var(--border);padding:20px 0;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--gray);flex-wrap:wrap;gap:12px;}
+    .float-btns{position:fixed;bottom:30px;right:24px;z-index:900;display:flex;flex-direction:column;gap:12px;}
+    .float-btn{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.4);transition:var(--tr);border:none;}
+    .float-wa{background:#25D366;color:white;} .float-call{background:var(--blue);color:white;}
+    .float-btn:hover{transform:scale(1.12);}
+
+    @media(max-width:768px){section{padding:60px 0;}.nav-links,.nav-cta{display:none;}.hamburger{display:flex;}.gallery-grid{grid-template-columns:1fr;}.highlights-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="logo">
+          <img
+            src="image/wedget_logo-removebg-preview.png"
+            alt="Widgets Cafe Mobile Repair Institute"
+            class="logo-img"
+          >
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a><a href="about.html">About</a>
+          <a href="courses.html">Courses</a><a href="gallery.html" class="active">Gallery</a>
+          <a href="testimonials.html">Testimonials</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+        </div>
+        <div class="nav-cta">
+          <a href="admission.html" class="btn-primary" style="padding:10px 22px;font-size:13px;"><i class="fas fa-graduation-cap"></i> Enroll Now</a>
+        </div>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <span class="mobile-close" id="mobileClose">&times;</span>
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="courses.html">Courses</a>
+    <a href="gallery.html">Gallery</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+    <a href="admission.html" class="btn-primary">Enroll Now</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div style="position:relative;z-index:2">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Gallery</span></div>
+      <h1 class="page-title">Our <span>Training Facility</span></h1>
+      <p class="page-sub">Take a virtual tour of our state-of-the-art mobile repairing institute and see where the magic happens.</p>
+    </div>
+  </div>
+
+  <!-- GALLERY CATEGORIES -->
+  <section>
+    <div class="container">
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All Photos</button>
+        <button class="filter-btn" data-filter="lab">Training Lab</button>
+        <button class="filter-btn" data-filter="classroom">Classroom</button>
+        <button class="filter-btn" data-filter="equipment">Equipment</button>
+        <button class="filter-btn" data-filter="students">Student Activities</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Lab Photos -->
+        <div class="gallery-item reveal" data-category="lab">
+          <div class="gallery-img">🔬</div>
+          <div class="gallery-content">
+            <div class="gallery-title">BGA Rework Station</div>
+            <div class="gallery-desc">Professional BGA machines for advanced chip-level training with precision temperature control.</div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="lab">
+          <div class="gallery-img">⚡</div>
+          <div class="gallery-content">
+            <div class="gallery-title">Power Testing Lab</div>
+            <div class="gallery-desc">DC power supplies and testing equipment for fault diagnosis training.</div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="equipment">
+          <div class="gallery-img">🔧</div>
+          <div class="gallery-content">
+            <div class="gallery-title">Professional Tools</div>
+            <div class="gallery-desc">Complete set of professional tools used in top service centers.</div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="lab">
+          <div class="gallery-img">🖥️</div>
+          <div class="gallery-content">
+            <div class="gallery-title">Software Flashing Lab</div>
+            <div class="gallery-desc">Dedicated section for mobile software training and firmware flashing.</div>
+          </div>
+        </div>
+
+        <!-- Classroom Photos -->
+        <div class="gallery-item reveal" data-category="classroom">
+          <div class="gallery-img">👨‍🏫</div>
+          <div class="gallery-content">
+            <div class="gallery-title">Theory Classroom</div>
+            <div class="gallery-desc">Modern classroom with digital projectors for theoretical sessions.</div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="classroom">
+          <div class="gallery-img">📚</div>
+          <div class="gallery-content">
+            <div class="gallery-title">Digital Learning</div>
+            <div class="gallery-desc">Smart classroom setup with interactive learning materials.</div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="students">
+          <div class="gallery-img">👥</div>
+          <div class="gallery-content">
+            <div class="gallery-title">Hands-on Training</div>
+            <div class="gallery-desc">Students learning practical skills with real devices.</div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="students">
+          <div class="gallery-img">🎓</div>
+          <div class="gallery-content">
+            <div class="gallery-title">Certificate Ceremony</div>
+            <div class="gallery-desc">Students receiving their course completion certificates.</div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="equipment">
+          <div class="gallery-img">🔬</div>
+          <div class="gallery-content">
+            <div class="gallery-title">Microscope Station</div>
+            <div class="gallery-desc">Professional microscopes for precision micro-soldering work.</div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="lab">
+          <div class="gallery-img">📱</div>
+          <div class="gallery-content">
+            <div class="gallery-title">Device Collection</div>
+            <div class="gallery-desc">Wide range of mobile devices for practical training.</div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="students">
+          <div class="gallery-img">🏆</div>
+          <div class="gallery-content">
+            <div class="gallery-title">Student Success</div>
+            <div class="gallery-desc">Proud moments of our successful graduates.</div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="classroom">
+          <div class="gallery-img">👨‍🏫</div>
+          <div class="gallery-content">
+            <div class="gallery-title">Expert Instruction</div>
+            <div class="gallery-desc">Our certified trainers providing personalized guidance.</div>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="equipment">
+          <div class="gallery-img">🛠️</div>
+          <div class="gallery-content">
+            <div class="gallery-title">Soldering Station</div>
+            <div class="gallery-desc">Professional soldering equipment for all repair work.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY HIGHLIGHTS -->
+  <section class="gallery-highlights">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag">Facilities</div>
+        <h2 class="section-title">Our <span>Infrastructure</span></h2>
+        <p class="section-sub">World-class facilities designed for professional mobile repair training.</p>
+      </div>
+      <div class="highlights-grid">
+        <div class="highlight-card reveal">
+          <div class="highlight-icon">🏢</div>
+          <div class="highlight-title">2000+ Sq. Ft. Lab</div>
+          <div class="highlight-desc">Spacious training facility with separate zones for different repair techniques.</div>
+        </div>
+        <div class="highlight-card reveal">
+          <div class="highlight-icon">👥</div>
+          <div class="highlight-title">Small Batch Size</div>
+          <div class="highlight-desc">Maximum 10 students per batch for personalized attention.</div>
+        </div>
+        <div class="highlight-card reveal">
+          <div class="highlight-icon">🔬</div>
+          <div class="highlight-title">Professional Equipment</div>
+          <div class="highlight-desc">Industry-standard tools and machines used in top service centers.</div>
+        </div>
+        <div class="highlight-card reveal">
+          <div class="highlight-icon">💻</div>
+          <div class="highlight-title">Digital Learning</div>
+          <div class="highlight-desc">Modern classroom with projectors and digital content.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">Ready to Visit Our <span style="color:var(--cyan)">Training Center?</span></h2>
+      <p class="cta-sub">Schedule a free demo class and see our facilities firsthand.</p>
+      <div class="cta-btns">
+        <a href="admission.html" class="btn-primary"><i class="fas fa-graduation-cap"></i> Book Free Demo</a>
+        <a href="tel:+919999999999" class="btn-outline"><i class="fas fa-phone"></i> Call Us</a>
+        <a href="https://wa.me/919999999999" class="btn-outline" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <img
+            src="image/wedget_logo-removebg-preview.png"
+            alt="Widgets Cafe Mobile Repair Institute"
+            class="logo-img"
+          >
+            <div class="logo-text"><div class="name" style="font-size:18px;font-weight:800;">Wid <span style="color:var(--cyan)">Gets</span> Cafe</div><div class="tagline" style="font-size:10px;color:var(--gray);">Premier Tech Institute</div></div>
+          </a>
+          <p class="footer-desc">Delhi's premier mobile repairing training institute. Practical, professional, and career-focused education since 2009.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="courses.html">Courses</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Courses</h4>
+          <ul><li><a href="course-detail.html">Mobile Repairing</a></li><li><a href="course-detail.html">Chip Level</a></li><li><a href="course-detail.html">iPhone Expert</a></li><li><a href="course-detail.html">Laptop Repair</a></li><li><a href="course-detail.html">Master Program</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul><li><a href="#">WZ-248, Milap Nagar</a></li><li><a href="#">Uttam Nagar, Delhi 110059</a></li><li><a href="tel:+919999999999">+91 99999 99999</a></li><li><a href="mailto:info@widgetscafe.in">info@widgetscafe.in</a></li></ul>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© 2024 Wid Gets Cafe. All rights reserved.</span><span>Designed with ❤️ for aspiring technicians</span></div>
+    </div>
+  </footer>
+
+  <div class="float-btns">
+    <a href="https://wa.me/919999999999" target="_blank" class="float-btn float-wa"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+919999999999" class="float-btn float-call"><i class="fas fa-phone"></i></a>
+  </div>
+
+  <script>
+    const navbar=document.getElementById('navbar');
+    window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>60));
+    document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+    document.getElementById('mobileClose').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+    const observer=new IntersectionObserver(e=>e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('visible');}),{threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
+
+    // Filter functionality
+    document.querySelectorAll('.filter-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter=btn.dataset.filter;
+        document.querySelectorAll('.gallery-item').forEach(item=>{
+          if(filter==='all'||item.dataset.category===filter){
+            item.style.display='block';
+          } else {
+            item.style.display='none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

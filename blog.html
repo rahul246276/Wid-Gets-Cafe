@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Wid Gets Cafe | Mobile Repairing Institute Delhi</title>
+  <meta name="description" content="Read expert tips, tutorials, and insights about mobile repairing. Latest industry trends and career guidance from Wid Gets Cafe." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root{--navy:#071120;--navy2:#0a1628;--cyan:#00E5FF;--blue:#2563EB;--gray:#94A3B8;--white:#FFFFFF;--glass:rgba(255,255,255,0.04);--glass-b:rgba(0,229,255,0.08);--border:rgba(0,229,255,0.15);--shadow:0 8px 32px rgba(0,229,255,0.08);--radius:16px;--tr:all 0.35s cubic-bezier(.4,0,.2,1);}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Poppins',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;line-height:1.6;}
+    a{text-decoration:none;color:inherit;} ul{list-style:none;} section{padding:80px 0;}
+    ::-webkit-scrollbar{width:6px;} ::-webkit-scrollbar-track{background:var(--navy);} ::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:3px;}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+    .section-tag{display:inline-block;background:var(--glass-b);border:1px solid var(--border);color:var(--cyan);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 18px;border-radius:50px;margin-bottom:16px;}
+    .section-title{font-size:clamp(28px,4vw,48px);font-weight:800;line-height:1.2;margin-bottom:16px;}
+    .section-title span{color:var(--cyan);}
+    .section-sub{font-size:16px;color:var(--gray);max-width:560px;margin:0 auto 50px;}
+    .text-center{text-align:center;}
+    .btn-primary{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--cyan),var(--blue));color:var(--navy);font-weight:700;font-size:15px;padding:14px 32px;border-radius:50px;border:none;cursor:pointer;transition:var(--tr);box-shadow:0 0 24px rgba(0,229,255,0.3);}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(0,229,255,0.5);}
+    .btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--white);font-weight:600;font-size:15px;padding:13px 30px;border-radius:50px;border:1.5px solid var(--border);cursor:pointer;transition:var(--tr);}
+    .btn-outline:hover{border-color:var(--cyan);color:var(--cyan);background:var(--glass-b);}
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+
+    /* NAVBAR */
+    #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;transition:var(--tr);}
+    #navbar.scrolled{background:rgba(7,17,32,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 0;}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;}
+    /* ===================== LOGO ===================== */
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    /* Navbar logo image */
+    .logo-img {
+      /* Show the real PNG — no color filter so original red/black/white shows */
+      display: block;
+      width: auto;
+      height: 64px;          /* Comfortable navbar height */
+      max-width: 240px;      /* Never overflow on smaller screens */
+      object-fit: contain;
+      object-position: left center;
+
+      /* Subtle glow matching the site's cyan accent */
+      filter: drop-shadow(0 2px 12px rgba(0, 229, 255, 0.20));
+
+      /* Smooth transitions for scroll-shrink & hover */
+      transition: height 0.35s cubic-bezier(.4,0,.2,1),
+                  filter 0.35s cubic-bezier(.4,0,.2,1),
+                  transform 0.35s cubic-bezier(.4,0,.2,1);
+    }
+
+    /* Hover: gentle lift + glow boost */
+    .logo-img:hover {
+      filter: drop-shadow(0 4px 18px rgba(0, 229, 255, 0.45));
+      transform: translateY(-1px) scale(1.02);
+    }
+
+    /* Scrolled navbar: shrink logo so header gets slimmer */
+    #navbar.scrolled .logo-img {
+      height: 48px;
+    }
+
+    /* Footer logo — slightly bigger, centered in brand column */
+    .logo-img-footer {
+      height: 72px;
+      max-width: 260px;
+      filter: drop-shadow(0 2px 10px rgba(0, 229, 255, 0.15));
+    }
+    .logo-img-footer:hover {
+      filter: drop-shadow(0 4px 20px rgba(0, 229, 255, 0.40));
+      transform: translateY(-1px) scale(1.02);
+    }
+    .logo-text .name{font-size:18px;font-weight:800;line-height:1.1;} .logo-text .name span{color:var(--cyan);}
+    .logo-text .tagline{font-size:10px;color:var(--gray);letter-spacing:1px;}
+    .nav-links{display:flex;align-items:center;gap:8px;}
+    .nav-links a{font-size:14px;font-weight:500;color:var(--gray);padding:8px 14px;border-radius:8px;transition:var(--tr);}
+    .nav-links a:hover,.nav-links a.active{color:var(--white);background:var(--glass);}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;}
+    .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(7,17,32,0.97);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:24px;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{font-size:22px;font-weight:600;color:var(--gray);}
+    .mobile-menu a:hover{color:var(--cyan);}
+    .mobile-close{position:absolute;top:24px;right:24px;font-size:28px;cursor:pointer;color:var(--gray);}
+
+    /* PAGE HERO */
+    .page-hero{padding:160px 0 80px;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(0,229,255,0.07) 0%,transparent 70%),var(--navy);text-align:center;position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.03) 1px,transparent 1px);background-size:60px 60px;}
+    .breadcrumb{display:flex;align-items:center;justify-content:center;gap:10px;font-size:13px;color:var(--gray);margin-bottom:20px;}
+    .breadcrumb a{color:var(--cyan);}
+    .page-title{font-size:clamp(36px,5vw,64px);font-weight:900;margin-bottom:20px;}
+    .page-title span{color:var(--cyan);}
+    .page-sub{font-size:17px;color:var(--gray);max-width:560px;margin:0 auto;}
+
+    /* SEARCH BAR */
+    .search-section{background:var(--navy2);padding:40px 0;}
+    .search-container{max-width:600px;margin:0 auto;position:relative;}
+    .search-input{width:100%;padding:16px 60px 16px 24px;background:var(--glass);border:1px solid var(--border);border-radius:50px;color:var(--white);font-size:15px;font-family:'Poppins',sans-serif;outline:none;transition:var(--tr);}
+    .search-input:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,229,255,0.1);}
+    .search-btn{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--blue));border:none;cursor:pointer;font-size:16px;color:var(--navy);transition:var(--tr);}
+    .search-btn:hover{transform:translateY(-50%) scale(1.1);}
+
+    /* CATEGORIES */
+    .categories-bar{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:48px;}
+    .category-btn{background:var(--glass);border:1px solid var(--border);color:var(--gray);font-size:14px;font-weight:500;padding:10px 20px;border-radius:50px;cursor:pointer;transition:var(--tr);font-family:'Poppins',sans-serif;}
+    .category-btn:hover,.category-btn.active{background:var(--glass-b);border-color:var(--cyan);color:var(--cyan);}
+
+    /* BLOG GRID */
+    .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:28px;margin-bottom:60px;}
+    .blog-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:var(--tr);cursor:pointer;}
+    .blog-card:hover{border-color:var(--cyan);box-shadow:0 0 30px rgba(0,229,255,0.1);transform:translateY(-4px);}
+    .blog-image{width:100%;height:200px;background:linear-gradient(135deg,var(--navy2),rgba(0,229,255,0.1));display:flex;align-items:center;justify-content:center;font-size:48px;position:relative;overflow:hidden;}
+    .blog-content{padding:24px;}
+    .blog-category{font-size:12px;font-weight:700;color:var(--cyan);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;}
+    .blog-title{font-size:18px;font-weight:700;line-height:1.3;margin-bottom:12px;transition:color 0.3s;}
+    .blog-card:hover .blog-title{color:var(--cyan);}
+    .blog-excerpt{font-size:14px;color:var(--gray);line-height:1.7;margin-bottom:16px;}
+    .blog-meta{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--gray);}
+    .blog-author{display:flex;align-items:center;gap:8px;}
+    .author-avatar{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--blue));display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--navy);}
+    .blog-date{display:flex;align-items:center;gap:6px;}
+    .read-more{display:inline-flex;align-items:center;gap:6px;color:var(--cyan);font-size:14px;font-weight:600;transition:gap 0.3s;}
+    .blog-card:hover .read-more{gap:12px;}
+
+    /* FEATURED POST */
+    .featured-post{
+      background:linear-gradient(135deg,rgba(0,229,255,0.08),rgba(37,99,235,0.08));
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:48px;
+      margin-bottom:60px;
+      position:relative;
+      overflow:hidden;
+    }
+    .featured-post::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:2px;
+      background:linear-gradient(90deg,var(--cyan),var(--blue),var(--cyan));
+      animation:shimmer 3s ease-in-out infinite;
+    }
+    @keyframes shimmer{
+      0%,100%{transform:translateX(-100%);}
+      50%{transform:translateX(100%);}
+    }
+    .featured-content{
+      display:grid;
+      grid-template-columns:1fr 320px;
+      gap:40px;
+      align-items:center;
+      position:relative;
+      z-index:2;
+    }
+    .featured-text{order:1;}
+    .featured-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:linear-gradient(135deg,var(--cyan),var(--blue));
+      color:var(--navy);
+      font-size:13px;
+      font-weight:700;
+      padding:8px 16px;
+      border-radius:50px;
+      margin-bottom:20px;
+      box-shadow:0 4px 16px rgba(0,229,255,0.3);
+      animation:pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse{
+      0%,100%{transform:scale(1);}
+      50%{transform:scale(1.05);}
+    }
+    .featured-title{
+      font-size:32px;
+      font-weight:900;
+      line-height:1.2;
+      margin-bottom:20px;
+      background:linear-gradient(135deg,var(--white),var(--cyan));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+    .featured-excerpt{
+      font-size:17px;
+      color:var(--gray);
+      line-height:1.7;
+      margin-bottom:28px;
+    }
+    .featured-meta{
+      display:flex;
+      gap:24px;
+      font-size:14px;
+      color:var(--gray);
+      margin-bottom:32px;
+      flex-wrap:wrap;
+    }
+    .featured-meta span{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      background:var(--glass);
+      padding:8px 12px;
+      border-radius:8px;
+      border:1px solid var(--border);
+    }
+    .featured-meta i{
+      color:var(--cyan);
+    }
+    .featured-image{
+      order:2;
+      width:100%;
+      height:280px;
+      background:linear-gradient(135deg,var(--navy2),rgba(0,229,255,0.15));
+      border-radius:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:80px;
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 8px 32px rgba(0,229,255,0.15);
+      transition:var(--tr);
+    }
+    .featured-image::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at center,rgba(0,229,255,0.1) 0%,transparent 70%);
+      animation:float 4s ease-in-out infinite;
+    }
+    @keyframes float{
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-8px);}
+    }
+    .featured-image:hover{
+      transform:scale(1.02);
+      box-shadow:0 12px 40px rgba(0,229,255,0.25);
+    }
+
+    /* NEWSLETTER */
+    .newsletter-section{background:var(--navy2);padding:60px 0;text-align:center;}
+    .newsletter-content{max-width:600px;margin:0 auto;}
+    .newsletter-title{font-size:24px;font-weight:800;margin-bottom:12px;}
+    .newsletter-sub{font-size:16px;color:var(--gray);margin-bottom:32px;}
+    .newsletter-form{display:flex;gap:12px;max-width:500px;margin:0 auto;}
+    .newsletter-input{flex:1;padding:14px 20px;background:var(--glass);border:1px solid var(--border);border-radius:50px;color:var(--white);font-size:14px;font-family:'Poppins',sans-serif;outline:none;}
+    .newsletter-input:focus{border-color:var(--cyan);}
+    .newsletter-btn{padding:14px 28px;border-radius:50px;}
+
+    /* CTA */
+    .cta-section{background:linear-gradient(135deg,rgba(0,229,255,0.08),rgba(37,99,235,0.08));border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;padding:80px 0;}
+    .cta-title{font-size:clamp(28px,4vw,48px);font-weight:800;margin-bottom:16px;}
+    .cta-sub{font-size:17px;color:var(--gray);margin-bottom:40px;}
+    .cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+    /* FOOTER */
+    footer{background:var(--navy2);border-top:1px solid var(--border);padding:60px 0 0;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
+    .footer-desc{font-size:14px;color:var(--gray);line-height:1.8;margin-bottom:20px;}
+    .social-links{display:flex;gap:12px;}
+    .social-link{width:38px;height:38px;background:var(--glass);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:15px;transition:var(--tr);}
+    .social-link:hover{background:var(--glass-b);border-color:var(--cyan);color:var(--cyan);}
+    .footer-col h4{font-size:15px;font-weight:700;margin-bottom:20px;}
+    .footer-col ul li a{font-size:14px;color:var(--gray);display:block;padding:5px 0;transition:var(--tr);}
+    .footer-col ul li a:hover{color:var(--cyan);padding-left:6px;}
+    .footer-bottom{border-top:1px solid var(--border);padding:20px 0;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--gray);flex-wrap:wrap;gap:12px;}
+    .float-btns{position:fixed;bottom:30px;right:24px;z-index:900;display:flex;flex-direction:column;gap:12px;}
+    .float-btn{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.4);transition:var(--tr);border:none;}
+    .float-wa{background:#25D366;color:white;} .float-call{background:var(--blue);color:white;}
+    .float-btn:hover{transform:scale(1.12);}
+
+    @media(max-width:768px){section{padding:60px 0;}.nav-links,.nav-cta{display:none;}.hamburger{display:flex;}.blog-grid{grid-template-columns:1fr;}.featured-content{grid-template-columns:1fr;gap:32px;}.featured-post{padding:32px 24px;}.featured-title{font-size:24px;}.featured-image{height:200px;font-size:60px;}.newsletter-form{flex-direction:column;}.footer-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="logo">
+          <img
+            src="image/wedget_logo-removebg-preview.png"
+            alt="Widgets Cafe Mobile Repair Institute"
+            class="logo-img"
+          >
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a><a href="about.html">About</a>
+          <a href="courses.html">Courses</a><a href="gallery.html">Gallery</a>
+          <a href="testimonials.html">Reviews</a><a href="blog.html" class="active">Blog</a><a href="contact.html">Contact</a>
+        </div>
+        <div class="nav-cta">
+          <a href="admission.html" class="btn-primary" style="padding:10px 22px;font-size:13px;"><i class="fas fa-graduation-cap"></i> Enroll Now</a>
+        </div>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <span class="mobile-close" id="mobileClose">&times;</span>
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="courses.html">Courses</a>
+    <a href="gallery.html">Gallery</a><a href="testimonials.html">Reviews</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+    <a href="admission.html" class="btn-primary">Enroll Now</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div style="position:relative;z-index:2">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Blog</span></div>
+      <h1 class="page-title">Mobile Repair <span>Knowledge Hub</span></h1>
+      <p class="page-sub">Expert tips, tutorials, and insights from our experienced instructors.</p>
+    </div>
+  </div>
+
+  <!-- SEARCH SECTION -->
+  <section class="search-section">
+    <div class="container">
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search articles, tips, tutorials...">
+        <button class="search-btn"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section>
+    <div class="container">
+      <div class="categories-bar">
+        <button class="category-btn active" data-category="all">All Articles</button>
+        <button class="category-btn" data-category="iphone">iPhone Repair</button>
+        <button class="category-btn" data-category="android">Android Repair</button>
+        <button class="category-btn" data-category="chip">Chip Level</button>
+        <button class="category-btn" data-category="tips">Tips & Tricks</button>
+        <button class="category-btn" data-category="career">Career Guide</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED POST -->
+  <section>
+    <div class="container">
+      <div class="featured-post reveal">
+        <div class="featured-content">
+          <div class="featured-badge"><i class="fas fa-star"></i> Featured Article</div>
+          <h2 class="featured-title">Complete Guide to iPhone 15 Pro Max Repair: Common Issues & Solutions</h2>
+          <p class="featured-excerpt">Learn step-by-step how to diagnose and fix the most common issues in iPhone 15 Pro Max, from screen replacement to motherboard-level repairs. This comprehensive guide covers everything you need to know.</p>
+          <div class="featured-meta">
+            <span><i class="fas fa-user"></i> Ajay Kumar</span>
+            <span><i class="fas fa-calendar"></i> Dec 15, 2024</span>
+            <span><i class="fas fa-clock"></i> 12 min read</span>
+          </div>
+          <a href="#" class="btn-primary"><i class="fas fa-book-open"></i> Read Full Article</a>
+        </div>
+        <div class="featured-image">🍎</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG GRID -->
+  <section>
+    <div class="container">
+      <div class="blog-grid" id="blogGrid">
+        <article class="blog-card reveal" data-category="iphone">
+          <div class="blog-image">🍎</div>
+          <div class="blog-content">
+            <div class="blog-category">iPhone Repair</div>
+            <h3 class="blog-title">How to Diagnose iPhone 14 Charging Issues – Complete Guide</h3>
+            <p class="blog-excerpt">Learn step-by-step how to identify and fix charging problems on iPhone 14 series, from port cleaning to tristar IC replacement.</p>
+            <div class="blog-meta">
+              <div class="blog-author">
+                <div class="author-avatar">AK</div>
+                <span>Ajay Kumar</span>
+              </div>
+              <div class="blog-date">
+                <i class="fas fa-calendar"></i> Dec 2024
+                <i class="fas fa-clock"></i> 8 min
+              </div>
+            </div>
+            <div class="read-more">Read More <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </article>
+
+        <article class="blog-card reveal" data-category="android">
+          <div class="blog-image">🤖</div>
+          <div class="blog-content">
+            <div class="blog-category">Android Repair</div>
+            <h3 class="blog-title">Samsung S24 Motherboard Repair: What You Need to Know</h3>
+            <p class="blog-excerpt">A deep dive into Samsung Galaxy S24 motherboard architecture, common failure points, and repair techniques.</p>
+            <div class="blog-meta">
+              <div class="blog-author">
+                <div class="author-avatar">RS</div>
+                <span>Ravi Sharma</span>
+              </div>
+              <div class="blog-date">
+                <i class="fas fa-calendar"></i> Nov 2024
+                <i class="fas fa-clock"></i> 12 min
+              </div>
+            </div>
+            <div class="read-more">Read More <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </article>
+
+        <article class="blog-card reveal" data-category="career">
+          <div class="blog-image">💼</div>
+          <div class="blog-content">
+            <div class="blog-category">Career Guide</div>
+            <h3 class="blog-title">How to Start Your Own Mobile Repair Business in 2025</h3>
+            <p class="blog-excerpt">Complete guide to starting a profitable mobile repair business from scratch – tools, location, pricing, and marketing.</p>
+            <div class="blog-meta">
+              <div class="blog-author">
+                <div class="author-avatar">PG</div>
+                <span>Pradeep Gupta</span>
+              </div>
+              <div class="blog-date">
+                <i class="fas fa-calendar"></i> Oct 2024
+                <i class="fas fa-clock"></i> 15 min
+              </div>
+            </div>
+            <div class="read-more">Read More <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </article>
+
+        <article class="blog-card reveal" data-category="chip">
+          <div class="blog-image">🔬</div>
+          <div class="blog-content">
+            <div class="blog-category">Chip Level</div>
+            <h3 class="blog-title">Micro-Soldering Techniques Every Technician Must Know</h3>
+            <p class="blog-excerpt">Master the art of micro-soldering with these professional tips on BGA chip reballing, pad repair, and jumper wire techniques.</p>
+            <div class="blog-meta">
+              <div class="blog-author">
+                <div class="author-avatar">AK</div>
+                <span>Ajay Kumar</span>
+              </div>
+              <div class="blog-date">
+                <i class="fas fa-calendar"></i> Sep 2024
+                <i class="fas fa-clock"></i> 10 min
+              </div>
+            </div>
+            <div class="read-more">Read More <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </article>
+
+        <article class="blog-card reveal" data-category="tips">
+          <div class="blog-image">💡</div>
+          <div class="blog-content">
+            <div class="blog-category">Tips & Tricks</div>
+            <h3 class="blog-title">Top 10 Tools Every Mobile Repair Technician Should Own</h3>
+            <p class="blog-excerpt">From basic screwdrivers to professional multimeters – essential toolkit for mobile repair professionals.</p>
+            <div class="blog-meta">
+              <div class="blog-author">
+                <div class="author-avatar">MI</div>
+                <span>Mohammad Irfan</span>
+              </div>
+              <div class="blog-date">
+                <i class="fas fa-calendar"></i> Aug 2024
+                <i class="fas fa-clock"></i> 6 min
+              </div>
+            </div>
+            <div class="read-more">Read More <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </article>
+
+        <article class="blog-card reveal" data-category="career">
+          <div class="blog-image">🎓</div>
+          <div class="blog-content">
+            <div class="blog-category">Career Guide</div>
+            <h3 class="blog-title">Mobile Repair Career Opportunities in India 2025</h3>
+            <p class="blog-excerpt">Explore booming mobile repair industry in India, salary expectations, career paths, and growth opportunities.</p>
+            <div class="blog-meta">
+              <div class="blog-author">
+                <div class="author-avatar">SG</div>
+                <span>Suman Gupta</span>
+              </div>
+              <div class="blog-date">
+                <i class="fas fa-calendar"></i> Jul 2024
+                <i class="fas fa-clock"></i> 9 min
+              </div>
+            </div>
+            <div class="read-more">Read More <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-content">
+        <h2 class="newsletter-title">Stay Updated with <span style="color:var(--cyan);">Latest Tips</span></h2>
+        <p class="newsletter-sub">Get weekly mobile repair tips, industry news, and exclusive course discounts delivered to your inbox.</p>
+        <form class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Enter your email address">
+          <button type="submit" class="btn-primary newsletter-btn"><i class="fas fa-envelope"></i> Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">Want to Learn <span style="color:var(--cyan);">Professional Skills?</span></h2>
+      <p class="cta-sub">Join our courses and get hands-on training from industry experts.</p>
+      <div class="cta-btns">
+        <a href="courses.html" class="btn-primary"><i class="fas fa-graduation-cap"></i> Explore Courses</a>
+        <a href="admission.html" class="btn-outline"><i class="fas fa-phone"></i> Free Counseling</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo logo-footer">
+            <img
+              src="image/wedget_logo-removebg-preview.png"
+              alt="Widgets Cafe Mobile Repair Institute"
+              class="logo-img logo-img-footer"
+            >
+          </a>
+          <p class="footer-desc">Delhi's premier mobile repairing training institute. Practical, professional, and career-focused education since 2009.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="courses.html">Courses</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="testimonials.html">Reviews</a></li><li><a href="contact.html">Contact</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Courses</h4>
+          <ul><li><a href="course-detail.html">Mobile Repairing</a></li><li><a href="course-detail.html">Chip Level</a></li><li><a href="course-detail.html">iPhone Expert</a></li><li><a href="course-detail.html">Laptop Repair</a></li><li><a href="course-detail.html">Master Program</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul><li><a href="#">WZ-248, Milap Nagar</a></li><li><a href="#">Uttam Nagar, Delhi 110059</a></li><li><a href="tel:+919999999999">+91 99999 99999</a></li><li><a href="mailto:info@widgetscafe.in">info@widgetscafe.in</a></li></ul>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© 2024 Wid Gets Cafe. All rights reserved.</span><span>Designed with ❤️ for aspiring technicians</span></div>
+    </div>
+  </footer>
+
+  <div class="float-btns">
+    <a href="https://wa.me/919999999999" target="_blank" class="float-btn float-wa"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+919999999999" class="float-btn float-call"><i class="fas fa-phone"></i></a>
+  </div>
+
+  <script>
+    const navbar=document.getElementById('navbar');
+    window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>60));
+    document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+    document.getElementById('mobileClose').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+    const observer=new IntersectionObserver(e=>e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('visible');}),{threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
+
+    // Category filter
+    document.querySelectorAll('.category-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        document.querySelectorAll('.category-btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const category=btn.dataset.category;
+        document.querySelectorAll('.blog-card').forEach(card=>{
+          if(category==='all'||card.dataset.category===category){
+            card.style.display='block';
+          } else {
+            card.style.display='none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

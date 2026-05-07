@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courses | Wid Gets Cafe | Mobile Repairing Training Delhi</title>
+  <meta name="description" content="Explore all mobile repairing courses at Wid Gets Cafe — Basic, Advanced, Chip Level, iPhone Expert, Laptop Repair and Master Technician programs." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root{--navy:#071120;--navy2:#0a1628;--cyan:#00E5FF;--blue:#2563EB;--gray:#94A3B8;--white:#FFFFFF;--glass:rgba(255,255,255,0.04);--glass-b:rgba(0,229,255,0.08);--border:rgba(0,229,255,0.15);--shadow:0 8px 32px rgba(0,229,255,0.08);--radius:16px;--tr:all 0.35s cubic-bezier(.4,0,.2,1);}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Poppins',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;line-height:1.6;}
+    a{text-decoration:none;color:inherit;} ul{list-style:none;} section{padding:80px 0;}
+    ::-webkit-scrollbar{width:6px;} ::-webkit-scrollbar-track{background:var(--navy);} ::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:3px;}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+    .section-tag{display:inline-block;background:var(--glass-b);border:1px solid var(--border);color:var(--cyan);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 18px;border-radius:50px;margin-bottom:16px;}
+    .section-title{font-size:clamp(28px,4vw,48px);font-weight:800;line-height:1.2;margin-bottom:16px;}
+    .section-title span{color:var(--cyan);}
+    .section-sub{font-size:16px;color:var(--gray);max-width:560px;margin:0 auto 50px;}
+    .text-center{text-align:center;}
+    .btn-primary{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--cyan),var(--blue));color:var(--navy);font-weight:700;font-size:15px;padding:14px 32px;border-radius:50px;border:none;cursor:pointer;transition:var(--tr);box-shadow:0 0 24px rgba(0,229,255,0.3);}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(0,229,255,0.5);}
+    .btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--white);font-weight:600;font-size:15px;padding:13px 30px;border-radius:50px;border:1.5px solid var(--border);cursor:pointer;transition:var(--tr);}
+    .btn-outline:hover{border-color:var(--cyan);color:var(--cyan);background:var(--glass-b);}
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+
+    /* NAVBAR */
+    #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;transition:var(--tr);}
+    #navbar.scrolled{background:rgba(7,17,32,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 0;}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;}
+    /* ===================== LOGO ===================== */
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    /* Navbar logo image */
+    .logo-img {
+      /* Show the real PNG — no color filter so original red/black/white shows */
+      display: block;
+      width: auto;
+      height: 64px;          /* Comfortable navbar height */
+      max-width: 240px;      /* Never overflow on smaller screens */
+      object-fit: contain;
+      object-position: left center;
+
+      /* Subtle glow matching the site's cyan accent */
+      filter: drop-shadow(0 2px 12px rgba(0, 229, 255, 0.20));
+
+      /* Smooth transitions for scroll-shrink & hover */
+      transition: height 0.35s cubic-bezier(.4,0,.2,1),
+                  filter 0.35s cubic-bezier(.4,0,.2,1),
+                  transform 0.35s cubic-bezier(.4,0,.2,1);
+    }
+
+    /* Hover: gentle lift + glow boost */
+    .logo-img:hover {
+      filter: drop-shadow(0 4px 18px rgba(0, 229, 255, 0.45));
+      transform: translateY(-1px) scale(1.02);
+    }
+
+    /* Scrolled navbar: shrink logo so header gets slimmer */
+    #navbar.scrolled .logo-img {
+      height: 48px;
+    }
+
+    /* Footer logo — slightly bigger, centered in brand column */
+    .logo-img-footer {
+      height: 72px;
+      max-width: 260px;
+      filter: drop-shadow(0 2px 10px rgba(0, 229, 255, 0.15));
+    }
+    .logo-img-footer:hover {
+      filter: drop-shadow(0 4px 20px rgba(0, 229, 255, 0.40));
+      transform: translateY(-1px) scale(1.02);
+    }
+    .logo-text .name{font-size:18px;font-weight:800;line-height:1.1;} .logo-text .name span{color:var(--cyan);}
+    .logo-text .tagline{font-size:10px;color:var(--gray);letter-spacing:1px;}
+    .nav-links{display:flex;align-items:center;gap:8px;}
+    .nav-links a{font-size:14px;font-weight:500;color:var(--gray);padding:8px 14px;border-radius:8px;transition:var(--tr);}
+    .nav-links a:hover,.nav-links a.active{color:var(--white);background:var(--glass);}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;}
+    .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(7,17,32,0.97);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:24px;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{font-size:22px;font-weight:600;color:var(--gray);}
+    .mobile-menu a:hover{color:var(--cyan);}
+    .mobile-close{position:absolute;top:24px;right:24px;font-size:28px;cursor:pointer;color:var(--gray);}
+
+    /* PAGE HERO */
+    .page-hero{padding:160px 0 80px;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(0,229,255,0.07) 0%,transparent 70%),var(--navy);text-align:center;position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.03) 1px,transparent 1px);background-size:60px 60px;}
+    .breadcrumb{display:flex;align-items:center;justify-content:center;gap:10px;font-size:13px;color:var(--gray);margin-bottom:20px;}
+    .breadcrumb a{color:var(--cyan);}
+    .page-title{font-size:clamp(36px,5vw,64px);font-weight:900;margin-bottom:20px;position:relative;}
+    .page-title span{color:var(--cyan);}
+    .page-sub{font-size:17px;color:var(--gray);max-width:560px;margin:0 auto;position:relative;}
+
+    /* FILTERS */
+    .filter-bar{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:48px;}
+    .filter-btn{background:var(--glass);border:1px solid var(--border);color:var(--gray);font-size:14px;font-weight:500;padding:10px 22px;border-radius:50px;cursor:pointer;transition:var(--tr);font-family:'Poppins',sans-serif;}
+    .filter-btn:hover,.filter-btn.active{background:var(--glass-b);border-color:var(--cyan);color:var(--cyan);}
+
+    /* COURSE CARDS */
+    .courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+    .course-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:var(--tr);display:flex;flex-direction:column;}
+    .course-card:hover{border-color:var(--cyan);box-shadow:0 0 30px rgba(0,229,255,0.1);transform:translateY(-6px);}
+    .course-card.featured{border-color:rgba(0,229,255,0.3);background:linear-gradient(135deg,rgba(0,229,255,0.04),rgba(37,99,235,0.04));}
+    .course-header{padding:28px 28px 0;position:relative;}
+    .course-badge{position:absolute;top:20px;right:20px;background:linear-gradient(135deg,var(--cyan),var(--blue));color:var(--navy);font-size:11px;font-weight:700;padding:4px 12px;border-radius:50px;}
+    .course-icon-wrap{width:64px;height:64px;background:var(--glass-b);border:1px solid var(--border);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:30px;margin-bottom:20px;}
+    .course-title{font-size:19px;font-weight:700;margin-bottom:8px;}
+    .course-desc{font-size:14px;color:var(--gray);line-height:1.7;margin-bottom:20px;}
+    .course-body{padding:0 28px 28px;flex:1;display:flex;flex-direction:column;justify-content:space-between;}
+    .course-highlights{margin-bottom:20px;}
+    .ch-item{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--gray);padding:5px 0;}
+    .ch-item i{color:var(--cyan);font-size:12px;flex-shrink:0;}
+    .course-meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;}
+    .cm-tag{font-size:12px;color:var(--cyan);background:var(--glass-b);padding:5px 12px;border-radius:50px;border:1px solid var(--border);}
+    .course-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding-top:20px;margin-top:auto;}
+    .course-price{font-size:14px;color:var(--gray);}
+    .course-price strong{font-size:18px;color:var(--cyan);font-weight:800;}
+
+    /* CERTIFICATION SECTION */
+    .cert-section{background:var(--navy2);}
+    .cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+    .cert-card{background:var(--glass);border:2px solid var(--border);border-radius:20px;padding:40px;text-align:center;position:relative;overflow:hidden;}
+    .cert-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,229,255,0.05) 0%,transparent 70%);}
+    .cert-icon{font-size:64px;margin-bottom:20px;display:block;position:relative;}
+    .cert-title{font-size:24px;font-weight:800;margin-bottom:12px;position:relative;}
+    .cert-text{font-size:15px;color:var(--gray);line-height:1.8;position:relative;}
+    .cert-badges{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;justify-content:center;position:relative;}
+    .cert-badge{background:var(--glass-b);border:1px solid var(--border);color:var(--cyan);font-size:12px;font-weight:600;padding:8px 16px;border-radius:8px;}
+
+    /* CTA */
+    .cta-section{background:linear-gradient(135deg,rgba(0,229,255,0.08),rgba(37,99,235,0.08));border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;padding:80px 0;}
+    .cta-title{font-size:clamp(28px,4vw,48px);font-weight:800;margin-bottom:16px;}
+    .cta-sub{font-size:17px;color:var(--gray);margin-bottom:40px;}
+    .cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+    /* FOOTER */
+    footer{background:var(--navy2);border-top:1px solid var(--border);padding:60px 0 0;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
+    .footer-desc{font-size:14px;color:var(--gray);line-height:1.8;margin-bottom:20px;}
+    .social-links{display:flex;gap:12px;}
+    .social-link{width:38px;height:38px;background:var(--glass);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:15px;transition:var(--tr);}
+    .social-link:hover{background:var(--glass-b);border-color:var(--cyan);color:var(--cyan);}
+    .footer-col h4{font-size:15px;font-weight:700;margin-bottom:20px;}
+    .footer-col ul li a{font-size:14px;color:var(--gray);display:block;padding:5px 0;transition:var(--tr);}
+    .footer-col ul li a:hover{color:var(--cyan);padding-left:6px;}
+    .footer-bottom{border-top:1px solid var(--border);padding:20px 0;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--gray);flex-wrap:wrap;gap:12px;}
+    .float-btns{position:fixed;bottom:30px;right:24px;z-index:900;display:flex;flex-direction:column;gap:12px;}
+    .float-btn{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.4);transition:var(--tr);border:none;}
+    .float-wa{background:#25D366;color:white;} .float-call{background:var(--blue);color:white;}
+    .float-btn:hover{transform:scale(1.12);}
+
+    @media(max-width:1024px){.courses-grid{grid-template-columns:repeat(2,1fr);}.cert-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:768px){section{padding:60px 0;}.nav-links,.nav-cta{display:none;}.hamburger{display:flex;}.courses-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="logo">
+          <img
+            src="image/wedget_logo-removebg-preview.png"
+            alt="Widgets Cafe Mobile Repair Institute"
+            class="logo-img"
+          >
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a><a href="about.html">About</a>
+          <a href="courses.html" class="active">Courses</a><a href="gallery.html">Gallery</a>
+          <a href="testimonials.html">Testimonials</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+        </div>
+        <div class="nav-cta">
+          <a href="admission.html" class="btn-primary" style="padding:10px 22px;font-size:13px;"><i class="fas fa-graduation-cap"></i> Enroll Now</a>
+        </div>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <span class="mobile-close" id="mobileClose">&times;</span>
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="courses.html">Courses</a>
+    <a href="gallery.html">Gallery</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+    <a href="admission.html" class="btn-primary">Enroll Now</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div style="position:relative;z-index:2">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Courses</span></div>
+      <h1 class="page-title">Our <span>Training Programs</span></h1>
+      <p class="page-sub">Comprehensive, career-focused courses designed with industry experts to make you job-ready from day one.</p>
+    </div>
+  </div>
+
+  <!-- COURSES LIST -->
+  <section>
+    <div class="container">
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All Courses</button>
+        <button class="filter-btn" data-filter="basic">Basic Level</button>
+        <button class="filter-btn" data-filter="advanced">Advanced</button>
+        <button class="filter-btn" data-filter="iphone">iPhone</button>
+        <button class="filter-btn" data-filter="laptop">Laptop</button>
+        <button class="filter-btn" data-filter="master">Master Program</button>
+      </div>
+
+      <div class="courses-grid" id="coursesGrid">
+
+        <!-- Course 1 -->
+        <div class="course-card reveal" data-category="basic">
+          <div class="course-header">
+            <div class="course-badge">Bestseller</div>
+            <div class="course-icon-wrap">📱</div>
+            <div class="course-title">Mobile Repairing Basic</div>
+            <div class="course-desc">A complete beginner's program covering all aspects of smartphone hardware repair. Perfect for freshers with zero experience.</div>
+          </div>
+          <div class="course-body">
+            <div class="course-highlights">
+              <div class="ch-item"><i class="fas fa-check"></i> Screen & Display Replacement</div>
+              <div class="ch-item"><i class="fas fa-check"></i> Battery & Charging Port Repair</div>
+              <div class="ch-item"><i class="fas fa-check"></i> Speaker, Mic & Camera Fix</div>
+              <div class="ch-item"><i class="fas fa-check"></i> Basic Soldering Techniques</div>
+              <div class="ch-item"><i class="fas fa-check"></i> Water Damage Treatment</div>
+            </div>
+            <div class="course-meta">
+              <span class="cm-tag"><i class="fas fa-clock"></i> 45 Days</span>
+              <span class="cm-tag"><i class="fas fa-user"></i> Beginner</span>
+              <span class="cm-tag"><i class="fas fa-certificate"></i> Certificate</span>
+            </div>
+            <div class="course-footer">
+              <div class="course-price"><strong>₹8,000</strong></div>
+              <a href="admission.html" class="btn-primary" style="padding:10px 20px;font-size:13px;">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="course-card reveal" data-category="advanced">
+          <div class="course-header">
+            <div class="course-badge">Popular</div>
+            <div class="course-icon-wrap">🔬</div>
+            <div class="course-title">Chip Level Repairing</div>
+            <div class="course-desc">Advanced motherboard-level diagnosis and repair using professional BGA machines and micro-soldering techniques.</div>
+          </div>
+          <div class="course-body">
+            <div class="course-highlights">
+              <div class="ch-item"><i class="fas fa-check"></i> Motherboard Circuit Analysis</div>
+              <div class="ch-item"><i class="fas fa-check"></i> BGA IC Reballing & Replacement</div>
+              <div class="ch-item"><i class="fas fa-check"></i> Multimeter & Oscilloscope Use</div>
+              <div class="ch-item"><i class="fas fa-check"></i> Power Section Fault Diagnosis</div>
+              <div class="ch-item"><i class="fas fa-check"></i> ESD & Component Handling</div>
+            </div>
+            <div class="course-meta">
+              <span class="cm-tag"><i class="fas fa-clock"></i> 90 Days</span>
+              <span class="cm-tag"><i class="fas fa-signal"></i> Advanced</span>
+              <span class="cm-tag"><i class="fas fa-award"></i> Diploma</span>
+            </div>
+            <div class="course-footer">
+              <div class="course-price"><strong>₹18,000</strong></div>
+              <a href="admission.html" class="btn-primary" style="padding:10px 20px;font-size:13px;">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="course-card reveal" data-category="iphone">
+          <div class="course-header">
+            <div class="course-icon-wrap">🍎</div>
+            <div class="course-title">iPhone Expert Course</div>
+            <div class="course-desc">Become a certified Apple device specialist. All iPhone models, logic board repair, Face ID troubleshooting & iOS management.</div>
+          </div>
+          <div class="course-body">
+            <div class="course-highlights">
+              <div class="ch-item"><i class="fas fa-check"></i> All iPhone Models (6 to 15 Pro)</div>
+              <div class="ch-item"><i class="fas fa-check"></i> Logic Board Level Repair</div>
+              <div class="ch-item"><i class="fas fa-check"></i> Face ID & Touch ID Repair</div>
+              <div class="ch-item"><i class="fas fa-check"></i> iOS DFU Restore & Flashing</div>
+              <div class="ch-item"><i class="fas fa-check"></i> iCloud & FMI Bypass</div>
+            </div>
+            <div class="course-meta">
+              <span class="cm-tag"><i class="fas fa-clock"></i> 60 Days</span>
+              <span class="cm-tag"><i class="fas fa-star"></i> Pro Level</span>
+              <span class="cm-tag"><i class="fas fa-certificate"></i> Certificate</span>
+            </div>
+            <div class="course-footer">
+              <div class="course-price"><strong>₹15,000</strong></div>
+              <a href="admission.html" class="btn-primary" style="padding:10px 20px;font-size:13px;">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 4 -->
+        <div class="course-card reveal" data-category="laptop">
+          <div class="course-header">
+            <div class="course-icon-wrap">💻</div>
+            <div class="course-title">Laptop Repairing Course</div>
+            <div class="course-desc">Complete laptop hardware and software repair — from charging issues to motherboard-level diagnosis and screen replacement.</div>
+          </div>
+          <div class="course-body">
+            <div class="course-highlights">
+              <div class="ch-item"><i class="fas fa-check"></i> All Brand Laptop Repair</div>
+              <div class="ch-item"><i class="fas fa-check"></i> Motherboard Fault Diagnosis</div>
+              <div class="ch-item"><i class="fas fa-check"></i> DC Jack & Power Repair</div>
+              <div class="ch-item"><i class="fas fa-check"></i> Display & Keyboard Repair</div>
+              <div class="ch-item"><i class="fas fa-check"></i> Windows & Driver Installation</div>
+            </div>
+            <div class="course-meta">
+              <span class="cm-tag"><i class="fas fa-clock"></i> 75 Days</span>
+              <span class="cm-tag"><i class="fas fa-signal"></i> Intermediate</span>
+              <span class="cm-tag"><i class="fas fa-award"></i> Diploma</span>
+            </div>
+            <div class="course-footer">
+              <div class="course-price"><strong>₹12,000</strong></div>
+              <a href="admission.html" class="btn-primary" style="padding:10px 20px;font-size:13px;">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 5 -->
+        <div class="course-card reveal" data-category="basic">
+          <div class="course-header">
+            <div class="course-icon-wrap">📡</div>
+            <div class="course-title">Tablet & iPad Repair</div>
+            <div class="course-desc">Specialized training for iPad and Android tablet repair including digitizer, display, battery, and charging port service.</div>
+          </div>
+          <div class="course-body">
+            <div class="course-highlights">
+              <div class="ch-item"><i class="fas fa-check"></i> iPad All Models Repair</div>
+              <div class="ch-item"><i class="fas fa-check"></i> Digitizer & Screen Replacement</div>
+              <div class="ch-item"><i class="fas fa-check"></i> Charging & Battery Repair</div>
+              <div class="ch-item"><i class="fas fa-check"></i> Android Tablet Flashing</div>
+            </div>
+            <div class="course-meta">
+              <span class="cm-tag"><i class="fas fa-clock"></i> 30 Days</span>
+              <span class="cm-tag"><i class="fas fa-user"></i> Beginner</span>
+              <span class="cm-tag"><i class="fas fa-certificate"></i> Certificate</span>
+            </div>
+            <div class="course-footer">
+              <div class="course-price"><strong>₹6,000</strong></div>
+              <a href="admission.html" class="btn-primary" style="padding:10px 20px;font-size:13px;">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 6 - Master -->
+        <div class="course-card featured reveal" data-category="master">
+          <div class="course-header">
+            <div class="course-badge">🏆 Premium</div>
+            <div class="course-icon-wrap">🏆</div>
+            <div class="course-title">Master Technician Program</div>
+            <div class="course-desc">The ultimate 6-month comprehensive program. Master mobile, chip-level, iPhone, laptop, and tablet repair. Become a certified master.</div>
+          </div>
+          <div class="course-body">
+            <div class="course-highlights">
+              <div class="ch-item"><i class="fas fa-check"></i> Complete Mobile & Chip Level</div>
+              <div class="ch-item"><i class="fas fa-check"></i> iPhone & iPad Expert Level</div>
+              <div class="ch-item"><i class="fas fa-check"></i> Laptop & MacBook Repair</div>
+              <div class="ch-item"><i class="fas fa-check"></i> Business Setup Guidance</div>
+              <div class="ch-item"><i class="fas fa-check"></i> Guaranteed Placement Support</div>
+              <div class="ch-item"><i class="fas fa-check"></i> Lifetime Alumni Benefits</div>
+            </div>
+            <div class="course-meta">
+              <span class="cm-tag"><i class="fas fa-clock"></i> 180 Days</span>
+              <span class="cm-tag"><i class="fas fa-star"></i> All Levels</span>
+              <span class="cm-tag"><i class="fas fa-award"></i> Master Diploma</span>
+            </div>
+            <div class="course-footer">
+              <div class="course-price"><strong>₹35,000</strong></div>
+              <a href="admission.html" class="btn-primary" style="padding:10px 20px;font-size:13px;">Apply Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 7 -->
+        <div class="course-card reveal" data-category="advanced">
+          <div class="course-header">
+            <div class="course-icon-wrap">⚡</div>
+            <div class="course-title">Software & Flashing Expert</div>
+            <div class="course-desc">Complete Android and iOS software training — flashing, FRP bypass, pattern unlock, and advanced software diagnostics.</div>
+          </div>
+          <div class="course-body">
+            <div class="course-highlights">
+              <div class="ch-item"><i class="fas fa-check"></i> Android ROM Flashing</div>
+              <div class="ch-item"><i class="fas fa-check"></i> FRP & Google Account Bypass</div>
+              <div class="ch-item"><i class="fas fa-check"></i> iOS DFU Mode & Restore</div>
+              <div class="ch-item"><i class="fas fa-check"></i> JTAG & eMMC Programming</div>
+            </div>
+            <div class="course-meta">
+              <span class="cm-tag"><i class="fas fa-clock"></i> 45 Days</span>
+              <span class="cm-tag"><i class="fas fa-signal"></i> Intermediate</span>
+              <span class="cm-tag"><i class="fas fa-certificate"></i> Certificate</span>
+            </div>
+            <div class="course-footer">
+              <div class="course-price"><strong>₹9,000</strong></div>
+              <a href="admission.html" class="btn-primary" style="padding:10px 20px;font-size:13px;">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 8 -->
+        <div class="course-card reveal" data-category="laptop">
+          <div class="course-header">
+            <div class="course-icon-wrap">🍏</div>
+            <div class="course-title">MacBook Repair Course</div>
+            <div class="course-desc">Specialized Apple MacBook hardware and software repair — logic board, keyboard, display, SSD and macOS troubleshooting.</div>
+          </div>
+          <div class="course-body">
+            <div class="course-highlights">
+              <div class="ch-item"><i class="fas fa-check"></i> MacBook Air & Pro All Models</div>
+              <div class="ch-item"><i class="fas fa-check"></i> Logic Board Diagnosis</div>
+              <div class="ch-item"><i class="fas fa-check"></i> Display & Trackpad Repair</div>
+              <div class="ch-item"><i class="fas fa-check"></i> macOS Installation & Recovery</div>
+            </div>
+            <div class="course-meta">
+              <span class="cm-tag"><i class="fas fa-clock"></i> 60 Days</span>
+              <span class="cm-tag"><i class="fas fa-star"></i> Advanced</span>
+              <span class="cm-tag"><i class="fas fa-award"></i> Diploma</span>
+            </div>
+            <div class="course-footer">
+              <div class="course-price"><strong>₹14,000</strong></div>
+              <a href="admission.html" class="btn-primary" style="padding:10px 20px;font-size:13px;">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 9 -->
+        <div class="course-card reveal" data-category="basic">
+          <div class="course-header">
+            <div class="course-icon-wrap">🎮</div>
+            <div class="course-title">Gaming Device Repair</div>
+            <div class="course-desc">Repair gaming devices — PlayStation, Xbox, Nintendo Switch — joystick drift fix, HDMI repair, and power board repair.</div>
+          </div>
+          <div class="course-body">
+            <div class="course-highlights">
+              <div class="ch-item"><i class="fas fa-check"></i> PlayStation 4 & 5 Repair</div>
+              <div class="ch-item"><i class="fas fa-check"></i> Xbox Controller Repair</div>
+              <div class="ch-item"><i class="fas fa-check"></i> Nintendo Switch Repair</div>
+              <div class="ch-item"><i class="fas fa-check"></i> HDMI Port Repair</div>
+            </div>
+            <div class="course-meta">
+              <span class="cm-tag"><i class="fas fa-clock"></i> 30 Days</span>
+              <span class="cm-tag"><i class="fas fa-user"></i> Beginner</span>
+              <span class="cm-tag"><i class="fas fa-certificate"></i> Certificate</span>
+            </div>
+            <div class="course-footer">
+              <div class="course-price"><strong>₹7,000</strong></div>
+              <a href="admission.html" class="btn-primary" style="padding:10px 20px;font-size:13px;">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATION SECTION -->
+  <section class="cert-section">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag">Credentials</div>
+        <h2 class="section-title">Industry-Recognized <span>Certifications</span></h2>
+        <p class="section-sub">Our certificates are accepted and respected by top companies, service centers, and employers across India.</p>
+      </div>
+      <div class="cert-grid">
+        <div class="reveal">
+          <p style="font-size:15px;color:var(--gray);line-height:1.9;margin-bottom:24px;">
+            Every student who completes our courses receives a certificate that is formally recognized by the
+            mobile repair industry. Our institute is registered and approved, giving your certificate real
+            credibility in the job market.
+          </p>
+          <ul style="display:flex;flex-direction:column;gap:14px;">
+            <li style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--gray);">
+              <i class="fas fa-check-circle" style="color:var(--cyan);"></i> Accepted by Apple Authorized Service Centers
+            </li>
+            <li style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--gray);">
+              <i class="fas fa-check-circle" style="color:var(--cyan);"></i> Recognized by Samsung Service Partners
+            </li>
+            <li style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--gray);">
+              <i class="fas fa-check-circle" style="color:var(--cyan);"></i> Valid for business registration & shop license
+            </li>
+            <li style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--gray);">
+              <i class="fas fa-check-circle" style="color:var(--cyan);"></i> Lifetime verification support
+            </li>
+          </ul>
+          <div style="margin-top:32px;">
+            <a href="admission.html" class="btn-primary"><i class="fas fa-award"></i> Get Certified Today</a>
+          </div>
+        </div>
+        <div class="cert-card reveal">
+          <span class="cert-icon">🏆</span>
+          <div class="cert-title">Certificate of Completion</div>
+          <p class="cert-text">Awarded upon successful completion of training and passing the final assessment. Digitally verifiable and industry-endorsed.</p>
+          <div class="cert-badges">
+            <div class="cert-badge">ISO Certified</div>
+            <div class="cert-badge">Government Approved</div>
+            <div class="cert-badge">Industry Recognized</div>
+            <div class="cert-badge">Digitally Verified</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">Can't Decide Which Course?<br><span style="color:var(--cyan)">Talk to Our Experts!</span></h2>
+      <p class="cta-sub">Get free career counseling and a personalized course recommendation based on your goals.</p>
+      <div class="cta-btns">
+        <a href="admission.html" class="btn-primary"><i class="fas fa-graduation-cap"></i> Enroll Now</a>
+        <a href="tel:+919999999999" class="btn-outline"><i class="fas fa-phone"></i> Free Counseling Call</a>
+        <a href="https://wa.me/919999999999" class="btn-outline" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <img
+            src="image/wedget_logo-removebg-preview.png"
+            alt="Widgets Cafe Mobile Repair Institute"
+            class="logo-img"
+          >
+            <div class="logo-text"><div class="name" style="font-size:18px;font-weight:800;">Wid <span style="color:var(--cyan)">Gets</span> Cafe</div><div class="tagline" style="font-size:10px;color:var(--gray);">Premier Tech Institute</div></div>
+          </a>
+          <p class="footer-desc">Delhi's premier mobile repairing training institute. Practical, professional, and career-focused education since 2009.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="courses.html">Courses</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Courses</h4>
+          <ul><li><a href="admission.html">Mobile Repairing</a></li><li><a href="course-detail.html">Chip Level</a></li><li><a href="course-detail.html">iPhone Expert</a></li><li><a href="course-detail.html">Laptop Repair</a></li><li><a href="course-detail.html">Master Program</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul><li><a href="#">WZ-248, Milap Nagar</a></li><li><a href="#">Uttam Nagar, Delhi 110059</a></li><li><a href="tel:+919999999999">+91 99999 99999</a></li><li><a href="mailto:info@widgetscafe.in">info@widgetscafe.in</a></li></ul>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© 2024 Wid Gets Cafe. All rights reserved.</span><span>Designed with ❤️ for aspiring technicians</span></div>
+    </div>
+  </footer>
+
+  <div class="float-btns">
+    <a href="https://wa.me/919999999999" target="_blank" class="float-btn float-wa"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+919999999999" class="float-btn float-call"><i class="fas fa-phone"></i></a>
+  </div>
+
+  <script>
+    const navbar=document.getElementById('navbar');
+    window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>60));
+    document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+    document.getElementById('mobileClose').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+    const observer=new IntersectionObserver(e=>e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('visible');}),{threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
+
+    // Filter functionality
+    document.querySelectorAll('.filter-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter=btn.dataset.filter;
+        document.querySelectorAll('.course-card').forEach(card=>{
+          if(filter==='all'||card.dataset.category===filter){
+            card.style.display='flex';
+          } else {
+            card.style.display='none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Wid Gets Cafe | Mobile Repairing Institute Delhi</title>
+  <meta name="description" content="Contact Wid Gets Cafe mobile repairing institute in Delhi. Visit us at Uttam Nagar or call for course admissions and inquiries." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root{--navy:#071120;--navy2:#0a1628;--cyan:#00E5FF;--blue:#2563EB;--gray:#94A3B8;--white:#FFFFFF;--glass:rgba(255,255,255,0.04);--glass-b:rgba(0,229,255,0.08);--border:rgba(0,229,255,0.15);--shadow:0 8px 32px rgba(0,229,255,0.08);--radius:16px;--tr:all 0.35s cubic-bezier(.4,0,.2,1);}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Poppins',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;line-height:1.6;}
+    a{text-decoration:none;color:inherit;} ul{list-style:none;} section{padding:80px 0;}
+    ::-webkit-scrollbar{width:6px;} ::-webkit-scrollbar-track{background:var(--navy);} ::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:3px;}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+    .section-tag{display:inline-block;background:var(--glass-b);border:1px solid var(--border);color:var(--cyan);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 18px;border-radius:50px;margin-bottom:16px;}
+    .section-title{font-size:clamp(28px,4vw,48px);font-weight:800;line-height:1.2;margin-bottom:16px;}
+    .section-title span{color:var(--cyan);}
+    .section-sub{font-size:16px;color:var(--gray);max-width:560px;margin:0 auto 50px;}
+    .text-center{text-align:center;}
+    .btn-primary{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--cyan),var(--blue));color:var(--navy);font-weight:700;font-size:15px;padding:14px 32px;border-radius:50px;border:none;cursor:pointer;transition:var(--tr);box-shadow:0 0 24px rgba(0,229,255,0.3);}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(0,229,255,0.5);}
+    .btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--white);font-weight:600;font-size:15px;padding:13px 30px;border-radius:50px;border:1.5px solid var(--border);cursor:pointer;transition:var(--tr);}
+    .btn-outline:hover{border-color:var(--cyan);color:var(--cyan);background:var(--glass-b);}
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+
+    /* NAVBAR */
+    #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;transition:var(--tr);}
+    #navbar.scrolled{background:rgba(7,17,32,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 0;}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;}
+    /* ===================== LOGO ===================== */
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    /* Navbar logo image */
+    .logo-img {
+      /* Show the real PNG — no color filter so original red/black/white shows */
+      display: block;
+      width: auto;
+      height: 64px;          /* Comfortable navbar height */
+      max-width: 240px;      /* Never overflow on smaller screens */
+      object-fit: contain;
+      object-position: left center;
+
+      /* Subtle glow matching the site's cyan accent */
+      filter: drop-shadow(0 2px 12px rgba(0, 229, 255, 0.20));
+
+      /* Smooth transitions for scroll-shrink & hover */
+      transition: height 0.35s cubic-bezier(.4,0,.2,1),
+                  filter 0.35s cubic-bezier(.4,0,.2,1),
+                  transform 0.35s cubic-bezier(.4,0,.2,1);
+    }
+
+    /* Hover: gentle lift + glow boost */
+    .logo-img:hover {
+      filter: drop-shadow(0 4px 18px rgba(0, 229, 255, 0.45));
+      transform: translateY(-1px) scale(1.02);
+    }
+
+    /* Scrolled navbar: shrink logo so header gets slimmer */
+    #navbar.scrolled .logo-img {
+      height: 48px;
+    }
+
+    /* Footer logo — slightly bigger, centered in brand column */
+    .logo-img-footer {
+      height: 72px;
+      max-width: 260px;
+      filter: drop-shadow(0 2px 10px rgba(0, 229, 255, 0.15));
+    }
+    .logo-img-footer:hover {
+      filter: drop-shadow(0 4px 20px rgba(0, 229, 255, 0.40));
+      transform: translateY(-1px) scale(1.02);
+    }
+    .logo-text .name{font-size:18px;font-weight:800;line-height:1.1;} .logo-text .name span{color:var(--cyan);}
+    .logo-text .tagline{font-size:10px;color:var(--gray);letter-spacing:1px;}
+    .nav-links{display:flex;align-items:center;gap:8px;}
+    .nav-links a{font-size:14px;font-weight:500;color:var(--gray);padding:8px 14px;border-radius:8px;transition:var(--tr);}
+    .nav-links a:hover,.nav-links a.active{color:var(--white);background:var(--glass);}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;}
+    .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(7,17,32,0.97);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:24px;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{font-size:22px;font-weight:600;color:var(--gray);}
+    .mobile-menu a:hover{color:var(--cyan);}
+    .mobile-close{position:absolute;top:24px;right:24px;font-size:28px;cursor:pointer;color:var(--gray);}
+
+    /* PAGE HERO */
+    .page-hero{padding:160px 0 80px;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(0,229,255,0.07) 0%,transparent 70%),var(--navy);text-align:center;position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.03) 1px,transparent 1px);background-size:60px 60px;}
+    .breadcrumb{display:flex;align-items:center;justify-content:center;gap:10px;font-size:13px;color:var(--gray);margin-bottom:20px;}
+    .breadcrumb a{color:var(--cyan);}
+    .page-title{font-size:clamp(36px,5vw,64px);font-weight:900;margin-bottom:20px;}
+    .page-title span{color:var(--cyan);}
+    .page-sub{font-size:17px;color:var(--gray);max-width:560px;margin:0 auto;}
+
+    /* CONTACT GRID */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+    .contact-info{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);padding:40px;}
+    .contact-form{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);padding:40px;}
+    .ci-item{display:flex;gap:16px;margin-bottom:24px;align-items:flex-start;}
+    .ci-icon{width:48px;height:48px;min-width:48px;background:var(--glass-b);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+    .ci-text{flex:1;}
+    .ci-label{font-size:14px;color:var(--gray);margin-bottom:4px;}
+    .ci-value{font-size:16px;color:var(--white);font-weight:600;}
+    .ci-value a{color:var(--cyan);transition:color 0.3s;}
+    .ci-value a:hover{color:var(--white);}
+
+    /* FORM */
+    .form-group{margin-bottom:20px;}
+    .form-group label{display:block;font-size:14px;font-weight:600;margin-bottom:8px;color:var(--gray);}
+    .form-control{width:100%;padding:14px 18px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:10px;color:var(--white);font-size:14px;font-family:'Poppins',sans-serif;transition:var(--tr);outline:none;}
+    .form-control:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,229,255,0.1);}
+    .form-control::placeholder{color:rgba(148,163,184,0.5);}
+    select.form-control option{background:var(--navy2);}
+    textarea.form-control{resize:vertical;min-height:120px;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+
+    /* MAP */
+    .map-section{margin-top:48px;}
+    .map-container{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);height:400px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;cursor:pointer;transition:var(--tr);}
+    .map-container:hover{border-color:var(--cyan);box-shadow:var(--shadow);}
+    .map-placeholder{text-align:center;}
+    .map-icon{font-size:48px;margin-bottom:16px;color:var(--cyan);}
+    .map-title{font-size:18px;font-weight:700;margin-bottom:8px;}
+    .map-desc{font-size:14px;color:var(--gray);margin-bottom:20px;}
+    .map-link{display:inline-flex;align-items:center;gap:8px;color:var(--cyan);font-size:14px;font-weight:600;padding:12px 24px;background:var(--glass-b);border:1px solid var(--border);border-radius:50px;transition:var(--tr);}
+    .map-link:hover{background:var(--cyan);color:var(--navy);}
+
+    /* QUICK CONTACT */
+    .quick-contact{background:var(--navy2);padding:60px 0;}
+    .quick-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;}
+    .quick-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center;transition:var(--tr);}
+    .quick-card:hover{border-color:var(--cyan);transform:translateY(-4px);}
+    .quick-icon{font-size:40px;margin-bottom:16px;display:block;}
+    .quick-title{font-size:18px;font-weight:700;margin-bottom:8px;}
+    .quick-desc{font-size:14px;color:var(--gray);line-height:1.7;margin-bottom:20px;}
+    .quick-action{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+
+    /* FAQ */
+    .faq-section{margin-top:60px;}
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+    .faq-item{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:var(--tr);}
+    .faq-item:hover{border-color:var(--cyan);}
+    .faq-question{font-size:16px;font-weight:700;margin-bottom:12px;color:var(--white);}
+    .faq-answer{font-size:14px;color:var(--gray);line-height:1.7;}
+
+    /* CTA */
+    .cta-section{background:linear-gradient(135deg,rgba(0,229,255,0.08),rgba(37,99,235,0.08));border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;padding:80px 0;}
+    .cta-title{font-size:clamp(28px,4vw,48px);font-weight:800;margin-bottom:16px;}
+    .cta-sub{font-size:17px;color:var(--gray);margin-bottom:40px;}
+    .cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+    /* FOOTER */
+    footer{background:var(--navy2);border-top:1px solid var(--border);padding:60px 0 0;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
+    .footer-desc{font-size:14px;color:var(--gray);line-height:1.8;margin-bottom:20px;}
+    .social-links{display:flex;gap:12px;}
+    .social-link{width:38px;height:38px;background:var(--glass);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:15px;transition:var(--tr);}
+    .social-link:hover{background:var(--glass-b);border-color:var(--cyan);color:var(--cyan);}
+    .footer-col h4{font-size:15px;font-weight:700;margin-bottom:20px;}
+    .footer-col ul li a{font-size:14px;color:var(--gray);display:block;padding:5px 0;transition:var(--tr);}
+    .footer-col ul li a:hover{color:var(--cyan);padding-left:6px;}
+    .footer-bottom{border-top:1px solid var(--border);padding:20px 0;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--gray);flex-wrap:wrap;gap:12px;}
+    .float-btns{position:fixed;bottom:30px;right:24px;z-index:900;display:flex;flex-direction:column;gap:12px;}
+    .float-btn{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.4);transition:var(--tr);border:none;}
+    .float-wa{background:#25D366;color:white;} .float-call{background:var(--blue);color:white;}
+    .float-btn:hover{transform:scale(1.12);}
+
+    @media(max-width:768px){section{padding:60px 0;}.nav-links,.nav-cta{display:none;}.hamburger{display:flex;}.contact-grid{grid-template-columns:1fr;}.quick-grid{grid-template-columns:1fr;}.faq-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="logo">
+          <img
+            src="image/wedget_logo-removebg-preview.png"
+            alt="Widgets Cafe Mobile Repair Institute"
+            class="logo-img"
+          >
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a><a href="about.html">About</a>
+          <a href="courses.html">Courses</a><a href="gallery.html">Gallery</a>
+          <a href="testimonials.html">Reviews</a><a href="blog.html">Blog</a>
+          <a href="contact.html" class="active">Contact</a>
+        </div>
+        <div class="nav-cta">
+          <a href="admission.html" class="btn-primary" style="padding:10px 22px;font-size:13px;"><i class="fas fa-graduation-cap"></i> Enroll Now</a>
+        </div>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <span class="mobile-close" id="mobileClose">&times;</span>
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="courses.html">Courses</a>
+    <a href="gallery.html">Gallery</a><a href="testimonials.html">Reviews</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+    <a href="admission.html" class="btn-primary">Enroll Now</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div style="position:relative;z-index:2">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Contact Us</span></div>
+      <h1 class="page-title">Get in <span>Touch</span></h1>
+      <p class="page-sub">Visit our training center or reach out through any channel. We're here to help you start your mobile repair career.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT GRID -->
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h2 style="font-size:24px;font-weight:800;margin-bottom:24px;">Visit Our Institute</h2>
+          <div class="ci-item">
+            <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="ci-text">
+              <div class="ci-label">Address</div>
+              <div class="ci-value">WZ-248, Milap Nagar, Uttam Nagar<br>New Delhi, Delhi 110059</div>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon"><i class="fas fa-phone"></i></div>
+            <div class="ci-text">
+              <div class="ci-label">Phone Numbers</div>
+              <div class="ci-value">
+                <a href="tel:+919999999999">+91 99999 99999</a> (Admissions)<br>
+                <a href="tel:+918888888888">+91 88888 88888</a> (Support)
+              </div>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+            <div class="ci-text">
+              <div class="ci-label">Email Address</div>
+              <div class="ci-value">
+                <a href="mailto:info@widgetscafe.in">info@widgetscafe.in</a><br>
+                <a href="mailto:admissions@widgetscafe.in">admissions@widgetscafe.in</a>
+              </div>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="ci-text">
+              <div class="ci-label">WhatsApp</div>
+              <div class="ci-value"><a href="https://wa.me/919999999999" target="_blank">+91 99999 99999</a></div>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon"><i class="fas fa-clock"></i></div>
+            <div class="ci-text">
+              <div class="ci-label">Working Hours</div>
+              <div class="ci-value">
+                Monday - Saturday: 9:00 AM - 8:00 PM<br>
+                Sunday: 10:00 AM - 5:00 PM
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form reveal">
+          <h2 style="font-size:24px;font-weight:800;margin-bottom:24px;">Send Us a Message</h2>
+          <form onsubmit="alert('Message sent! We will contact you within 24 hours.'); return false;">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name *</label>
+                <input type="text" class="form-control" placeholder="Enter your full name" required>
+              </div>
+              <div class="form-group">
+                <label>Phone Number *</label>
+                <input type="tel" class="form-control" placeholder="+91 XXXXX XXXXX" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" class="form-control" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label>Course Interest</label>
+              <select class="form-control">
+                <option value="">Select a course...</option>
+                <option>Basic Mobile Repair</option>
+                <option>iPhone Repair (iOS)</option>
+                <option>Android Chip Level</option>
+                <option>Laptop Repairing</option>
+                <option>PCB Designing</option>
+                <option>Master Tech Bundle</option>
+                <option>Other / General Inquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Your Message</label>
+              <textarea class="form-control" placeholder="Tell us about your goals or ask any question..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- MAP -->
+      <div class="map-section reveal">
+        <div class="map-container" onclick="window.open('https://maps.google.com/?q=WZ-248+Milap+Nagar+Uttam+Nagar+Delhi+110059', '_blank')">
+          <div class="map-placeholder">
+            <div class="map-icon"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="map-title">Find Us on Google Maps</div>
+            <div class="map-desc">Click to open our location in Google Maps</div>
+            <div class="map-link">
+              <i class="fas fa-external-link-alt"></i> Open in Google Maps
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK CONTACT -->
+  <section class="quick-contact">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag">Quick Contact</div>
+        <h2 class="section-title">Multiple Ways to <span>Reach Us</span></h2>
+        <p class="section-sub">Choose the most convenient way to get in touch with our team.</p>
+      </div>
+      
+      <div class="quick-grid">
+        <div class="quick-card reveal">
+          <div class="quick-icon"><i class="fas fa-phone-alt"></i></div>
+          <div class="quick-title">Call Us</div>
+          <div class="quick-desc">Speak directly with our admissions team for instant course guidance and fee details.</div>
+          <div class="quick-action">
+            <a href="tel:+919999999999" class="btn-primary"><i class="fas fa-phone"></i> Call Now</a>
+            <a href="tel:+918888888888" class="btn-outline"><i class="fas fa-headset"></i> Support</a>
+          </div>
+        </div>
+
+        <div class="quick-card reveal">
+          <div class="quick-icon"><i class="fab fa-whatsapp"></i></div>
+          <div class="quick-title">WhatsApp</div>
+          <div class="quick-desc">Get quick responses, course details, and fee information through WhatsApp messaging.</div>
+          <div class="quick-action">
+            <a href="https://wa.me/919999999999?text=Hi! I want to know more about mobile repairing courses" target="_blank" class="btn-primary" style="background:#25D366;">
+              <i class="fab fa-whatsapp"></i> WhatsApp Us
+            </a>
+          </div>
+        </div>
+
+        <div class="quick-card reveal">
+          <div class="quick-icon"><i class="fas fa-envelope"></i></div>
+          <div class="quick-title">Email</div>
+          <div class="quick-desc">Send detailed inquiries, course information requests, or document submissions via email.</div>
+          <div class="quick-action">
+            <a href="mailto:info@widgetscafe.in" class="btn-primary"><i class="fas fa-envelope"></i> Send Email</a>
+          </div>
+        </div>
+
+        <div class="quick-card reveal">
+          <div class="quick-icon"><i class="fas fa-users"></i></div>
+          <div class="quick-title">Visit Institute</div>
+          <div class="quick-desc">Tour our training facility, meet instructors, and see our lab equipment firsthand.</div>
+          <div class="quick-action">
+            <a href="admission.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Book Visit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag">FAQ</div>
+        <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+        <p class="section-sub">Quick answers to common questions about our courses and admission process.</p>
+      </div>
+      
+      <div class="faq-grid">
+        <div class="faq-item reveal">
+          <div class="faq-question">Do I need prior technical knowledge to enroll?</div>
+          <div class="faq-answer">Not at all! We start from basic electronics fundamentals and gradually advance to complex topics. Many of our successful students had zero technical background before joining.</div>
+        </div>
+        
+        <div class="faq-item reveal">
+          <div class="faq-question">What documents are required for admission?</div>
+          <div class="faq-answer">You'll need: ID proof (Aadhar/PAN), 2 passport photos, and the admission form. We provide the form at our institute during enrollment.</div>
+        </div>
+        
+        <div class="faq-item reveal">
+          <div class="faq-question">Do you provide placement assistance?</div>
+          <div class="faq-answer">Yes! We have a dedicated placement cell with tie-ups with 50+ service centers. We also help students who want to start their own repair business.</div>
+        </div>
+        
+        <div class="faq-item reveal">
+          <div class="faq-question">Are EMI options available for course fees?</div>
+          <div class="faq-answer">Absolutely! We offer flexible EMI options to make education accessible. You can pay in easy monthly installments with zero interest.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">Ready to Start Your <span style="color:var(--cyan)">Mobile Repair Career?</span></h2>
+      <p class="cta-sub">Join 5000+ successful students. Enroll today and get first week FREE!</p>
+      <div class="cta-btns">
+        <a href="admission.html" class="btn-primary"><i class="fas fa-graduation-cap"></i> Enroll Now</a>
+        <a href="tel:+919999999999" class="btn-outline"><i class="fas fa-phone"></i> Quick Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <img
+            src="image/wedget_logo-removebg-preview.png"
+            alt="Widgets Cafe Mobile Repair Institute"
+            class="logo-img"
+          >
+            <div class="logo-text"><div class="name" style="font-size:18px;font-weight:800;">Wid <span style="color:var(--cyan)">Gets</span> Cafe</div><div class="tagline" style="font-size:10px;color:var(--gray);">Premier Tech Institute</div></div>
+          </a>
+          <p class="footer-desc">Delhi's premier mobile repairing training institute. Practical, professional, and career-focused education since 2009.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="courses.html">Courses</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="testimonials.html">Reviews</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Courses</h4>
+          <ul><li><a href="course-detail.html">Mobile Repairing</a></li><li><a href="course-detail.html">Chip Level</a></li><li><a href="course-detail.html">iPhone Expert</a></li><li><a href="course-detail.html">Laptop Repair</a></li><li><a href="course-detail.html">Master Program</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul><li><a href="#">WZ-248, Milap Nagar</a></li><li><a href="#">Uttam Nagar, Delhi 110059</a></li><li><a href="tel:+919999999999">+91 99999 99999</a></li><li><a href="mailto:info@widgetscafe.in">info@widgetscafe.in</a></li></ul>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© 2024 Wid Gets Cafe. All rights reserved.</span><span>Designed with ❤️ for aspiring technicians</span></div>
+    </div>
+  </footer>
+
+  <div class="float-btns">
+    <a href="https://wa.me/919999999999" target="_blank" class="float-btn float-wa"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+919999999999" class="float-btn float-call"><i class="fas fa-phone"></i></a>
+  </div>
+
+  <script>
+    const navbar=document.getElementById('navbar');
+    window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>60));
+    document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+    document.getElementById('mobileClose').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+    const observer=new IntersectionObserver(e=>e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('visible');}),{threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
+  </script>
+</body>
+</html>
