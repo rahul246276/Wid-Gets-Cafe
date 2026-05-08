@@ -110,12 +110,14 @@
     .filter-btn:hover,.filter-btn.active{background:var(--glass-b);border-color:var(--cyan);color:var(--cyan);}
 
     /* GALLERY GRID */
-    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:60px;}
-    .gallery-item{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:var(--tr);cursor:pointer;position:relative;}
-    .gallery-item:hover{border-color:var(--cyan);box-shadow:0 0 30px rgba(0,229,255,0.1);transform:translateY(-4px);}
-    .gallery-img{width:100%;height:250px;background:linear-gradient(135deg,var(--navy2),rgba(0,229,255,0.1));display:flex;align-items:center;justify-content:center;font-size:48px;position:relative;overflow:hidden;}
-    .gallery-img::after{content:'';position:absolute;inset:0;background:rgba(0,229,255,0.05);opacity:0;transition:opacity 0.3s;}
-    .gallery-item:hover .gallery-img::after{opacity:1;}
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:32px;margin-bottom:60px;}
+    .gallery-item{background:linear-gradient(135deg,var(--glass),rgba(0,229,255,0.02));border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all 0.4s cubic-bezier(0.4,0,0.2,1);cursor:pointer;position:relative;transform:translateY(0);}
+    .gallery-item:hover{border-color:var(--cyan);box-shadow:0 12px 40px rgba(0,229,255,0.15);transform:translateY(-8px);}
+    .gallery-img{width:100%;height:280px;background:linear-gradient(135deg,var(--navy2),rgba(0,229,255,0.05));display:flex;align-items:center;justify-content:center;font-size:48px;position:relative;overflow:hidden;}
+    .gallery-img::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(0,229,255,0.1));opacity:0;transition:opacity 0.3s ease;}
+    .gallery-item:hover .gallery-img::before{opacity:1;}
+    .gallery-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease;}
+    .gallery-item:hover .gallery-img img{transform:scale(1.1);}
     .gallery-content{padding:20px;}
     .gallery-title{font-size:16px;font-weight:700;margin-bottom:8px;}
     .gallery-desc{font-size:13px;color:var(--gray);line-height:1.6;}
@@ -209,28 +211,36 @@
       <div class="gallery-grid" id="galleryGrid">
         <!-- Lab Photos -->
         <div class="gallery-item reveal" data-category="lab">
-          <div class="gallery-img">🔬</div>
+          <div class="gallery-img">
+            <img src="image/Soldering Station.jpg" alt="BGA Rework Station" style="width:100%;height:100%;object-fit:cover;" />
+          </div>
           <div class="gallery-content">
             <div class="gallery-title">BGA Rework Station</div>
             <div class="gallery-desc">Professional BGA machines for advanced chip-level training with precision temperature control.</div>
           </div>
         </div>
         <div class="gallery-item reveal" data-category="lab">
-          <div class="gallery-img">⚡</div>
+          <div class="gallery-img">
+            <img src="image/Professional Tools.jpg" alt="Power Testing Lab" style="width:100%;height:100%;object-fit:cover;" />
+          </div>
           <div class="gallery-content">
             <div class="gallery-title">Power Testing Lab</div>
             <div class="gallery-desc">DC power supplies and testing equipment for fault diagnosis training.</div>
           </div>
         </div>
         <div class="gallery-item reveal" data-category="equipment">
-          <div class="gallery-img">🔧</div>
+          <div class="gallery-img">
+            <img src="image/Soldering Station.jpg" alt="Professional Tools" style="width:100%;height:100%;object-fit:cover;" />
+          </div>
           <div class="gallery-content">
             <div class="gallery-title">Professional Tools</div>
             <div class="gallery-desc">Complete set of professional tools used in top service centers.</div>
           </div>
         </div>
         <div class="gallery-item reveal" data-category="lab">
-          <div class="gallery-img">🖥️</div>
+          <div class="gallery-img">
+            <img src="image/Digital Learning.jpg" alt="Software Flashing Lab" style="width:100%;height:100%;object-fit:cover;" />
+          </div>
           <div class="gallery-content">
             <div class="gallery-title">Software Flashing Lab</div>
             <div class="gallery-desc">Dedicated section for mobile software training and firmware flashing.</div>
@@ -246,56 +256,72 @@
           </div>
         </div>
         <div class="gallery-item reveal" data-category="classroom">
-          <div class="gallery-img">📚</div>
+          <div class="gallery-img">
+            <img src="image/Digital Learning.jpg" alt="Digital Learning Classroom" style="width:100%;height:100%;object-fit:cover;" />
+          </div>
           <div class="gallery-content">
             <div class="gallery-title">Digital Learning</div>
             <div class="gallery-desc">Smart classroom setup with interactive learning materials.</div>
           </div>
         </div>
         <div class="gallery-item reveal" data-category="students">
-          <div class="gallery-img">👥</div>
+          <div class="gallery-img">
+            <img src="image/Hands-on Training.jpg" alt="Hands-on Training Session" style="width:100%;height:100%;object-fit:cover;" />
+          </div>
           <div class="gallery-content">
             <div class="gallery-title">Hands-on Training</div>
             <div class="gallery-desc">Students learning practical skills with real devices.</div>
           </div>
         </div>
         <div class="gallery-item reveal" data-category="students">
-          <div class="gallery-img">🎓</div>
+          <div class="gallery-img">
+            <img src="image/Professional Tools.jpg" alt="Certificate Ceremony" style="width:100%;height:100%;object-fit:cover;" />
+          </div>
           <div class="gallery-content">
             <div class="gallery-title">Certificate Ceremony</div>
             <div class="gallery-desc">Students receiving their course completion certificates.</div>
           </div>
         </div>
         <div class="gallery-item reveal" data-category="equipment">
-          <div class="gallery-img">🔬</div>
+          <div class="gallery-img">
+            <img src="image/Soldering Station.jpg" alt="Microscope Station" style="width:100%;height:100%;object-fit:cover;" />
+          </div>
           <div class="gallery-content">
             <div class="gallery-title">Microscope Station</div>
             <div class="gallery-desc">Professional microscopes for precision micro-soldering work.</div>
           </div>
         </div>
         <div class="gallery-item reveal" data-category="lab">
-          <div class="gallery-img">📱</div>
+          <div class="gallery-img">
+            <img src="image/chip Leval MObile reparing.jpg" alt="Device Collection" style="width:100%;height:100%;object-fit:cover;" />
+          </div>
           <div class="gallery-content">
             <div class="gallery-title">Device Collection</div>
             <div class="gallery-desc">Wide range of mobile devices for practical training.</div>
           </div>
         </div>
         <div class="gallery-item reveal" data-category="students">
-          <div class="gallery-img">🏆</div>
+          <div class="gallery-img">
+            <img src="image/Digital Learning.jpg" alt="Student Success" style="width:100%;height:100%;object-fit:cover;" />
+          </div>
           <div class="gallery-content">
             <div class="gallery-title">Student Success</div>
             <div class="gallery-desc">Proud moments of our successful graduates.</div>
           </div>
         </div>
         <div class="gallery-item reveal" data-category="classroom">
-          <div class="gallery-img">👨‍🏫</div>
+          <div class="gallery-img">
+            <img src="image/Hands-on Training.jpg" alt="Expert Instruction" style="width:100%;height:100%;object-fit:cover;" />
+          </div>
           <div class="gallery-content">
             <div class="gallery-title">Expert Instruction</div>
             <div class="gallery-desc">Our certified trainers providing personalized guidance.</div>
           </div>
         </div>
         <div class="gallery-item reveal" data-category="equipment">
-          <div class="gallery-img">🛠️</div>
+          <div class="gallery-img">
+            <img src="image/Soldering Station.jpg" alt="Soldering Station" style="width:100%;height:100%;object-fit:cover;" />
+          </div>
           <div class="gallery-content">
             <div class="gallery-title">Soldering Station</div>
             <div class="gallery-desc">Professional soldering equipment for all repair work.</div>

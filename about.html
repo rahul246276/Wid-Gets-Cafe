@@ -5,217 +5,566 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Wid Gets Cafe | Mobile Repairing Institute Delhi</title>
   <meta name="description" content="Learn about Wid Gets Cafe — Delhi's premier mobile repairing training institute. Our story, mission, vision, and expert faculty." />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
-      --navy:#071120; --navy2:#0a1628; --cyan:#00E5FF; --blue:#2563EB;
-      --gray:#94A3B8; --white:#FFFFFF; --glass:rgba(255,255,255,0.04);
-      --glass-b:rgba(0,229,255,0.08); --border:rgba(0,229,255,0.15);
-      --shadow:0 8px 32px rgba(0,229,255,0.08); --radius:16px;
-      --tr:all 0.35s cubic-bezier(.4,0,.2,1);
-    }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    html{scroll-behavior:smooth;}
-    body{font-family:'Poppins',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;line-height:1.6;}
-    a{text-decoration:none;color:inherit;} ul{list-style:none;} section{padding:90px 0;}
-    ::-webkit-scrollbar{width:6px;} ::-webkit-scrollbar-track{background:var(--navy);}
-    ::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:3px;}
-    .container{max-width:1200px;margin:0 auto;padding:0 24px;}
-    .section-tag{display:inline-block;background:var(--glass-b);border:1px solid var(--border);color:var(--cyan);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 18px;border-radius:50px;margin-bottom:16px;}
-    .section-title{font-size:clamp(28px,4vw,48px);font-weight:800;line-height:1.2;margin-bottom:16px;}
-    .section-title span{color:var(--cyan);}
-    .section-sub{font-size:16px;color:var(--gray);max-width:560px;margin:0 auto 50px;}
-    .text-center{text-align:center;}
-    .btn-primary{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--cyan),var(--blue));color:var(--navy);font-weight:700;font-size:15px;padding:14px 32px;border-radius:50px;border:none;cursor:pointer;transition:var(--tr);box-shadow:0 0 24px rgba(0,229,255,0.3);}
-    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(0,229,255,0.5);}
-    .btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--white);font-weight:600;font-size:15px;padding:13px 30px;border-radius:50px;border:1.5px solid var(--border);cursor:pointer;transition:var(--tr);}
-    .btn-outline:hover{border-color:var(--cyan);color:var(--cyan);background:var(--glass-b);}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
-    .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
-    .reveal.visible{opacity:1;transform:translateY(0);}
-
-    /* NAVBAR */
-    #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:12px 0;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.1);box-shadow:0 2px 20px rgba(0,0,0,0.08);transition:all 0.3s ease;}
-    #navbar.scrolled{background:rgba(255,255,255,0.98);backdrop-filter:blur(25px);border-bottom:1px solid rgba(0,0,0,0.15);box-shadow:0 4px 30px rgba(0,0,0,0.12);padding:8px 0;}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;}
-    /* ===================== LOGO ===================== */
-    .logo {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      flex-shrink: 0;
+      --navy: #060e1c;
+      --navy2: #091525;
+      --navy3: #0d1f35;
+      --cyan: #00E5FF;
+      --cyan2: #00b8cc;
+      --blue: #1a56db;
+      --blue2: #2563EB;
+      --gold: #f0a500;
+      --gray: #7a8fa8;
+      --gray2: #a8bcd0;
+      --white: #f5f9ff;
+      --glass: rgba(255,255,255,0.03);
+      --glass-hover: rgba(0,229,255,0.06);
+      --border: rgba(0,229,255,0.12);
+      --border-strong: rgba(0,229,255,0.25);
+      --shadow-cyan: 0 0 40px rgba(0,229,255,0.12);
+      --radius: 18px;
+      --radius-sm: 10px;
+      --tr: all 0.4s cubic-bezier(.4,0,.2,1);
+      --font-head: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
     }
 
-    /* Navbar logo image */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--navy);
+      color: var(--white);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    section { padding: 100px 0; }
+    img { display: block; }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--navy); }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(var(--cyan), var(--blue)); border-radius: 4px; }
+
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+
+    /* ── TAGS & TITLES ── */
+    .tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(0,229,255,0.07);
+      border: 1px solid var(--border);
+      color: var(--cyan); font-size: 11px; font-weight: 600;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      padding: 7px 18px; border-radius: 50px; margin-bottom: 20px;
+    }
+    .tag::before { content: ''; width: 6px; height: 6px; background: var(--cyan); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.7); } }
+
+    .h1 { font-family: var(--font-head); font-size: clamp(36px,5vw,60px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; }
+    .h2 { font-family: var(--font-head); font-size: clamp(28px,3.5vw,44px); font-weight: 800; line-height: 1.15; letter-spacing: -0.5px; }
+    .h3 { font-family: var(--font-head); font-size: 20px; font-weight: 700; }
+    .accent { color: var(--cyan); }
+    .text-gray { color: var(--gray2); }
+    .text-center { text-align: center; }
+
+    /* ── BUTTONS ── */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, var(--cyan), var(--blue2));
+      color: var(--navy); font-family: var(--font-head); font-weight: 700; font-size: 14px;
+      padding: 14px 30px; border-radius: 50px; border: none; cursor: pointer;
+      transition: var(--tr); box-shadow: 0 4px 24px rgba(0,229,255,0.25);
+      letter-spacing: 0.3px;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(0,229,255,0.4); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent; color: var(--white);
+      font-family: var(--font-head); font-weight: 600; font-size: 14px;
+      padding: 13px 28px; border-radius: 50px; border: 1.5px solid var(--border-strong);
+      cursor: pointer; transition: var(--tr);
+    }
+    .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); background: rgba(0,229,255,0.06); }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.delay-1 { transition-delay: 0.1s; }
+    .reveal.delay-2 { transition-delay: 0.2s; }
+    .reveal.delay-3 { transition-delay: 0.3s; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ════════════════════════════════
+       NAVBAR
+    ════════════════════════════════ */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 14px 0;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 2px 24px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+    #navbar.scrolled { padding: 9px 0; box-shadow: 0 4px 32px rgba(0,0,0,0.12); }
+
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+
+    .logo { display: inline-flex; align-items: center; flex-shrink: 0; }
     .logo-img {
-      /* Show the real PNG — no color filter so original red/black/white shows */
-      display: block;
-      width: auto;
-      height: 48px;          /* Smaller navbar height */
-      max-width: 200px;      /* Never overflow on smaller screens */
-      object-fit: contain;
-      object-position: left center;
+      height: 46px; width: auto; max-width: 200px;
+      object-fit: contain; object-position: left;
+      filter: drop-shadow(0 2px 6px rgba(0,100,150,0.15));
+      transition: height 0.3s ease, transform 0.3s ease;
+    }
+    .logo-img:hover { transform: scale(1.03); }
+    #navbar.scrolled .logo-img { height: 38px; }
 
-      /* Subtle glow matching the site's cyan accent */
-      filter: drop-shadow(0 2px 8px rgba(0, 229, 255, 0.15));
+    .logo-img-footer { height: 54px; max-width: 220px; }
 
-      /* Smooth transitions for scroll-shrink & hover */
-      transition: height 0.35s cubic-bezier(.4,0,.2,1),
-                  filter 0.35s cubic-bezier(.4,0,.2,1),
-                  transform 0.35s cubic-bezier(.4,0,.2,1);
+    .nav-links { display: flex; align-items: center; gap: 2px; }
+    .nav-links a {
+      font-family: var(--font-head); font-size: 13px; font-weight: 600; color: #2d3748;
+      padding: 7px 13px; border-radius: 8px; transition: all 0.25s ease; position: relative;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { color: #0070b8; background: rgba(0,112,184,0.09); }
+    .nav-links a.active { color: #0070b8; background: rgba(0,112,184,0.1); }
+    .nav-links a.active::after {
+      content: ''; position: absolute; bottom: 3px; left: 50%;
+      transform: translateX(-50%); width: 20px; height: 2.5px;
+      background: linear-gradient(90deg,#007ACC,#00E5FF); border-radius: 2px;
     }
 
-    /* Hover: gentle lift + glow boost */
-    .logo-img:hover {
-      filter: drop-shadow(0 3px 12px rgba(0, 229, 255, 0.35));
-      transform: translateY(-1px) scale(1.02);
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: #2d3748; border-radius: 2px; transition: all 0.3s; }
+
+    .mobile-menu {
+      display: none; position: fixed; inset: 0;
+      background: rgba(6,14,28,0.98); z-index: 999;
+      flex-direction: column; align-items: center; justify-content: center; gap: 20px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: var(--font-head); font-size: 24px; font-weight: 700; color: var(--gray2); transition: var(--tr); }
+    .mobile-menu a:hover { color: var(--cyan); }
+    .mobile-close { position: absolute; top: 24px; right: 28px; font-size: 32px; cursor: pointer; color: var(--gray); line-height: 1; }
+
+    /* ════════════════════════════════
+       PAGE HERO
+    ════════════════════════════════ */
+    .page-hero {
+      padding: 170px 0 90px;
+      background: var(--navy);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .hero-grid-bg {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(0,229,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,0.04) 1px, transparent 1px);
+      background-size: 56px 56px;
+    }
+    .hero-glow {
+      position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+      width: 700px; height: 400px;
+      background: radial-gradient(ellipse, rgba(0,229,255,0.09) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero-content { position: relative; z-index: 2; }
+
+    .breadcrumb {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 12px; color: var(--gray); margin-bottom: 24px;
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+      padding: 6px 18px; border-radius: 50px;
+    }
+    .breadcrumb a { color: var(--cyan); }
+
+    /* ════════════════════════════════
+       ABOUT SECTION — MAIN
+    ════════════════════════════════ */
+    .about-section { background: var(--navy); padding: 100px 0; }
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
     }
 
-    /* Scrolled navbar: shrink logo so header gets slimmer */
-    #navbar.scrolled .logo-img {
-      height: 40px;
-      max-width: 180px;
+    /* Left — Text */
+    .about-text-col p {
+      font-size: 15.5px; color: var(--gray2); line-height: 1.95; margin-bottom: 18px;
+    }
+    .about-text-col strong { color: var(--white); font-weight: 500; }
+
+    .about-badges {
+      display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0;
+    }
+    .about-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(0,229,255,0.07); border: 1px solid var(--border);
+      color: var(--cyan2); font-size: 12px; font-weight: 600;
+      padding: 6px 14px; border-radius: 8px; letter-spacing: 0.3px;
+    }
+    .about-badge i { font-size: 13px; }
+
+    .about-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+
+    /* Right — Image Grid */
+    .about-image-col { position: relative; }
+
+    .img-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 14px;
     }
 
-    /* Footer logo — slightly bigger, centered in brand column */
-    .logo-img-footer {
-      height: 72px;
-      max-width: 260px;
-      filter: drop-shadow(0 2px 10px rgba(0, 229, 255, 0.15));
+    .img-box {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      border: 1px solid var(--border);
     }
-    .logo-img-footer:hover {
-      filter: drop-shadow(0 4px 20px rgba(0, 229, 255, 0.40));
-      transform: translateY(-1px) scale(1.02);
+    .img-box img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s ease;
     }
-    .logo-text .name{font-size:18px;font-weight:800;line-height:1.1;color:var(--white);}
-    .logo-text .name span{color:var(--cyan);}
-    .logo-text .tagline{font-size:10px;color:var(--gray);letter-spacing:1px;}
-    .nav-links{display:flex;align-items:center;gap:8px;}
-    .nav-links a{font-size:13px;font-weight:600;color:#333;padding:6px 12px;border-radius:6px;transition:all 0.3s ease;position:relative;}
-    .nav-links a:hover{color:#007ACC;background:rgba(0,122,204,0.1);transform:translateY(-1px);}
-    .nav-links a.active{color:#007ACC;background:rgba(0,122,204,0.15);font-weight:700;}
-    .nav-links a.active::after{content:'';position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);width:30px;height:3px;background:linear-gradient(90deg,#007ACC,#00E5FF);border-radius:2px;}
-    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
-    .hamburger span{display:block;width:24px;height:2px;background:#333;border-radius:2px;transition:all 0.3s ease;}
-    .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(7,17,32,0.97);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:24px;}
-    .mobile-menu.open{display:flex;}
-    .mobile-menu a{font-size:22px;font-weight:600;color:var(--gray);transition:var(--tr);}
-    .mobile-menu a:hover{color:var(--cyan);}
-    .mobile-close{position:absolute;top:24px;right:24px;font-size:28px;cursor:pointer;color:var(--gray);}
+    .img-box:hover img { transform: scale(1.05); }
 
-    
-    /* PAGE HERO */
-    .page-hero{padding:160px 0 80px;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(0,229,255,0.07) 0%,transparent 70%),var(--navy);text-align:center;position:relative;overflow:hidden;}
-    .page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.03) 1px,transparent 1px);background-size:60px 60px;}
-    .page-hero-content{position:relative;z-index:2;}
-    .breadcrumb{display:flex;align-items:center;justify-content:center;gap:10px;font-size:13px;color:var(--gray);margin-bottom:20px;}
-    .breadcrumb a{color:var(--cyan);}
-    .breadcrumb span{color:var(--gray);}
-    .page-title{font-size:clamp(36px,5vw,64px);font-weight:900;margin-bottom:20px;}
-    .page-title span{color:var(--cyan);}
-    .page-sub{font-size:17px;color:var(--gray);max-width:560px;margin:0 auto;}
+    .img-box.tall { grid-row: span 2; }
+    .img-box.tall img { height: 100%; min-height: 300px; }
+    .img-box.short img { height: 170px; }
 
-    /* FOUNDER */
-    .founder-card{background:var(--glass);border:1px solid var(--border);border-radius:20px;padding:48px;display:flex;gap:48px;align-items:flex-start;}
-    .founder-avatar{width:160px;height:160px;min-width:160px;border-radius:50%;background:linear-gradient(135deg,rgba(0,229,255,0.2),rgba(37,99,235,0.2));border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:64px;}
-    .founder-quote{font-size:18px;color:var(--gray);font-style:italic;line-height:1.8;margin-bottom:24px;position:relative;padding-left:24px;}
-    .founder-quote::before{content:'"';position:absolute;left:0;top:-8px;font-size:48px;color:var(--cyan);opacity:0.4;font-family:serif;line-height:1;}
-    .founder-name{font-size:20px;font-weight:800;}
-    .founder-role{font-size:14px;color:var(--cyan);}
-    .founder-exp{display:flex;gap:24px;margin-top:20px;}
-    .fe-item .fe-num{font-size:24px;font-weight:800;color:var(--cyan);}
-    .fe-item .fe-label{font-size:12px;color:var(--gray);}
-
-    /* MISSION VISION */
-    .mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
-    .mv-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);padding:36px;}
-    .mv-card.mission{border-left:3px solid var(--cyan);}
-    .mv-card.vision{border-left:3px solid var(--blue);}
-    .mv-icon{font-size:40px;margin-bottom:20px;}
-    .mv-title{font-size:22px;font-weight:800;margin-bottom:12px;}
-    .mv-text{font-size:15px;color:var(--gray);line-height:1.8;}
-
-    /* VALUES */
-    .values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
-    .value-item{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:center;transition:var(--tr);}
-    .value-item:hover{border-color:var(--cyan);transform:translateY(-4px);}
-    .value-icon{font-size:40px;margin-bottom:16px;}
-    .value-title{font-size:16px;font-weight:700;margin-bottom:8px;}
-    .value-text{font-size:13px;color:var(--gray);line-height:1.7;}
-
-    /* INFRASTRUCTURE */
-    .infra-bg{background:var(--navy2);}
-    .infra-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-    .infra-item{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);padding:32px;transition:var(--tr);}
-    .infra-item:hover{border-color:var(--cyan);box-shadow:var(--shadow);}
-    .infra-icon{width:60px;height:60px;background:linear-gradient(135deg,rgba(0,229,255,0.15),rgba(37,99,235,0.15));border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:20px;}
-    .infra-title{font-size:17px;font-weight:700;margin-bottom:10px;}
-    .infra-desc{font-size:14px;color:var(--gray);line-height:1.7;}
-
-    /* ACHIEVEMENTS */
-    .ach-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
-    .ach-card{background:linear-gradient(135deg,rgba(0,229,255,0.06),rgba(37,99,235,0.06));border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center;transition:var(--tr);}
-    .ach-card:hover{border-color:var(--cyan);transform:translateY(-4px);}
-    .ach-num{font-size:clamp(32px,4vw,48px);font-weight:900;color:var(--cyan);margin-bottom:8px;}
-    .ach-label{font-size:14px;color:var(--gray);font-weight:500;}
-
-    /* TEAM */
-    .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
-    .team-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center;transition:var(--tr);}
-    .team-card:hover{border-color:var(--cyan);transform:translateY(-4px);}
-    .team-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--blue));display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:700;color:var(--navy);margin:0 auto 16px;}
-    .team-name{font-size:18px;font-weight:700;margin-bottom:6px;}
-    .team-role{font-size:13px;color:var(--cyan);margin-bottom:12px;}
-    .team-exp{font-size:13px;color:var(--gray);}
-
-    /* FOOTER */
-    footer{background:var(--navy2);border-top:1px solid var(--border);padding:60px 0 0;}
-    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
-    .footer-brand .logo{margin-bottom:16px;}
-    .footer-desc{font-size:14px;color:var(--gray);line-height:1.8;margin-bottom:20px;}
-    .social-links{display:flex;gap:12px;}
-    .social-link{width:38px;height:38px;background:var(--glass);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:15px;transition:var(--tr);}
-    .social-link:hover{background:var(--glass-b);border-color:var(--cyan);color:var(--cyan);}
-    .footer-col h4{font-size:15px;font-weight:700;margin-bottom:20px;}
-    .footer-col ul li a{font-size:14px;color:var(--gray);display:block;padding:5px 0;transition:var(--tr);}
-    .footer-col ul li a:hover{color:var(--cyan);padding-left:6px;}
-    .footer-bottom{border-top:1px solid var(--border);padding:20px 0;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--gray);flex-wrap:wrap;gap:12px;}
-    .float-btns{position:fixed;bottom:30px;right:24px;z-index:900;display:flex;flex-direction:column;gap:12px;}
-    .float-btn{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.4);transition:var(--tr);border:none;}
-    .float-wa{background:#25D366;color:white;}
-    .float-call{background:var(--blue);color:white;}
-    .float-btn:hover{transform:scale(1.12);}
-
-    @media(max-width:1024px){
-      .values-grid,.ach-grid{grid-template-columns:repeat(2,1fr);}
-      .infra-grid,.team-grid{grid-template-columns:repeat(2,1fr);}
-      .footer-grid{grid-template-columns:1fr 1fr;}
-      .mv-grid{grid-template-columns:1fr;}
+    /* Floating stat badge on image */
+    .img-stat {
+      position: absolute; bottom: 14px; left: 14px;
+      background: rgba(6,14,28,0.88); backdrop-filter: blur(10px);
+      border: 1px solid var(--border-strong);
+      border-radius: 12px; padding: 10px 16px;
     }
-    @media(max-width:768px){
-      section{padding:60px 0;}
-      .nav-links,.nav-cta{display:none;}
-      .hamburger{display:flex;}
-      .grid-2{grid-template-columns:1fr;}
-      .founder-card{flex-direction:column;padding:28px;}
-      .values-grid,.ach-grid,.infra-grid,.team-grid{grid-template-columns:1fr;}
-      .footer-grid{grid-template-columns:1fr;}
+    .img-stat .num { font-family: var(--font-head); font-size: 22px; font-weight: 800; color: var(--cyan); line-height: 1; }
+    .img-stat .lbl { font-size: 11px; color: var(--gray2); margin-top: 3px; }
+
+    /* Floating accent element */
+    .img-accent {
+      position: absolute; top: -18px; right: -18px;
+      width: 80px; height: 80px;
+      background: linear-gradient(135deg, rgba(0,229,255,0.15), rgba(26,86,219,0.15));
+      border: 1px solid var(--border-strong);
+      border-radius: 20px; z-index: 2;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 32px;
+    }
+
+    /* Year badge */
+    .year-badge {
+      position: absolute; top: 14px; right: 14px;
+      background: linear-gradient(135deg, var(--cyan), var(--blue2));
+      color: var(--navy); font-family: var(--font-head); font-size: 12px; font-weight: 800;
+      padding: 6px 12px; border-radius: 8px; letter-spacing: 0.5px;
+    }
+
+    /* ── Divider line ── */
+    .divider {
+      width: 56px; height: 3px;
+      background: linear-gradient(90deg, var(--cyan), var(--blue2));
+      border-radius: 2px; margin: 20px 0 28px;
+    }
+
+    /* ── Quick stats row ── */
+    .quick-stats {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      margin-top: 60px;
+    }
+    .qs-item {
+      background: var(--navy2); padding: 28px 20px; text-align: center;
+      transition: var(--tr);
+    }
+    .qs-item:hover { background: rgba(0,229,255,0.06); }
+    .qs-num { font-family: var(--font-head); font-size: 36px; font-weight: 800; color: var(--cyan); line-height: 1; }
+    .qs-label { font-size: 12.5px; color: var(--gray2); margin-top: 6px; }
+
+    /* ════════════════════════════════
+       FOUNDER
+    ════════════════════════════════ */
+    .founder-section { background: var(--navy2); padding: 100px 0; }
+    .founder-wrap {
+      display: grid; grid-template-columns: 340px 1fr;
+      gap: 60px; align-items: center;
+    }
+    .founder-img-wrap { position: relative; }
+    .founder-img {
+      width: 100%; border-radius: 24px; overflow: hidden;
+      border: 1px solid var(--border); aspect-ratio: 4/5;
+    }
+    .founder-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    .founder-img-badge {
+      position: absolute; bottom: -20px; right: -20px;
+      background: linear-gradient(135deg, var(--cyan), var(--blue2));
+      color: var(--navy); padding: 18px 22px; border-radius: 16px;
+      text-align: center; box-shadow: 0 8px 32px rgba(0,229,255,0.3);
+    }
+    .founder-img-badge .big { font-family: var(--font-head); font-size: 28px; font-weight: 800; line-height: 1; }
+    .founder-img-badge .small { font-size: 11px; font-weight: 600; opacity: 0.8; margin-top: 3px; }
+
+    .founder-content
+    .founder-quote-text {
+      font-size: 17px; color: var(--gray2); font-style: italic; line-height: 1.9;
+      margin-bottom: 28px; position: relative; padding-left: 32px;
+      border-left: 2px solid var(--cyan);
+    }
+    .founder-name { font-family: var(--font-head); font-size: 22px; font-weight: 800; }
+    .founder-role { font-size: 13px; color: var(--cyan); margin-top: 4px; letter-spacing: 0.3px; }
+
+    .founder-stats {
+      display: flex; gap: 32px; margin-top: 28px; flex-wrap: wrap;
+    }
+    .fs-item
+    .fs-num { font-family: var(--font-head); font-size: 28px; font-weight: 800; color: var(--cyan); }
+    .fs-label { font-size: 12px; color: var(--gray); margin-top: 2px; }
+
+    /* ════════════════════════════════
+       MISSION & VISION
+    ════════════════════════════════ */
+    .mv-section { background: var(--navy); padding: 100px 0; }
+    .mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 56px; }
+
+    .mv-card {
+      background: var(--glass); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 42px 36px;
+      position: relative; overflow: hidden; transition: var(--tr);
+    }
+    .mv-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(0,229,255,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .mv-card:hover { border-color: var(--border-strong); transform: translateY(-4px); box-shadow: var(--shadow-cyan); }
+    .mv-card.mission { border-top: 2px solid var(--cyan); }
+    .mv-card.vision { border-top: 2px solid var(--blue2); }
+
+    .mv-icon-wrap {
+      width: 68px; height: 68px; border-radius: 16px; overflow: hidden;
+      border: 1px solid var(--border); margin-bottom: 24px;
+    }
+    .mv-icon-wrap img { width: 100%; height: 100%; object-fit: cover; }
+
+    .mv-title { font-family: var(--font-head); font-size: 22px; font-weight: 800; margin-bottom: 14px; }
+    .mv-text { font-size: 14.5px; color: var(--gray2); line-height: 1.9; }
+
+    /* ════════════════════════════════
+       VALUES
+    ════════════════════════════════ */
+    .values-section { background: var(--navy2); padding: 100px 0; }
+    .values-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 56px; }
+
+    .value-card {
+      background: var(--navy3); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 36px 28px;
+      text-align: center; transition: var(--tr); position: relative; overflow: hidden;
+    }
+    .value-card::after {
+      content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 0; height: 2px; background: linear-gradient(90deg, var(--cyan), var(--blue2));
+      transition: width 0.4s ease; border-radius: 2px;
+    }
+    .value-card:hover::after { width: 60%; }
+    .value-card:hover { border-color: var(--border-strong); transform: translateY(-5px); box-shadow: var(--shadow-cyan); }
+
+    .val-icon {
+      width: 70px; height: 70px; border-radius: 18px; overflow: hidden;
+      border: 1px solid var(--border); margin: 0 auto 20px; position: relative;
+    }
+    .val-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .val-title { font-family: var(--font-head); font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+    .val-text { font-size: 13.5px; color: var(--gray2); line-height: 1.8; }
+
+    /* ════════════════════════════════
+       INFRASTRUCTURE
+    ════════════════════════════════ */
+    .infra-section { background: var(--navy); padding: 100px 0; }
+    .infra-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 56px; }
+
+    .infra-card {
+      background: var(--navy2); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden; transition: var(--tr);
+    }
+    .infra-card:hover { border-color: var(--border-strong); transform: translateY(-4px); box-shadow: var(--shadow-cyan); }
+
+    .infra-card-img { height: 180px; overflow: hidden; position: relative; }
+    .infra-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .infra-card:hover .infra-card-img img { transform: scale(1.06); }
+    .infra-card-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, rgba(6,14,28,0.85));
+    }
+
+    .infra-card-body { padding: 24px; }
+    .infra-icon-badge {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, rgba(0,229,255,0.15), rgba(26,86,219,0.15));
+      border: 1px solid var(--border); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; color: var(--cyan); margin-bottom: 14px;
+    }
+    .infra-title { font-family: var(--font-head); font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .infra-desc { font-size: 13.5px; color: var(--gray2); line-height: 1.75; }
+
+    /* ════════════════════════════════
+       ACHIEVEMENTS
+    ════════════════════════════════ */
+    .ach-section { background: var(--navy2); padding: 100px 0; }
+    .ach-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; margin-top: 56px; }
+
+    .ach-card {
+      background: var(--navy3); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 36px 24px; text-align: center;
+      position: relative; overflow: hidden; transition: var(--tr);
+    }
+    .ach-card::before {
+      content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 60px; height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--blue2));
+    }
+    .ach-card:hover { border-color: var(--border-strong); transform: translateY(-5px); box-shadow: var(--shadow-cyan); }
+
+    .ach-num { font-family: var(--font-head); font-size: 46px; font-weight: 800; color: var(--cyan); line-height: 1; margin-bottom: 10px; }
+    .ach-label { font-size: 13.5px; color: var(--gray2); font-weight: 400; line-height: 1.5; }
+
+    /* ════════════════════════════════
+       TEAM
+    ════════════════════════════════ */
+    .team-section { background: var(--navy); padding: 100px 0; }
+    .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; margin-top: 56px; }
+
+    .team-card {
+      background: var(--navy2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 40px 28px; text-align: center; transition: var(--tr);
+      position: relative; overflow: hidden;
+    }
+    .team-card:hover { border-color: var(--border-strong); transform: translateY(-5px); box-shadow: var(--shadow-cyan); }
+
+    .team-avatar-ring {
+      width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 18px;
+      background: linear-gradient(135deg, var(--cyan), var(--blue2));
+      padding: 2px;
+    }
+    .team-avatar-inner {
+      width: 100%; height: 100%; border-radius: 50%;
+      background: var(--navy3);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-head); font-size: 20px; font-weight: 800; color: var(--cyan);
+    }
+    .team-name { font-family: var(--font-head); font-size: 19px; font-weight: 700; margin-bottom: 6px; }
+    .team-role { font-size: 12.5px; color: var(--cyan); margin-bottom: 14px; letter-spacing: 0.3px; }
+    .team-exp { font-size: 13px; color: var(--gray2); line-height: 1.65; }
+
+    .team-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 14px; }
+    .team-tag {
+      font-size: 11px; background: rgba(0,229,255,0.07); border: 1px solid var(--border);
+      color: var(--gray2); padding: 3px 10px; border-radius: 6px;
+    }
+
+    /* ════════════════════════════════
+       FOOTER
+    ════════════════════════════════ */
+    footer { background: var(--navy2); border-top: 1px solid var(--border); padding: 64px 0 0; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 44px; margin-bottom: 48px; }
+
+    .footer-brand .footer-logo { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .footer-logo-text .name { font-family: var(--font-head); font-size: 18px; font-weight: 800; color: var(--white); }
+    .footer-logo-text .name span { color: var(--cyan); }
+    .footer-logo-text .tagline { font-size: 10px; color: var(--gray); letter-spacing: 1.5px; text-transform: uppercase; }
+
+    .footer-desc { font-size: 13.5px; color: var(--gray); line-height: 1.85; margin-bottom: 22px; max-width: 280px; }
+
+    .social-links { display: flex; gap: 10px; }
+    .social-link {
+      width: 38px; height: 38px; background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border); border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gray); font-size: 15px; transition: var(--tr);
+    }
+    .social-link:hover { background: rgba(0,229,255,0.1); border-color: var(--cyan); color: var(--cyan); }
+
+    .footer-col h4 { font-family: var(--font-head); font-size: 14px; font-weight: 700; margin-bottom: 18px; letter-spacing: 0.5px; }
+    .footer-col ul li a { font-size: 13.5px; color: var(--gray); display: block; padding: 5px 0; transition: var(--tr); }
+    .footer-col ul li a:hover { color: var(--cyan); padding-left: 5px; }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border); padding: 20px 0;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 12.5px; color: var(--gray); flex-wrap: wrap; gap: 10px;
+    }
+
+    /* ── FLOAT BUTTONS ── */
+    .float-btns { position: fixed; bottom: 28px; right: 22px; z-index: 900; display: flex; flex-direction: column; gap: 10px; }
+    .float-btn {
+      width: 52px; height: 52px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; cursor: pointer; color: white; border: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: var(--tr);
+    }
+    .float-wa { background: #25D366; }
+    .float-call { background: var(--blue2); }
+    .float-btn:hover { transform: scale(1.12) translateY(-2px); }
+
+    /* ════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .about-layout { gap: 40px; }
+      .founder-wrap { grid-template-columns: 280px 1fr; gap: 40px; }
+      .ach-grid { grid-template-columns: repeat(2,1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .mv-grid { grid-template-columns: 1fr; }
+      .quick-stats { grid-template-columns: repeat(2,1fr); }
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 70px 0; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .about-layout { grid-template-columns: 1fr; gap: 48px; }
+      .img-grid { grid-template-columns: 1fr 1fr; }
+      .img-box.tall img { min-height: 220px; }
+      .founder-wrap { grid-template-columns: 1fr; }
+      .founder-img { max-width: 280px; margin: 0 auto; }
+      .founder-img-badge { right: 10px; bottom: -16px; }
+      .values-grid { grid-template-columns: 1fr; }
+      .infra-grid { grid-template-columns: 1fr; }
+      .ach-grid { grid-template-columns: repeat(2,1fr); }
+      .team-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .quick-stats { grid-template-columns: repeat(2,1fr); }
+      .img-accent { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .page-hero { padding: 140px 0 70px; }
+      .ach-grid { grid-template-columns: 1fr 1fr; }
+      .about-badges { gap: 8px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
- <nav id="navbar">
+  <!-- ════════ NAVBAR ════════ -->
+  <nav id="navbar">
     <div class="container">
       <div class="nav-inner">
         <a href="index.html" class="logo">
-          <img
-            src="image/wedget_logo-removebg-preview.png"
-            alt="Widgets Cafe Mobile Repair Institute"
-            class="logo-img"
-          >
+          <img src="image/wedget_logo-removebg-preview.png" alt="Wid Gets Cafe" class="logo-img" />
         </a>
         <div class="nav-links">
           <a href="index.html">Home</a>
@@ -227,107 +576,181 @@
           <a href="contact.html">Contact</a>
         </div>
         <div class="nav-cta">
-          <a href="admission.html" class="btn-primary" style="padding:10px 22px;font-size:13px;"><i class="fas fa-graduation-cap"></i> Enroll Now</a>
+          <a href="admission.html" class="btn-primary" style="padding:10px 22px;font-size:13px;">
+            <i class="fas fa-graduation-cap"></i> Enroll Now
+          </a>
         </div>
-        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
       </div>
     </div>
   </nav>
 
+  <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
     <span class="mobile-close" id="mobileClose">&times;</span>
-    <a href="index.html">Home</a><a href="about.html">About Us</a><a href="courses.html">Courses</a>
-    <a href="gallery.html">Gallery</a><a href="testimonials.html">Testimonials</a>
-    <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
-    <a href="admission.html" class="btn-primary">Enroll Now</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="courses.html">Courses</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="admission.html" class="btn-primary" style="margin-top:10px;">Enroll Now</a>
   </div>
 
-  <!-- PAGE HERO -->
+  <!-- ════════ PAGE HERO ════════ -->
   <div class="page-hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow"></div>
     <div class="page-hero-content">
       <div class="breadcrumb">
         <a href="index.html">Home</a>
-        <span>›</span>
+        <span style="color:var(--gray);opacity:0.5;font-size:14px;">›</span>
         <span>About Us</span>
       </div>
-      <h1 class="page-title">About <span>Wid Gets Cafe</span></h1>
-      <p class="page-sub">Empowering young technicians since 2009 with world-class mobile repairing education right in the heart of Delhi.</p>
+      <h1 class="h1" style="margin-bottom:20px;">About <span class="accent">Wid Gets Cafe</span></h1>
+      <p style="font-size:17px;color:var(--gray2);max-width:520px;margin:0 auto;line-height:1.8;">
+        Empowering young technicians since 2009 — Delhi's most trusted mobile repairing training institute in the heart of Uttam Nagar.
+      </p>
     </div>
   </div>
 
-  <!-- INSTITUTE INTRO -->
-  <section>
+  <!-- ════════ ABOUT SECTION (with images) ════════ -->
+  <section class="about-section">
     <div class="container">
-      <div class="grid-2">
+      <div class="about-layout">
+
+        <!-- TEXT COLUMN -->
         <div class="reveal">
-          <div class="section-tag">Our Story</div>
-          <h2 class="section-title">Delhi's Most Trusted<br><span>Repair Training Institute</span></h2>
-          <p style="font-size:15px;color:var(--gray);line-height:1.9;margin-bottom:20px;">
-            Founded in 2009, Wid Gets Cafe has grown from a small training center to Delhi's most recognized
-            mobile repairing institute. Located in the heart of Uttam Nagar, we've trained over 5,000 students
-            who are now running successful careers and businesses across India.
+          <div class="tag">Our Story</div>
+          <h2 class="h2" style="margin-bottom:14px;">
+            Delhi's Most Trusted<br><span class="accent">Repair Training Institute</span>
+          </h2>
+          <div class="divider"></div>
+
+          <p>
+            Founded in 2009, <strong>Wid Gets Cafe</strong> has grown from a small training center into Delhi's most recognized mobile repairing institute. Located in the heart of Uttam Nagar, we have trained over 5,000 students who are now running successful careers and businesses across India.
           </p>
-          <p style="font-size:15px;color:var(--gray);line-height:1.9;margin-bottom:32px;">
-            Our philosophy is simple — <strong style="color:var(--white)">learn by doing</strong>. Every student who walks through our doors
-            gets hands-on experience with real devices, professional tools, and expert guidance that prepares
-            them for the real world from day one.
+          <p>
+            Our philosophy is simple — <strong>learn by doing</strong>. Every student who walks through our doors gets hands-on experience with real devices, professional tools, and expert guidance that prepares them for the real world from day one.
           </p>
-          <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <p>
+            We believe that a skill in your hands is worth more than a degree on paper. That's why our training is purely practical, industry-aligned, and designed to get you job-ready or business-ready in the shortest possible time.
+          </p>
+
+          <div class="about-badges">
+            <span class="about-badge"><i class="fas fa-check-circle"></i> ISO Certified Institute</span>
+            <span class="about-badge"><i class="fab fa-apple"></i> Apple Authorized Trainer</span>
+            <span class="about-badge"><i class="fas fa-award"></i> 15+ Industry Awards</span>
+            <span class="about-badge"><i class="fas fa-users"></i> 5000+ Alumni Network</span>
+          </div>
+
+          <div class="about-cta">
             <a href="admission.html" class="btn-primary"><i class="fas fa-graduation-cap"></i> Join Us Today</a>
             <a href="contact.html" class="btn-outline"><i class="fas fa-phone"></i> Talk to Us</a>
           </div>
         </div>
-        <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-          <div style="background:var(--glass);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center;">
-            <div style="font-size:48px;font-weight:900;color:var(--cyan)">15+</div>
-            <div style="font-size:14px;color:var(--gray)">Years of Excellence</div>
+
+        <!-- IMAGE GRID COLUMN -->
+        <div class="about-image-col reveal delay-2">
+          <div class="img-accent">🔧</div>
+          <div class="img-grid">
+
+            <!-- Tall left image -->
+            <div class="img-box tall">
+              <img src="image/Hands-on Training.jpg" alt="Hands-on Training at Wid Gets Cafe" loading="lazy" />
+              <div class="img-stat">
+                <div class="num">15+</div>
+                <div class="lbl">Years of Excellence</div>
+              </div>
+              <div class="year-badge">Est. 2009</div>
+            </div>
+
+            <!-- Top right -->
+            <div class="img-box short">
+              <img src="image/Professional Tools.jpg" alt="Professional Repair Tools" loading="lazy" />
+            </div>
+
+            <!-- Bottom right -->
+            <div class="img-box short">
+              <img src="image/Digital Learning.jpg" alt="Digital Learning Room" loading="lazy" />
+              <div class="img-stat">
+                <div class="num">98%</div>
+                <div class="lbl">Placement Rate</div>
+              </div>
+            </div>
+
           </div>
-          <div style="background:var(--glass);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center;margin-top:24px;">
-            <div style="font-size:48px;font-weight:900;color:var(--cyan)">5K+</div>
-            <div style="font-size:14px;color:var(--gray)">Students Trained</div>
-          </div>
-          <div style="background:var(--glass);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center;">
-            <div style="font-size:48px;font-weight:900;color:var(--cyan)">20+</div>
-            <div style="font-size:14px;color:var(--gray)">Courses Offered</div>
-          </div>
-          <div style="background:var(--glass);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center;margin-top:24px;">
-            <div style="font-size:48px;font-weight:900;color:var(--cyan)">98%</div>
-            <div style="font-size:14px;color:var(--gray)">Placement Rate</div>
-          </div>
+        </div>
+      </div>
+
+      <!-- QUICK STATS BAR -->
+      <div class="quick-stats reveal" style="margin-top:70px;">
+        <div class="qs-item">
+          <div class="qs-num">5000+</div>
+          <div class="qs-label">Students Trained</div>
+        </div>
+        <div class="qs-item">
+          <div class="qs-num">20+</div>
+          <div class="qs-label">Courses Offered</div>
+        </div>
+        <div class="qs-item">
+          <div class="qs-num">50+</div>
+          <div class="qs-label">Placement Partners</div>
+        </div>
+        <div class="qs-item">
+          <div class="qs-num">500+</div>
+          <div class="qs-label">Alumni Shops Launched</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOUNDER STORY -->
-  <section style="background:var(--navy2);">
+  <!-- ════════ FOUNDER ════════ -->
+  <section class="founder-section">
     <div class="container">
-      <div class="text-center" style="margin-bottom:50px;">
-        <div class="section-tag">Leadership</div>
-        <h2 class="section-title">The <span>Founder's Story</span></h2>
+      <div class="text-center reveal" style="margin-bottom:56px;">
+        <div class="tag">Leadership</div>
+        <h2 class="h2">The <span class="accent">Founder's Story</span></h2>
       </div>
-      <div class="founder-card reveal">
-        <div class="founder-avatar">👨‍🔧</div>
-        <div>
-          <p class="founder-quote">
-            I started Wid Gets Cafe with one goal — to give young people a skill that can never be taken away from them.
-            Mobile technology is the future, and the technicians who can repair these devices will always be in demand.
-            We don't just teach repair; we build entrepreneurs and confident professionals.
+
+      <div class="founder-wrap reveal">
+        <div class="founder-img-wrap">
+          <div class="founder-img">
+            <img src="image/Hands-on Training.jpg" alt="Kush Chhabra — Founder" />
+          </div>
+          <div class="founder-img-badge">
+            <div class="big">15+</div>
+            <div class="small">Years Expert</div>
+          </div>
+        </div>
+
+        <div class="founder-content">
+          <div class="tag">Kush Chhabra</div>
+          <h3 class="h2" style="margin-bottom:12px;">Founder &amp; <span class="accent">Chief Instructor</span></h3>
+          <div class="divider"></div>
+
+          <p class="founder-quote-text">
+            I started Wid Gets Cafe with one goal — to give young people a skill that can never be taken away from them. Mobile technology is the future, and the technicians who can repair these devices will always be in demand. We don't just teach repair; we build entrepreneurs and confident professionals.
           </p>
-          <div class="founder-name">~Kush Chhabra</div>
-          <div class="founder-role">Founder & Chief Instructor — Wid Gets Cafe</div>
-          <div class="founder-exp">
-            <div class="fe-item">
-              <div class="fe-num">15+</div>
-              <div class="fe-label">Years in Industry</div>
+
+          <div class="founder-name">Kush Chhabra</div>
+          <div class="founder-role">Founder &amp; Chief Instructor — Wid Gets Cafe</div>
+
+          <div class="founder-stats">
+            <div class="fs-item">
+              <div class="fs-num">15+</div>
+              <div class="fs-label">Years in Industry</div>
             </div>
-            <div class="fe-item">
-              <div class="fe-num">5000+</div>
-              <div class="fe-label">Students Mentored</div>
+            <div class="fs-item">
+              <div class="fs-num">5000+</div>
+              <div class="fs-label">Students Mentored</div>
             </div>
-            <div class="fe-item">
-              <div class="fe-num">Apple</div>
-              <div class="fe-label">Certified Trainer</div>
+            <div class="fs-item">
+              <div class="fs-num">Apple</div>
+              <div class="fs-label">Certified Trainer</div>
             </div>
           </div>
         </div>
@@ -335,121 +758,155 @@
     </div>
   </section>
 
-  <!-- MISSION & VISION -->
-  <section>
+  <!-- ════════ MISSION & VISION ════════ -->
+  <section class="mv-section">
     <div class="container">
-      <div class="text-center">
-        <div class="section-tag">Purpose</div>
-        <h2 class="section-title">Our <span>Mission & Vision</span></h2>
+      <div class="text-center reveal">
+        <div class="tag">Purpose</div>
+        <h2 class="h2">Our <span class="accent">Mission &amp; Vision</span></h2>
       </div>
       <div class="mv-grid">
-        <div class="mv-card mission reveal">
-          <div class="mv-icon">🎯</div>
+        <div class="mv-card mission reveal delay-1">
+          <div class="mv-icon-wrap">
+            <img src="image/Digital Learning.jpg" alt="Mission" />
+          </div>
           <div class="mv-title">Our Mission</div>
           <p class="mv-text">To provide world-class, affordable, and practical mobile repairing education that empowers students from all backgrounds to build successful, sustainable careers in the growing smartphone repair industry. We are committed to hands-on learning, expert mentorship, and continuous skill development.</p>
         </div>
-        <div class="mv-card vision reveal">
-          <div class="mv-icon">🔭</div>
+        <div class="mv-card vision reveal delay-2">
+          <div class="mv-icon-wrap">
+            <img src="image/Professional Tools.jpg" alt="Vision" />
+          </div>
           <div class="mv-title">Our Vision</div>
-          <p class="mv-text">To become India's most trusted and recognized mobile technology training institution — a place where every student leaves with not just a certificate, but the confidence, skills, and business mindset to lead the future of the mobile repair industry across the nation.</p>
+          <p class="mv-text">To become India's most trusted and recognized mobile technology training institution — a place where every student leaves with not just a certificate, but with confidence, skills, and a business mindset to lead the future of the mobile repair industry across the nation.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CORE VALUES -->
-  <section style="background:var(--navy2);">
+  <!-- ════════ CORE VALUES ════════ -->
+  <section class="values-section">
     <div class="container">
-      <div class="text-center">
-        <div class="section-tag">What We Stand For</div>
-        <h2 class="section-title">Our Core <span>Values</span></h2>
-        <p class="section-sub">The principles that guide everything we do at Wid Gets Cafe.</p>
+      <div class="text-center reveal">
+        <div class="tag">What We Stand For</div>
+        <h2 class="h2">Our Core <span class="accent">Values</span></h2>
+        <p style="font-size:15px;color:var(--gray2);max-width:480px;margin:16px auto 0;">The principles that guide everything we do at Wid Gets Cafe.</p>
       </div>
       <div class="values-grid">
-        <div class="value-item reveal">
-          <div class="value-icon">🤝</div>
-          <div class="value-title">Integrity</div>
-          <div class="value-text">We teach with honesty and transparency. No false promises — only real results.</div>
+        <div class="value-card reveal delay-1">
+          <div class="val-icon"><img src="image/Digital Learning.jpg" alt="Excellence" /></div>
+          <div class="val-title">Excellence</div>
+          <div class="val-text">We never settle for average. Every lesson and every demo is delivered at the highest professional standard possible.</div>
         </div>
-        <div class="value-item reveal">
-          <div class="value-icon">⚡</div>
-          <div class="value-title">Excellence</div>
-          <div class="value-text">We never settle for average. Every lesson, every demo is delivered at the highest standard.</div>
+        <div class="value-card reveal delay-2">
+          <div class="val-icon"><img src="image/Professional Tools.jpg" alt="Innovation" /></div>
+          <div class="val-title">Innovation</div>
+          <div class="val-text">We update our curriculum constantly to stay ahead of new technologies, tools, and devices in the fast-evolving repair industry.</div>
         </div>
-        <div class="value-item reveal">
-          <div class="value-icon">💡</div>
-          <div class="value-title">Innovation</div>
-          <div class="value-text">We update our curriculum constantly to stay ahead of new technologies and devices.</div>
-        </div>
-        <div class="value-item reveal">
-          <div class="value-icon">❤️</div>
-          <div class="value-title">Student First</div>
-          <div class="value-text">Every decision we make is centered around student success, comfort, and growth.</div>
+        <div class="value-card reveal delay-3">
+          <div class="val-icon"><img src="image/Hands-on Training.jpg" alt="Student First" /></div>
+          <div class="val-title">Student First</div>
+          <div class="val-text">Every decision we make is centered around student success, comfort, and long-term growth in their chosen career path.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- INFRASTRUCTURE -->
-  <section class="infra-bg">
+  <!-- ════════ INFRASTRUCTURE ════════ -->
+  <section class="infra-section">
     <div class="container">
-      <div class="text-center">
-        <div class="section-tag">Facilities</div>
-        <h2 class="section-title">World-Class <span>Infrastructure</span></h2>
-        <p class="section-sub">Our lab is equipped with the most advanced tools used in top professional repair centers.</p>
+      <div class="text-center reveal">
+        <div class="tag">Facilities</div>
+        <h2 class="h2">World-Class <span class="accent">Infrastructure</span></h2>
+        <p style="font-size:15px;color:var(--gray2);max-width:500px;margin:16px auto 0;">Our labs are equipped with the most advanced tools used in top professional repair centers worldwide.</p>
       </div>
       <div class="infra-grid">
-        <div class="infra-item reveal">
-          <div class="infra-icon">🔬</div>
-          <div class="infra-title">Professional BGA Lab</div>
-          <div class="infra-desc">Our BGA reballing lab features professional-grade BGA machines, rework stations, and precision soldering equipment for advanced chip-level training.</div>
+        <div class="infra-card reveal delay-1">
+          <div class="infra-card-img">
+            <img src="image/Soldering Station.jpg" alt="BGA Rework Lab" />
+            <div class="infra-card-img-overlay"></div>
+          </div>
+          <div class="infra-card-body">
+            <div class="infra-icon-badge"><i class="fas fa-microchip"></i></div>
+            <div class="infra-title">Professional BGA Lab</div>
+            <div class="infra-desc">Professional-grade BGA machines, rework stations, and precision soldering equipment for advanced chip-level training.</div>
+          </div>
         </div>
-        <div class="infra-item reveal">
-          <div class="infra-icon">🖥️</div>
-          <div class="infra-title">Software Flashing Lab</div>
-          <div class="infra-desc">Dedicated software section with JTAG boxes, Octoplus, UFI, and all major flash tools for complete mobile software training.</div>
+        <div class="infra-card reveal delay-2">
+          <div class="infra-card-img">
+            <img src="image/Professional Tools.jpg" alt="Software Flashing Lab" />
+            <div class="infra-card-img-overlay"></div>
+          </div>
+          <div class="infra-card-body">
+            <div class="infra-icon-badge"><i class="fas fa-laptop-code"></i></div>
+            <div class="infra-title">Software Flashing Lab</div>
+            <div class="infra-desc">Dedicated section with JTAG boxes, Octoplus, UFI, and all major flash tools for complete mobile software training.</div>
+          </div>
         </div>
-        <div class="infra-item reveal">
-          <div class="infra-icon">⚡</div>
-          <div class="infra-title">Power & Testing Lab</div>
-          <div class="infra-desc">DC power supplies, digital oscilloscopes, component testers, and multimeters for fault diagnosis and power-level training.</div>
+        <div class="infra-card reveal delay-3">
+          <div class="infra-card-img">
+            <img src="image/Hands-on Training.jpg" alt="Hardware Workshop" />
+            <div class="infra-card-img-overlay"></div>
+          </div>
+          <div class="infra-card-body">
+            <div class="infra-icon-badge"><i class="fas fa-tools"></i></div>
+            <div class="infra-title">Hardware Workshop</div>
+            <div class="infra-desc">Fully equipped with hot air rework stations, soldering irons, magnification tools, and all precision instruments.</div>
+          </div>
         </div>
-        <div class="infra-item reveal">
-          <div class="infra-icon">🔧</div>
-          <div class="infra-title">Hardware Workshop</div>
-          <div class="infra-desc">Fully equipped hardware workshop with hot air rework stations, soldering irons, magnification tools, and all precision instruments.</div>
+        <div class="infra-card reveal delay-1">
+          <div class="infra-card-img">
+            <img src="image/Digital Learning.jpg" alt="Digital Learning Room" />
+            <div class="infra-card-img-overlay"></div>
+          </div>
+          <div class="infra-card-body">
+            <div class="infra-icon-badge"><i class="fas fa-chalkboard-teacher"></i></div>
+            <div class="infra-title">Digital Learning Room</div>
+            <div class="infra-desc">Smart classroom with projectors and digital content for theory sessions, circuit diagram studies, and video demos.</div>
+          </div>
         </div>
-        <div class="infra-item reveal">
-          <div class="infra-icon">📚</div>
-          <div class="infra-title">Digital Learning Room</div>
-          <div class="infra-desc">Smart classroom with projectors and digital content for theory sessions, circuit diagram studies, and video demonstrations.</div>
+        <div class="infra-card reveal delay-2">
+          <div class="infra-card-img">
+            <img src="image/Student Lounge.jpg" alt="Student Lounge" />
+            <div class="infra-card-img-overlay"></div>
+          </div>
+          <div class="infra-card-body">
+            <div class="infra-icon-badge"><i class="fas fa-couch"></i></div>
+            <div class="infra-title">Student Lounge</div>
+            <div class="infra-desc">Comfortable lounge area to relax, network, and collaborate — because great technicians are built outside the lab too.</div>
+          </div>
         </div>
-        <div class="infra-item reveal">
-          <div class="infra-icon">🏢</div>
-          <div class="infra-title">Student Lounge</div>
-          <div class="infra-desc">Comfortable lounge area for students to relax, network, and collaborate — because great technicians are built outside the lab too.</div>
+        <div class="infra-card reveal delay-3">
+          <div class="infra-card-img" style="background:linear-gradient(135deg,#091525,#0d1f35);display:flex;align-items:center;justify-content:center;font-size:64px;">
+            🔬
+          </div>
+          <div class="infra-card-body">
+            <div class="infra-icon-badge"><i class="fas fa-microscope"></i></div>
+            <div class="infra-title">100+ Repair Tools</div>
+            <div class="infra-desc">Students train on the same professional-grade equipment used by top repair shops worldwide.</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ACHIEVEMENTS -->
-  <section>
+  <!-- ════════ ACHIEVEMENTS ════════ -->
+  <section class="ach-section">
     <div class="container">
-      <div class="text-center">
-        <div class="section-tag">Milestones</div>
-        <h2 class="section-title">Our Key <span>Achievements</span></h2>
+      <div class="text-center reveal">
+        <div class="tag">Milestones</div>
+        <h2 class="h2">Our Key <span class="accent">Achievements</span></h2>
       </div>
       <div class="ach-grid">
-        <div class="ach-card reveal">
+        <div class="ach-card reveal delay-1">
           <div class="ach-num">5000+</div>
           <div class="ach-label">Students Successfully Trained</div>
         </div>
-        <div class="ach-card reveal">
+        <div class="ach-card reveal delay-2">
           <div class="ach-num">500+</div>
           <div class="ach-label">Repair Shops Launched by Alumni</div>
         </div>
-        <div class="ach-card reveal">
+        <div class="ach-card reveal delay-3">
           <div class="ach-num">15+</div>
           <div class="ach-label">Industry Awards Received</div>
         </div>
@@ -461,64 +918,87 @@
     </div>
   </section>
 
-  <!-- OUR TEAM -->
-  <section style="background:var(--navy2);">
+  <!-- ════════ TEAM ════════ -->
+  <section class="team-section">
     <div class="container">
-      <div class="text-center">
-        <div class="section-tag">Expert Faculty</div>
-        <h2 class="section-title">Meet Our <span>Instructors</span></h2>
-        <p class="section-sub">Our team of certified experts brings real-world industry experience to every classroom.</p>
+      <div class="text-center reveal">
+        <div class="tag">Expert Faculty</div>
+        <h2 class="h2">Meet Our <span class="accent">Instructors</span></h2>
+        <p style="font-size:15px;color:var(--gray2);max-width:460px;margin:16px auto 0;">Our certified experts bring real-world industry experience into every classroom session.</p>
       </div>
       <div class="team-grid">
-        <div class="team-card reveal">
-          <div class="team-avatar">*KC*</div>
-          <div class="team-name">~Kush Chhabra</div>
-          <div class="team-role">Founder & Master Trainer</div>
-          <div class="team-exp">15+ years experience · Chip-level specialist · Apple certified</div>
+        <div class="team-card reveal delay-1">
+          <div class="team-avatar-ring">
+            <div class="team-avatar-inner">KC</div>
+          </div>
+          <div class="team-name">Kush Chhabra</div>
+          <div class="team-role">Founder &amp; Master Trainer</div>
+          <div class="team-exp">15+ years in the industry with deep expertise in chip-level repair and mobile hardware diagnostics.</div>
+          <div class="team-tags">
+            <span class="team-tag">Chip-Level</span>
+            <span class="team-tag">Apple Certified</span>
+            <span class="team-tag">BGA Expert</span>
+          </div>
         </div>
-        <div class="team-card reveal">
-          <div class="team-avatar">RS</div>
+        <div class="team-card reveal delay-2">
+          <div class="team-avatar-ring">
+            <div class="team-avatar-inner">RS</div>
+          </div>
           <div class="team-name">Ravi Sharma</div>
           <div class="team-role">Senior Hardware Trainer</div>
-          <div class="team-exp">12+ years experience · iPhone specialist · BGA expert</div>
+          <div class="team-exp">12+ years of hands-on experience specializing in iPhone motherboard repair and advanced BGA rework.</div>
+          <div class="team-tags">
+            <span class="team-tag">iPhone Expert</span>
+            <span class="team-tag">BGA Rework</span>
+            <span class="team-tag">Hardware</span>
+          </div>
         </div>
-        <div class="team-card reveal">
-          <div class="team-avatar">PG</div>
+        <div class="team-card reveal delay-3">
+          <div class="team-avatar-ring">
+            <div class="team-avatar-inner">PG</div>
+          </div>
           <div class="team-name">Pradeep Gupta</div>
-          <div class="team-role">Software & Firmware Expert</div>
-          <div class="team-exp">10+ years experience · Android & iOS specialist</div>
+          <div class="team-role">Software &amp; Firmware Expert</div>
+          <div class="team-exp">10+ years specializing in Android and iOS software solutions, firmware flashing and data recovery.</div>
+          <div class="team-tags">
+            <span class="team-tag">Android</span>
+            <span class="team-tag">iOS</span>
+            <span class="team-tag">Data Recovery</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ════════ FOOTER ════════ -->
   <footer>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo">
-            <img
-            src="image/wedget_logo-removebg-preview.png"
-            alt="Widgets Cafe Mobile Repair Institute"
-            class="logo-img"
-          >
-            <div class="logo-text"><div class="name">Wid <span>Gets</span> Cafe</div><div class="tagline">Premier Tech Institute</div></div>
+          <a href="index.html" class="footer-logo">
+            <img src="image/wedget_logo-removebg-preview.png" alt="Wid Gets Cafe" class="logo-img-footer" />
+            <div class="footer-logo-text">
+              <div class="name">Wid <span>Gets</span> Cafe</div>
+              <div class="tagline">Premier Tech Institute</div>
+            </div>
           </a>
           <p class="footer-desc">Delhi's premier mobile repairing training institute. Practical, professional, and career-focused education since 2009.</p>
           <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/919899011151" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
           </div>
         </div>
         <div class="footer-col">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li>
-            <li><a href="courses.html">Courses</a></li><li><a href="gallery.html">Gallery</a></li>
-            <li><a href="testimonials.html">Testimonials</a></li><li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -532,7 +1012,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Contact</h4>
+          <h4>Contact Us</h4>
           <ul>
             <li><a href="#">WZ-248, Milap Nagar</a></li>
             <li><a href="#">Uttam Nagar, Delhi 110059</a></li>
@@ -542,24 +1022,79 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span> 2024 Wid Gets Cafe. All rights reserved.</span>
-        <span>Designed with  for aspiring technicians</span>
+        <span>&copy; 2024 Wid Gets Cafe. All rights reserved.</span>
+        <span>Designed with ❤️ for aspiring technicians</span>
       </div>
     </div>
   </footer>
 
+  <!-- FLOATING BUTTONS -->
   <div class="float-btns">
-    <a href="https://wa.me/919899011151" target="_blank" class="float-btn float-wa"><i class="fab fa-whatsapp"></i></a>
-    <a href="tel:+919899011151" class="float-btn float-call"><i class="fas fa-phone"></i></a>
+    <a href="https://wa.me/919899011151" target="_blank" class="float-btn float-wa" aria-label="WhatsApp Us">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+919899011151" class="float-btn float-call" aria-label="Call Us">
+      <i class="fas fa-phone"></i>
+    </a>
   </div>
 
   <script>
-    const navbar=document.getElementById('navbar');
-    window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',window.scrollY>60);});
-    document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
-    document.getElementById('mobileClose').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
-    const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
-    document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Mobile menu
+    const mobileMenu = document.getElementById('mobileMenu');
+    document.getElementById('hamburger').addEventListener('click', () => {
+      mobileMenu.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+    document.getElementById('mobileClose').addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Scroll reveal
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Counter animation for achievement numbers
+    function animateCounter(el) {
+      const text = el.textContent;
+      const num = parseInt(text.replace(/\D/g, ''));
+      if (!num) return;
+      const suffix = text.replace(/[\d]/g, '');
+      let start = 0;
+      const duration = 1800;
+      const step = (timestamp) => {
+        if (!start) start = timestamp;
+        const progress = Math.min((timestamp - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * num) + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+
+    const counterObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          animateCounter(e.target);
+          counterObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.ach-num, .qs-num').forEach(el => counterObserver.observe(el));
   </script>
 </body>
 </html>
