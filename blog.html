@@ -103,13 +103,31 @@
     .page-title span{color:var(--cyan);}
     .page-sub{font-size:17px;color:var(--gray);max-width:560px;margin:0 auto;}
 
+    /* BLOG LAYOUT */
+    .blog-layout{display:grid;grid-template-columns:1fr 300px;gap:40px;align-items:start;}
+    .blog-main{order:1;}
+    .blog-sidebar{order:2;position:sticky;top:100px;}
+    .categories-section{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:32px;}
+    .section-title-small{font-size:18px;font-weight:700;margin-bottom:16px;color:var(--white);} 
     /* SEARCH BAR */
     .search-section{background:var(--navy2);padding:40px 0;}
     .search-container{max-width:600px;margin:0 auto;position:relative;}
     .search-input{width:100%;padding:16px 60px 16px 24px;background:var(--glass);border:1px solid var(--border);border-radius:50px;color:var(--white);font-size:15px;font-family:'Poppins',sans-serif;outline:none;transition:var(--tr);}
     .search-input:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,229,255,0.1);}
-    .search-btn{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--blue));border:none;cursor:pointer;font-size:16px;color:var(--navy);transition:var(--tr);}
-    .search-btn:hover{transform:translateY(-50%) scale(1.1);}
+    /* ENHANCED UI/UX STYLES */
+    .blog-card::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(180deg,transparent,rgba(0,229,255,0.05),rgba(0,229,255,0.05));transition:opacity 0.3s ease;opacity:0;pointer-events:none;}
+    .blog-card:hover::before{opacity:1;}
+    .blog-card::after{content:'';position:absolute;top:10px;right:10px;width:20px;height:20px;background:var(--cyan);border-radius:50%;opacity:0;transform:scale(0) rotate(45deg);transition:all 0.3s ease;z-index:1;}
+    .blog-card:hover::after{opacity:1;transform:scale(1) rotate(0deg);}
+    .featured-post::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(90deg,var(--cyan),var(--blue),var(--cyan));height:2px;animation:shimmer 3s linear infinite;}
+    .search-input{background:var(--glass);border:1px solid var(--border);border-radius:50px;color:var(--white);font-size:15px;font-family:'Poppins',sans-serif;outline:none;transition:all 0.3s ease;padding:16px 60px 16px 50px;}
+    .search-input:focus{border-color:var(--cyan);box-shadow:0 0 0 20px rgba(0,229,255,0.2);transform:translateY(-2px);}
+    .search-btn{background:linear-gradient(135deg,var(--cyan),var(--blue));border:none;transition:all 0.3s ease;}
+    .search-btn:hover{transform:translateY(-50%) scale(1.1);box-shadow:0 4px 20px rgba(0,229,255,0.3);}
+    .category-btn{background:var(--glass);border:1px solid var(--border);color:var(--gray);font-size:14px;font-weight:500;padding:10px 20px;border-radius:50px;cursor:pointer;transition:all 0.3s ease;position:relative;overflow:hidden;}
+    .category-btn::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,var(--cyan),var(--blue));height:2px;transition:width 0.3s ease;}
+    .category-btn:hover::before{width:100%;}
+    .category-btn.active{background:linear-gradient(135deg,var(--cyan),var(--blue));color:var(--navy);border-color:var(--cyan);transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,229,255,0.3);}
 
     /* CATEGORIES */
     .categories-bar{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:48px;}
@@ -117,21 +135,23 @@
     .category-btn:hover,.category-btn.active{background:var(--glass-b);border-color:var(--cyan);color:var(--cyan);}
 
     /* BLOG GRID */
-    .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:28px;margin-bottom:60px;}
-    .blog-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:var(--tr);cursor:pointer;}
-    .blog-card:hover{border-color:var(--cyan);box-shadow:0 0 30px rgba(0,229,255,0.1);transform:translateY(-4px);}
-    .blog-image{width:100%;height:200px;background:linear-gradient(135deg,var(--navy2),rgba(0,229,255,0.1));display:flex;align-items:center;justify-content:center;font-size:48px;position:relative;overflow:hidden;}
-    .blog-content{padding:24px;}
-    .blog-category{font-size:12px;font-weight:700;color:var(--cyan);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;}
-    .blog-title{font-size:18px;font-weight:700;line-height:1.3;margin-bottom:12px;transition:color 0.3s;}
+    .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:32px;margin-bottom:60px;}
+    .blog-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:var(--tr);cursor:pointer;display:flex;flex-direction:column;position:relative;}
+    .blog-card:hover{border-color:var(--cyan);box-shadow:0 8px 32px rgba(0,229,255,0.15);transform:translateY(-8px);}
+    .blog-image{width:100%;height:220px;background:linear-gradient(135deg,var(--navy2),rgba(0,229,255,0.1));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border-radius:12px 12px 0 0;}
+    .blog-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);}
+    .blog-card:hover .blog-image img{transform:scale(1.08);}
+    .blog-content{padding:28px;flex:1;display:flex;flex-direction:column;}
+    .blog-category{font-size:11px;font-weight:700;color:var(--cyan);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;padding:4px 12px;background:rgba(0,229,255,0.1);border-radius:20px;display:inline-block;}
+    .blog-title{font-size:20px;font-weight:700;line-height:1.3;margin-bottom:16px;transition:color 0.3s;}
     .blog-card:hover .blog-title{color:var(--cyan);}
-    .blog-excerpt{font-size:14px;color:var(--gray);line-height:1.7;margin-bottom:16px;}
-    .blog-meta{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--gray);}
-    .blog-author{display:flex;align-items:center;gap:8px;}
-    .author-avatar{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--blue));display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--navy);}
-    .blog-date{display:flex;align-items:center;gap:6px;}
-    .read-more{display:inline-flex;align-items:center;gap:6px;color:var(--cyan);font-size:14px;font-weight:600;transition:gap 0.3s;}
-    .blog-card:hover .read-more{gap:12px;}
+    .blog-excerpt{font-size:15px;color:var(--gray);line-height:1.7;margin-bottom:20px;flex:1;}
+    .blog-meta{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--gray);margin-top:auto;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);}
+    .blog-author{display:flex;align-items:center;gap:10px;}
+    .author-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--blue));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--navy);box-shadow:0 2px 8px rgba(0,229,255,0.3);}
+    .blog-date{display:flex;align-items:center;gap:8px;background:var(--glass);padding:8px 16px;border-radius:24px;border:1px solid var(--border);font-size:12px;}
+    .read-more{display:inline-flex;align-items:center;gap:8px;color:var(--cyan);font-size:14px;font-weight:600;transition:all 0.3s ease;margin-top:16px;}
+    .blog-card:hover .read-more{gap:16px;transform:translateX(4px);}
 
     /* FEATURED POST */
     .featured-post{
@@ -142,6 +162,10 @@
       margin-bottom:60px;
       position:relative;
       overflow:hidden;
+      display:grid;
+      grid-template-columns:1fr 320px;
+      gap:40px;
+      align-items:center;
     }
     .featured-post::before{
       content:'';
@@ -283,7 +307,8 @@
     .float-wa{background:#25D366;color:white;} .float-call{background:var(--blue);color:white;}
     .float-btn:hover{transform:scale(1.12);}
 
-    @media(max-width:768px){section{padding:60px 0;}.nav-links,.nav-cta{display:none;}.hamburger{display:flex;}.blog-grid{grid-template-columns:1fr;}.featured-content{grid-template-columns:1fr;gap:32px;}.featured-post{padding:32px 24px;}.featured-title{font-size:24px;}.featured-image{height:200px;font-size:60px;}.newsletter-form{flex-direction:column;}.footer-grid{grid-template-columns:1fr;}}
+    @media(max-width:1024px){.blog-layout{grid-template-columns:1fr;gap:24px;}.blog-sidebar{position:static;order:1;}.blog-main{order:2;}.blog-grid{grid-template-columns:1fr;gap:24px;}.featured-post{grid-template-columns:1fr;gap:24px;padding:32px;}.featured-content{order:1;}.featured-image{order:2;height:200px;}}
+    @media(max-width:768px){.blog-layout{grid-template-columns:1fr;}.blog-sidebar{margin-bottom:32px;}.blog-grid{grid-template-columns:1fr;gap:20px;}.blog-card{margin-bottom:20px;}.blog-image{height:180px;}.featured-post{padding:24px;}.featured-content{padding:20px;}.featured-image{height:160px;}.search-section{padding:24px 0;}.categories-section{padding:20px;}.page-hero{padding:120px 0 60px;}}
   </style>
 </head>
 <body>
@@ -327,46 +352,19 @@
     </div>
   </div>
 
-  <!-- SEARCH SECTION -->
-  <section class="search-section">
-    <div class="container">
-      <div class="search-container">
-        <input type="text" class="search-input" placeholder="Search articles, tips, tutorials...">
-        <button class="search-btn"><i class="fas fa-search"></i></button>
-      </div>
-    </div>
-  </section>
-
-  <!-- CATEGORIES -->
+  <!-- BLOG LAYOUT WITH SIDEBAR -->
   <section>
     <div class="container">
-      <div class="categories-bar">
-        <button class="category-btn active" data-category="all">All Articles</button>
-        <button class="category-btn" data-category="iphone">iPhone Repair</button>
-        <button class="category-btn" data-category="android">Android Repair</button>
-        <button class="category-btn" data-category="chip">Chip Level</button>
-        <button class="category-btn" data-category="tips">Tips & Tricks</button>
-        <button class="category-btn" data-category="career">Career Guide</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURED POST -->
-  <section>
-    <div class="container">
-      <div class="featured-post reveal">
-        <div class="featured-content">
-          <div class="featured-badge"><i class="fas fa-star"></i> Featured Article</div>
-          <h2 class="featured-title">Complete Guide to iPhone 15 Pro Max Repair: Common Issues & Solutions</h2>
-          <p class="featured-excerpt">Learn step-by-step how to diagnose and fix the most common issues in iPhone 15 Pro Max, from screen replacement to motherboard-level repairs. This comprehensive guide covers everything you need to know.</p>
-          <div class="featured-meta">
-            <span><i class="fas fa-user"></i> Ajay Kumar</span>
-            <span><i class="fas fa-calendar"></i> Dec 15, 2024</span>
-            <span><i class="fas fa-clock"></i> 12 min read</span>
+      <div class="blog-layout">
+        <div class="blog-main">
+          <!-- SEARCH BAR -->
+          <div class="search-section">
+            <div class="search-container">
+              <input type="text" class="search-input" placeholder="Search articles..." />
+              <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
           </div>
-          <a href="#" class="btn-primary"><i class="fas fa-book-open"></i> Read Full Article</a>
         </div>
-        <div class="featured-image">🍎</div>
       </div>
     </div>
   </section>
@@ -374,9 +372,12 @@
   <!-- BLOG GRID -->
   <section>
     <div class="container">
-      <div class="blog-grid" id="blogGrid">
+          <div class="blog-grid" id="blogGrid">
+        <!-- Blog Articles -->
         <article class="blog-card reveal" data-category="iphone">
-          <div class="blog-image">🍎</div>
+          <div class="blog-image">
+            <img src="image/Mobile Repairing Basic.jpg" alt="iPhone 14 Charging Issues Guide" class="blog-img" loading="lazy" width="400" height="240" />
+          </div>
           <div class="blog-content">
             <div class="blog-category">iPhone Repair</div>
             <h3 class="blog-title">How to Diagnose iPhone 14 Charging Issues – Complete Guide</h3>
@@ -385,10 +386,8 @@
               <div class="blog-author">
                 <div class="author-avatar">AK</div>
                 <span>Ajay Kumar</span>
-              </div>
-              <div class="blog-date">
-                <i class="fas fa-calendar"></i> Dec 2024
-                <i class="fas fa-clock"></i> 8 min
+                <span><i class="fas fa-calendar"></i> Dec 2024</span>
+                <span><i class="fas fa-clock"></i> 8 min read</span>
               </div>
             </div>
             <div class="read-more">Read More <i class="fas fa-arrow-right"></i></div>
@@ -396,7 +395,9 @@
         </article>
 
         <article class="blog-card reveal" data-category="android">
-          <div class="blog-image">🤖</div>
+          <div class="blog-image">
+            <img src="image/chip Leval MObile reparing.jpg" alt="Samsung S24 Motherboard Repair" class="blog-img" loading="lazy" width="400" height="240" />
+          </div>
           <div class="blog-content">
             <div class="blog-category">Android Repair</div>
             <h3 class="blog-title">Samsung S24 Motherboard Repair: What You Need to Know</h3>
@@ -405,10 +406,8 @@
               <div class="blog-author">
                 <div class="author-avatar">RS</div>
                 <span>Ravi Sharma</span>
-              </div>
-              <div class="blog-date">
-                <i class="fas fa-calendar"></i> Nov 2024
-                <i class="fas fa-clock"></i> 12 min
+                <span><i class="fas fa-calendar"></i> Nov 2024</span>
+                <span><i class="fas fa-clock"></i> 12 min read</span>
               </div>
             </div>
             <div class="read-more">Read More <i class="fas fa-arrow-right"></i></div>
@@ -416,7 +415,9 @@
         </article>
 
         <article class="blog-card reveal" data-category="career">
-          <div class="blog-image">💼</div>
+          <div class="blog-image">
+            <img src="image/Hands-on Training.jpg" alt="Start Mobile Repair Business Guide" class="blog-img" loading="lazy" width="400" height="240" />
+          </div>
           <div class="blog-content">
             <div class="blog-category">Career Guide</div>
             <h3 class="blog-title">How to Start Your Own Mobile Repair Business in 2025</h3>
@@ -425,10 +426,8 @@
               <div class="blog-author">
                 <div class="author-avatar">PG</div>
                 <span>Pradeep Gupta</span>
-              </div>
-              <div class="blog-date">
-                <i class="fas fa-calendar"></i> Oct 2024
-                <i class="fas fa-clock"></i> 15 min
+                <span><i class="fas fa-calendar"></i> Oct 2024</span>
+                <span><i class="fas fa-clock"></i> 15 min read</span>
               </div>
             </div>
             <div class="read-more">Read More <i class="fas fa-arrow-right"></i></div>
@@ -436,7 +435,9 @@
         </article>
 
         <article class="blog-card reveal" data-category="chip">
-          <div class="blog-image">🔬</div>
+          <div class="blog-image">
+            <img src="image/Soldering Station.jpg" alt="Micro-Soldering Techniques Guide" class="blog-img">
+          </div>
           <div class="blog-content">
             <div class="blog-category">Chip Level</div>
             <h3 class="blog-title">Micro-Soldering Techniques Every Technician Must Know</h3>
@@ -456,7 +457,9 @@
         </article>
 
         <article class="blog-card reveal" data-category="tips">
-          <div class="blog-image">💡</div>
+          <div class="blog-image">
+            <img src="image/Professional Tools.jpg" alt="Top 10 Tools for Technicians" class="blog-img">
+          </div>
           <div class="blog-content">
             <div class="blog-category">Tips & Tricks</div>
             <h3 class="blog-title">Top 10 Tools Every Mobile Repair Technician Should Own</h3>
@@ -476,7 +479,9 @@
         </article>
 
         <article class="blog-card reveal" data-category="career">
-          <div class="blog-image">🎓</div>
+          <div class="blog-image">
+            <img src="image/Digital Learning.jpg" alt="Mobile Repair Career Opportunities" class="blog-img">
+          </div>
           <div class="blog-content">
             <div class="blog-category">Career Guide</div>
             <h3 class="blog-title">Mobile Repair Career Opportunities in India 2025</h3>
@@ -574,17 +579,20 @@
     const observer=new IntersectionObserver(e=>e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('visible');}),{threshold:0.1});
     document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
 
-    // Category filter
+    // Enhanced category filter functionality
     document.querySelectorAll('.category-btn').forEach(btn=>{
       btn.addEventListener('click',()=>{
         document.querySelectorAll('.category-btn').forEach(b=>b.classList.remove('active'));
         btn.classList.add('active');
-        const category=btn.dataset.category;
-        document.querySelectorAll('.blog-card').forEach(card=>{
-          if(category==='all'||card.dataset.category===category){
-            card.style.display='block';
+        
+        const category = btn.dataset.category;
+        const articles = document.querySelectorAll('.blog-card');
+        
+        articles.forEach(article => {
+          if (category === 'all' || article.dataset.category === category) {
+            article.style.display = 'flex';
           } else {
-            card.style.display='none';
+            article.style.display = 'none';
           }
         });
       });
