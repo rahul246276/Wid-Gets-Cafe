@@ -112,7 +112,24 @@
     .course-card:hover{border-color:var(--cyan);box-shadow:0 0 30px rgba(0,229,255,0.1);transform:translateY(-6px);}
     .course-card.featured{border-color:rgba(0,229,255,0.3);background:linear-gradient(135deg,rgba(0,229,255,0.04),rgba(37,99,235,0.04));}
     .course-header{padding:28px 28px 0;position:relative;}
-    .course-badge{position:absolute;top:20px;right:20px;background:linear-gradient(135deg,var(--cyan),var(--blue));color:var(--navy);font-size:11px;font-weight:700;padding:4px 12px;border-radius:50px;}
+    .course-badge{position:absolute;top:20px;right:20px;background:linear-gradient(135deg,var(--cyan),var(--blue));color:var(--navy);font-size:11px;font-weight:700;padding:4px 12px;border-radius:50px;z-index:2;}
+    .course-image{
+      width:100%;
+      height:200px;
+      overflow:hidden;
+      border-radius:12px;
+      position:relative;
+      margin-bottom:20px;
+    }
+    .course-img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform 0.3s ease;
+    }
+    .course-card:hover .course-img{
+      transform:scale(1.05);
+    }
     .course-icon-wrap{width:64px;height:64px;background:var(--glass-b);border:1px solid var(--border);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:30px;margin-bottom:20px;}
     .course-title{font-size:19px;font-weight:700;margin-bottom:8px;}
     .course-desc{font-size:14px;color:var(--gray);line-height:1.7;margin-bottom:20px;}
@@ -223,11 +240,13 @@
         <div class="course-card reveal" data-category="basic">
           <div class="course-header">
             <div class="course-badge">Bestseller</div>
-            <div class="course-icon-wrap">📱</div>
-            <div class="course-title">Mobile Repairing Basic</div>
-            <div class="course-desc">A complete beginner's program covering all aspects of smartphone hardware repair. Perfect for freshers with zero experience.</div>
+            <div class="course-image">
+              <img src="image/Mobile Repairing Basic.jpg" alt="Mobile Repairing Basic Course" class="course-img">
+            </div>
           </div>
           <div class="course-body">
+            <div class="course-title">Mobile Repairing Basic</div>
+            <div class="course-desc">A complete beginner's program covering all aspects of smartphone hardware repair. Perfect for freshers with zero experience.</div>
             <div class="course-highlights">
               <div class="ch-item"><i class="fas fa-check"></i> Screen & Display Replacement</div>
               <div class="ch-item"><i class="fas fa-check"></i> Battery & Charging Port Repair</div>
@@ -251,11 +270,13 @@
         <div class="course-card reveal" data-category="advanced">
           <div class="course-header">
             <div class="course-badge">Popular</div>
-            <div class="course-icon-wrap">🔬</div>
-            <div class="course-title">Chip Level Repairing</div>
-            <div class="course-desc">Advanced motherboard-level diagnosis and repair using professional BGA machines and micro-soldering techniques.</div>
+            <div class="course-image">
+              <img src="image/chip Leval MObile reparing.jpg" alt="Chip Level Repairing Course" class="course-img">
+            </div>
           </div>
           <div class="course-body">
+            <div class="course-title">Chip Level Repairing</div>
+            <div class="course-desc">Advanced motherboard-level diagnosis and repair using professional BGA machines and micro-soldering techniques.</div>
             <div class="course-highlights">
               <div class="ch-item"><i class="fas fa-check"></i> Motherboard Circuit Analysis</div>
               <div class="ch-item"><i class="fas fa-check"></i> BGA IC Reballing & Replacement</div>
@@ -278,11 +299,13 @@
         <!-- Course 3 -->
         <div class="course-card reveal" data-category="iphone">
           <div class="course-header">
-            <div class="course-icon-wrap">🍎</div>
-            <div class="course-title">iPhone Expert Course</div>
-            <div class="course-desc">Become a certified Apple device specialist. All iPhone models, logic board repair, Face ID troubleshooting & iOS management.</div>
+            <div class="course-image">
+              <img src="image/iPhone Expert Course.jpg" alt="iPhone Expert Course" class="course-img">
+            </div>
           </div>
           <div class="course-body">
+            <div class="course-title">iPhone Expert Course</div>
+            <div class="course-desc">Become a certified Apple device specialist. All iPhone models, logic board repair, Face ID troubleshooting & iOS management.</div>
             <div class="course-highlights">
               <div class="ch-item"><i class="fas fa-check"></i> All iPhone Models (6 to 15 Pro)</div>
               <div class="ch-item"><i class="fas fa-check"></i> Logic Board Level Repair</div>
@@ -305,11 +328,13 @@
         <!-- Course 4 -->
         <div class="course-card reveal" data-category="laptop">
           <div class="course-header">
-            <div class="course-icon-wrap">💻</div>
-            <div class="course-title">Laptop Repairing Course</div>
-            <div class="course-desc">Complete laptop hardware and software repair — from charging issues to motherboard-level diagnosis and screen replacement.</div>
+            <div class="course-image">
+              <img src="image/Lap  Top Reparing .jpg" alt="Laptop Repairing Course" class="course-img">
+            </div>
           </div>
           <div class="course-body">
+            <div class="course-title">Laptop Repairing Course</div>
+            <div class="course-desc">Complete laptop hardware and software repair — from charging issues to motherboard-level diagnosis and screen replacement.</div>
             <div class="course-highlights">
               <div class="ch-item"><i class="fas fa-check"></i> All Brand Laptop Repair</div>
               <div class="ch-item"><i class="fas fa-check"></i> Motherboard Fault Diagnosis</div>
@@ -332,11 +357,13 @@
         <!-- Course 5 -->
         <div class="course-card reveal" data-category="basic">
           <div class="course-header">
-            <div class="course-icon-wrap">📡</div>
-            <div class="course-title">Tablet & iPad Repair</div>
-            <div class="course-desc">Specialized training for iPad and Android tablet repair including digitizer, display, battery, and charging port service.</div>
+            <div class="course-image">
+              <img src="image/Tablet & iPad Repair.jpg" alt="Tablet & iPad Repair Course" class="course-img">
+            </div>
           </div>
           <div class="course-body">
+            <div class="course-title">Tablet & iPad Repair</div>
+            <div class="course-desc">Specialized training for iPad and Android tablet repair including digitizer, display, battery, and charging port service.</div>
             <div class="course-highlights">
               <div class="ch-item"><i class="fas fa-check"></i> iPad All Models Repair</div>
               <div class="ch-item"><i class="fas fa-check"></i> Digitizer & Screen Replacement</div>
@@ -359,11 +386,13 @@
         <div class="course-card featured reveal" data-category="master">
           <div class="course-header">
             <div class="course-badge">🏆 Premium</div>
-            <div class="course-icon-wrap">🏆</div>
-            <div class="course-title">Master Technician Program</div>
-            <div class="course-desc">The ultimate 6-month comprehensive program. Master mobile, chip-level, iPhone, laptop, and tablet repair. Become a certified master.</div>
+            <div class="course-image">
+              <img src="image/Master .png" alt="Master Technician Course" class="course-img">
+            </div>
           </div>
           <div class="course-body">
+            <div class="course-title">Master Technician Program</div>
+            <div class="course-desc">The ultimate 6-month comprehensive program. Master mobile, chip-level, iPhone, laptop, and tablet repair. Become a certified master.</div>
             <div class="course-highlights">
               <div class="ch-item"><i class="fas fa-check"></i> Complete Mobile & Chip Level</div>
               <div class="ch-item"><i class="fas fa-check"></i> iPhone & iPad Expert Level</div>

@@ -28,8 +28,8 @@
     .reveal.visible{opacity:1;transform:translateY(0);}
 
     /* NAVBAR */
-    #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;transition:var(--tr);}
-    #navbar.scrolled{background:rgba(7,17,32,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 0;}
+    #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:12px 0;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.1);box-shadow:0 2px 20px rgba(0,0,0,0.08);transition:all 0.3s ease;}
+    #navbar.scrolled{background:rgba(255,255,255,0.98);backdrop-filter:blur(25px);border-bottom:1px solid rgba(0,0,0,0.15);box-shadow:0 4px 30px rgba(0,0,0,0.12);padding:8px 0;}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;}
     /* ===================== LOGO ===================== */
     .logo {
@@ -44,13 +44,13 @@
       /* Show the real PNG — no color filter so original red/black/white shows */
       display: block;
       width: auto;
-      height: 64px;          /* Comfortable navbar height */
-      max-width: 240px;      /* Never overflow on smaller screens */
+      height: 48px;          /* Smaller navbar height */
+      max-width: 200px;      /* Never overflow on smaller screens */
       object-fit: contain;
       object-position: left center;
 
       /* Subtle glow matching the site's cyan accent */
-      filter: drop-shadow(0 2px 12px rgba(0, 229, 255, 0.20));
+      filter: drop-shadow(0 2px 8px rgba(0, 229, 255, 0.15));
 
       /* Smooth transitions for scroll-shrink & hover */
       transition: height 0.35s cubic-bezier(.4,0,.2,1),
@@ -60,13 +60,14 @@
 
     /* Hover: gentle lift + glow boost */
     .logo-img:hover {
-      filter: drop-shadow(0 4px 18px rgba(0, 229, 255, 0.45));
+      filter: drop-shadow(0 3px 12px rgba(0, 229, 255, 0.35));
       transform: translateY(-1px) scale(1.02);
     }
 
     /* Scrolled navbar: shrink logo so header gets slimmer */
     #navbar.scrolled .logo-img {
-      height: 48px;
+      height: 40px;
+      max-width: 180px;
     }
 
     /* Footer logo — slightly bigger, centered in brand column */
@@ -82,14 +83,15 @@
     .logo-text .name{font-size:18px;font-weight:800;line-height:1.1;} .logo-text .name span{color:var(--cyan);}
     .logo-text .tagline{font-size:10px;color:var(--gray);letter-spacing:1px;}
     .nav-links{display:flex;align-items:center;gap:8px;}
-    .nav-links a{font-size:14px;font-weight:500;color:var(--gray);padding:8px 14px;border-radius:8px;transition:var(--tr);}
-    .nav-links a:hover,.nav-links a.active{color:var(--white);background:var(--glass);}
+    .nav-links a{font-size:13px;font-weight:600;color:#333;padding:6px 12px;border-radius:6px;transition:all 0.3s ease;position:relative;}
+    .nav-links a:hover{color:#007ACC;background:rgba(0,122,204,0.1);transform:translateY(-1px);}
+    .nav-links a.active{color:#007ACC;background:rgba(0,122,204,0.15);font-weight:700;}
+    .nav-links a.active::after{content:'';position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);width:30px;height:3px;background:linear-gradient(90deg,#007ACC,#00E5FF);border-radius:2px;}
     .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
     .hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;}
     .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(7,17,32,0.97);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:24px;}
     .mobile-menu.open{display:flex;}
     .mobile-menu a{font-size:22px;font-weight:600;color:var(--gray);}
-    .mobile-menu a:hover{color:var(--cyan);}
     .mobile-close{position:absolute;top:24px;right:24px;font-size:28px;cursor:pointer;color:var(--gray);}
 
     /* PAGE HERO */
